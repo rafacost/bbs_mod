@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "bbs_mod",
+  "name": "Beer Brewery Simulator",
+  "description": "Base Mod for Beer Brewery Simulator Modpack.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/rafacost/bbs_mod",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["rafacost3d"],
+  "credits": "All rights reserved for rafacost3d",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
