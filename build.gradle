@@ -1,3 +1,7 @@
+def mainVersion = "0.1"
+def buildNumber = "01"
+
+
 buildscript {
     repositories {
         jcenter()
@@ -11,7 +15,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "1.0"
+version = "${mainVersion}.${buildNumber}"
 group = "com.rafacost3d.bbs_mod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "bbs_mod"
 
@@ -23,6 +27,8 @@ compileJava {
 minecraft {
     version = "1.11.2-13.20.0.2228"
     runDir = "run"
+
+    replace '${version}', project.version
     
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
