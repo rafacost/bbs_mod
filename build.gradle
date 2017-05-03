@@ -1,5 +1,5 @@
 def mainVersion = "0.1"
-def buildNumber = "01"
+def buildNumber = "02"
 
 
 buildscript {

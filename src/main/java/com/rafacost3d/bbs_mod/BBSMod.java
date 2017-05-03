@@ -25,8 +25,7 @@ public class BBSMod
     {
         this.proxy.preInit(e);
         System.out.println(" << BBS_Mod PreInit Successfully! >> ");
-    }]'\
-        40240'
+    }
 
     @EventHandler
     public void init(FMLInitializationEvent e)
