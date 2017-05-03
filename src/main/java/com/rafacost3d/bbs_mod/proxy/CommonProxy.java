@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent e) {
+
         BBSItems.init();
     }
     public void init(FMLInitializationEvent e) {
