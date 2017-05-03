@@ -11,3 +11,24 @@ ImmersiveEngineering - https://github.com/BluSunrize/ImmersiveEngineering
 BedRockMiner - https://bedrockminer.jimdo.com/modding-tutorials/basic-modding-1-8/
 
 Nornagon - https://gist.github.com/nornagon/f9ae87c01740db0518b7
+
+**To-Do List**
+- [ ] Implement Basic HopSeedsItem
+- [ ] Implement Hop Growth Block
+- [ ] Create StoveBlock
+- [ ] Create BoilPotBlock
+- [ ] Create StirringSpoonItem
+- [ ] Create MeasuringCupItem
+- [ ] Create StrainerItem
+- [ ] Create ThermometerItem
+- [ ] Create CleanerItem
+- [ ] Create SanitizerItem
+- [ ] Create FermenterBlock
+- [ ] Create AirlockItem
+- [ ] Create RackingCaneItem
+- [ ] Create BottlingBucketBlock
+- [ ] Create BottleFillerItem
+- [ ] Create BottleBrushItem
+- [ ] Create BottlesItem
+- [ ] Create BottleCapsItem
+- [ ] Create BottleCapperItem
