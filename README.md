@@ -14,7 +14,7 @@ Nornagon - https://gist.github.com/nornagon/f9ae87c01740db0518b7
 
 **To-Do List**
 - [x] Implement Basic HopSeedsItem
-- [ ] Implement Hop Growth Block
+- [x] Implement Hop Growth Block
 - [ ] Create StoveBlock
 - [ ] Create BoilPotBlock
 - [ ] Create StirringSpoonItem

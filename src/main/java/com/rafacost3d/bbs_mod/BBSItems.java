@@ -12,9 +12,10 @@ public class BBSItems {
     public static BasicItem basicItem;
     public static HopSeedsItem hopSeedsItem;
 
+
     public static void init(){
         basicItem = new BasicItem();
-        hopSeedsItem = new HopSeedsItem(Blocks.WHEAT, Blocks.DIRT);
+        hopSeedsItem = new HopSeedsItem(BBSBlocks.hopcropBlock, Blocks.DIRT);
     }
 
 
