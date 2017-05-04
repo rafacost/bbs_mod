@@ -1,6 +1,7 @@
 package com.rafacost3d.bbs_mod.proxy;
 
 
+import com.rafacost3d.bbs_mod.BBSBlocks;
 import com.rafacost3d.bbs_mod.BBSItems;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -12,13 +13,14 @@ public class ClientProxy extends CommonProxy {
     public void preInit(FMLPreInitializationEvent e) {
 
         super.preInit(e);
-
+        BBSBlocks.initModels();
         BBSItems.initModels();
     }
 
     @Override
     public void init(FMLInitializationEvent e) {
         super.init(e);
+
     }
 
     @Override

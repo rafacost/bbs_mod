@@ -1,12 +1,23 @@
 package com.rafacost3d.bbs_mod;
 
-import com.rafacost3d.bbs_mod.blocks.FirstBlock;
 
-public class BBSBlocks{
+import com.rafacost3d.bbs_mod.blocks.BasicBlock;
+import net.minecraft.client.renderer.ItemModelMesher;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-    public static FirstBlock firstBlock;
+public class BBSBlocks {
+
+    private static BasicBlock basicBlock;
 
     public static void init(){
-        firstBlock = new FirstBlock();
+
+        basicBlock = new BasicBlock();
+
+    }
+
+    @SideOnly(Side.CLIENT)
+    public static void initModels(){
+        basicBlock.initModel();
     }
 }
