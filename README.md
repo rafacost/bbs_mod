@@ -13,7 +13,7 @@ BedRockMiner - https://bedrockminer.jimdo.com/modding-tutorials/basic-modding-1-
 Nornagon - https://gist.github.com/nornagon/f9ae87c01740db0518b7
 
 **To-Do List**
-- [ ] Implement Basic HopSeedsItem
+- [x] Implement Basic HopSeedsItem
 - [ ] Implement Hop Growth Block
 - [ ] Create StoveBlock
 - [ ] Create BoilPotBlock
