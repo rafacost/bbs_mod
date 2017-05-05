@@ -12,9 +12,12 @@ BedRockMiner - https://bedrockminer.jimdo.com/modding-tutorials/basic-modding-1-
 
 Nornagon - https://gist.github.com/nornagon/f9ae87c01740db0518b7
 
+SilentChaos512 - https://github.com/SilentChaos512/Tutorial-1.11
+
 **To-Do List**
 - [x] Implement Basic HopSeedsItem
 - [x] Implement Hop Growth Block
+- [ ] Create HopsItem
 - [ ] Create StoveBlock
 - [ ] Create BoilPotBlock
 - [ ] Create StirringSpoonItem
