@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = BBSMod.MODID, name = BBSMod.MODNAME, version = BBSMod.VERSION, useMetadata = true)
+@Mod(modid = BBSMod.MODID, name = BBSMod.MODNAME, version = BBSMod.VERSION, useMetadata = true, updateJSON = "https://github.com/rafacost/bbs_mod/version.json")
 
 public class BBSMod
 {

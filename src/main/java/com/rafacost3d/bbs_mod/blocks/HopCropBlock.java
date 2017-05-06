@@ -35,6 +35,8 @@ public class HopCropBlock extends BlockCrops {
         GameRegistry.register(new ItemBlock(this), nameBlock);
     }
 
+
+
     @Override
     protected Item getSeed() {
         return BBSItems.hopSeedsItem;
@@ -42,7 +44,14 @@ public class HopCropBlock extends BlockCrops {
 
     @Override
     protected Item getCrop() {
-        return BBSItems.basicItem;
+        Random rand = new Random();
+        if(rand.nextInt(100)>=50){
+            return BBSItems.hopsLeafItemAA1;
+        } else {
+            return BBSItems.hopsLeafItemAA2;
+        }
+
+
     }
 
     @SideOnly(Side.CLIENT)
@@ -88,4 +97,7 @@ public class HopCropBlock extends BlockCrops {
     private boolean haveQuality(ItemStack stack) {
         return getTagCompoundSafe(stack).hasKey("Quality");
     }
+
+
+
 }

@@ -1,0 +1,11 @@
+{
+  "homepage": "https://github.com/rafacost/bbs_mod/releases",
+  "1.11.2": {
+    "01.16": "https://github.com/rafacost/bbs_mod/releases/r01.16",
+    "01.19": "https://github.com/rafacost/bbs_mod/releases/r01.19"
+  },
+  "promos": {
+    "1.11.2-latest": "01.19",
+    "1.11.2-recommended": "01.16"
+  }
+}

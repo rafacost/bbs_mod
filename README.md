@@ -14,10 +14,13 @@ Nornagon - https://gist.github.com/nornagon/f9ae87c01740db0518b7
 
 SilentChaos512 - https://github.com/SilentChaos512/Tutorial-1.11
 
+Forestry - https://github.com/ForestryMC/ForestryMC
+
 **To-Do List**
 - [x] Implement Basic HopSeedsItem
 - [x] Implement Hop Growth Block
-- [ ] Create HopsItem
+- [x] Create Generic HopsLeafItem with Hops Type, and Alpha Acid
+- [ ] Create PelleterMachineBlock, to double Hops production
 - [ ] Create StoveBlock
 - [ ] Create BoilPotBlock
 - [ ] Create StirringSpoonItem

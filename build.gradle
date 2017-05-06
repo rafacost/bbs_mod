@@ -1,5 +1,5 @@
 def mainVersion = "0.1"
-def buildNumber = "15"
+def buildNumber = "19"
 
 
 buildscript {
@@ -14,6 +14,12 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
+repositories {
+    maven { // TOP
+        name 'tterrag maven'
+        url "http://maven.tterrag.com/"
+    }
+}
 
 version = "${mainVersion}.${buildNumber}"
 group = "com.rafacost3d.bbs_mod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -25,7 +31,7 @@ compileJava {
 }
 
 minecraft {
-    version = "1.11.2-13.20.0.2228"
+    version = "1.11.2-13.20.0.2282"
     runDir = "run"
 
     replace '${version}', project.version
@@ -40,6 +46,7 @@ minecraft {
 }
 
 dependencies {
+    deobfCompile "mcjty.theoneprobe:TheOneProbe:1.1x-1.4.6-56"
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"

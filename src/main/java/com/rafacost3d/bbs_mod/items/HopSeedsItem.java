@@ -1,6 +1,8 @@
 package com.rafacost3d.bbs_mod.items;
 
 import com.rafacost3d.bbs_mod.BBSMod;
+import com.rafacost3d.bbs_mod.compat.top.TOPInfoProvider;
+import mcjty.theoneprobe.api.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -15,7 +17,6 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -27,7 +28,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 
-public class HopSeedsItem extends Item implements IPlantable {
+public class HopSeedsItem extends Item implements IPlantable, TOPInfoProvider {
 
     private final Block crops;
     private final Block soilBlockID;
@@ -96,6 +97,14 @@ public class HopSeedsItem extends Item implements IPlantable {
     }
     private boolean haveQuality(ItemStack stack) {
         return getTagCompoundSafe(stack).hasKey("Quality");
+    }
+
+    @Override
+    public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world, IBlockState blockState, IProbeHitData data) {
+        ItemStack is = data.getPickBlock();
+        Integer quali = getTagCompoundSafe(is).getInteger("Quality");
+        probeInfo.horizontal().text("Country: Domestic");
+        probeInfo.horizontal().text("Quality: ").progress(quali % 100, 100, probeInfo.defaultProgressStyle().suffix("%"));
     }
 }
 
