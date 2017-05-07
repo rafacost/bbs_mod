@@ -1,6 +1,7 @@
 package com.rafacost3d.bbs_mod.items;
 
 import com.rafacost3d.bbs_mod.BBSMod;
+import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -20,7 +21,7 @@ public class HopsWholeLeafItem extends Item {
 
         setRegistryName("hopsleaf_" + hopstype);
         setUnlocalizedName(BBSMod.MODID + ".hopsleaf_" + hopstype);
-        setCreativeTab(CreativeTabs.MATERIALS);
+        setCreativeTab(CreativeTabsBBS.BBSTabsHops);
         setHopsType(hopstype);
         setAlphaAcid(alphaacid);
         GameRegistry.register(this);

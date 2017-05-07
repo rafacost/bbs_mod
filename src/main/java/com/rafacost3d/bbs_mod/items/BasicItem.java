@@ -1,6 +1,7 @@
 package com.rafacost3d.bbs_mod.items;
 
 import com.rafacost3d.bbs_mod.BBSMod;
+import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,7 +26,7 @@ public class BasicItem extends Item {
 
         setRegistryName("basicitem");
         setUnlocalizedName(BBSMod.MODID + ".basicitem");
-        setCreativeTab(CreativeTabs.MATERIALS);
+        setCreativeTab(CreativeTabsBBS.BBSTabsHops);
         GameRegistry.register(this);
     }
 

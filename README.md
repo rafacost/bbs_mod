@@ -20,7 +20,7 @@ Forestry - https://github.com/ForestryMC/ForestryMC
 - [x] Implement Basic HopSeedsItem
 - [x] Implement Hop Growth Block
 - [x] Create Generic HopsLeafItem with Hops Type, and Alpha Acid
-- [ ] Implement CreativeTab
+- [x] Implement CreativeTabs
 - [ ] Create PelleterMachineBlock, to double Hops production
 - [ ] Create StoveBlock
 - [ ] Create BoilPotBlock

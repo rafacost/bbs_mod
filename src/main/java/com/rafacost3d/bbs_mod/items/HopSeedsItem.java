@@ -2,6 +2,7 @@ package com.rafacost3d.bbs_mod.items;
 
 import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.compat.top.TOPInfoProvider;
+import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
 import mcjty.theoneprobe.api.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -40,7 +41,7 @@ public class HopSeedsItem extends Item implements IPlantable, TOPInfoProvider {
             this.soilBlockID = soil;
             setRegistryName("hopseeds");
             setUnlocalizedName(BBSMod.MODID + ".hopseeds");
-            setCreativeTab(CreativeTabs.MATERIALS);
+            setCreativeTab(CreativeTabsBBS.BBSTabsSeeds);
             GameRegistry.register(this);
         }
 

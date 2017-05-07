@@ -8,11 +8,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BBSBlocks {
 
-    private static BasicBlock basicBlock;
+    public static BasicBlock basicBlock;
     public static HopCropBlock hopcropBlock;
+    public static Boolean isBurning;
 
     public static void init(){
-
+        isBurning = false;
         basicBlock = new BasicBlock();
         hopcropBlock = new HopCropBlock();
 

@@ -2,6 +2,7 @@ package com.rafacost3d.bbs_mod.blocks;
 
 
 import com.rafacost3d.bbs_mod.BBSMod;
+import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -21,7 +22,7 @@ public class BasicBlock extends Block{
         super(Material.ROCK);
         setRegistryName("basicblock");
         setUnlocalizedName(BBSMod.MODID + ".basicblock");
-        setCreativeTab(CreativeTabs.MATERIALS);
+        setCreativeTab(CreativeTabsBBS.BBSTabsMachines);
         GameRegistry.register(this);
         if(getRegistryName()!=null) {
             nameBlock = getRegistryName();
