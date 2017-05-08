@@ -1,9 +1,11 @@
 itemGroup.bbs_mod.hops=Beer Brewing Simulator Hops
 itemGroup.bbs_mod.seeds=Beer Brewing Simulator Seeds
 itemGroup.bbs_mod.machines=Beer Brewing Simulator Machines
-item.bbs_mod.basicitem.name=Basic Item
+itemGroup.bbs_mod.items=Beer Brewing Simulator Items
+item.bbs_mod.stirringspoon.name=Stirring Spoon
 item.bbs_mod.hopsleaf_aa1.name=Liberty Leaf Hops
 item.bbs_mod.hopsleaf_aa2.name=Chinook Leaf Hops
+item.bbs_mod.hopsleaf_aa3.name=American Perle Leaf Hops
 item.bbs_mod.hopseeds.name=Hop Seeds
 tile.bbs_mod.basicblock.name=Basic Block
 tile.bbs_mod.hopcropblock.name=Hops Crop

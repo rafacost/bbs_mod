@@ -1,6 +1,6 @@
 {
   "parent": "builtin/generated",
   "textures": {
-    "layer0": "bbs_mod:items/basicitem"
+    "layer0": "bbs_mod:items/hopsleaf_aa"
   }
 }

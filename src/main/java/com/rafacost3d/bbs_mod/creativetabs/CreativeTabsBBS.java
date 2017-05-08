@@ -36,4 +36,12 @@ public class CreativeTabsBBS {
         }
     };
 
+    public static final CreativeTabs BBSTabsItems = new CreativeTabs(BBSMod.MODID + ".items") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public ItemStack getTabIconItem() {
+            return BBSItems.stirringspoon.getDefaultInstance();
+        }
+    };
+
 }

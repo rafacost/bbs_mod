@@ -20,24 +20,28 @@ public class BBSMod
     @SidedProxy(clientSide = "com.rafacost3d.bbs_mod.proxy.ClientProxy", serverSide = "com.rafacost3d.bbs_mod.proxy.ServerProxy")
     public static CommonProxy proxy;
 
-    @EventHandler
+
+    @Mod.Instance(MODID)
+    public static BBSMod instance;
+
+    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e)
     {
         this.proxy.preInit(e);
-        System.out.println(" << BBS_Mod PreInit Successfully! >> ");
+        System.out.println(" << " + MODNAME + " PreInit Successfully! >> ");
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void init(FMLInitializationEvent e)
     {
         this.proxy.init(e);
-        System.out.println(" << BBS_Mod Init Successfully! >> ");
+        System.out.println(" << " + MODNAME + " Init Successfully! >> ");
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent e)
     {
         this.proxy.postInit(e);
-        System.out.println(" << BBS_Mod PostInit Successfully! >> ");
+        System.out.println(" << " + MODNAME + " PostInit Successfully! >> ");
     }
 }

@@ -45,10 +45,13 @@ public class HopCropBlock extends BlockCrops {
     @Override
     protected Item getCrop() {
         Random rand = new Random();
-        if(rand.nextInt(100)>=50){
-            return BBSItems.hopsLeafItemAA1;
-        } else {
-            return BBSItems.hopsLeafItemAA2;
+        Integer i = rand.nextInt(3);
+
+        switch (i){
+            case 0: return BBSItems.hopsLeafItemAA1;
+            case 1: return BBSItems.hopsLeafItemAA2;
+            case 2: return BBSItems.hopsLeafItemAA3;
+            default: return BBSItems.hopSeedsItem;
         }
 
 
@@ -65,7 +68,7 @@ public class HopCropBlock extends BlockCrops {
         int age = this.getAge(state);
         Random rand = world instanceof World ?((World)world).rand:new Random();
         if(age >= this.getMaxAge()) {
-            int k = 3 + fortune;
+            int k = 1 + fortune;
 
             for(int i = 0; i < k; ++i) {
                 if(rand.nextInt(2 * this.getMaxAge()) <= age) {
