@@ -1,9 +1,9 @@
 package com.rafacost3d.bbs_mod;
 
 
-import com.rafacost3d.bbs_mod.blocks.BasicBlock;
-import com.rafacost3d.bbs_mod.blocks.BlockBase;
-import com.rafacost3d.bbs_mod.blocks.HopCropBlock;
+import com.rafacost3d.bbs_mod.blocks.*;
+import com.rafacost3d.bbs_mod.blocks.machines.BlockCounter;
+import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -14,12 +14,14 @@ public class BBSBlocks {
 
     public static BasicBlock basicBlock;
     public static HopCropBlock hopcropBlock;
-    public static Boolean isBurning;
+    public static BlockCounter counterBlock;
+    public static DataBlock dataBlock;
 
     public static void init(){
-        isBurning = false;
         basicBlock = new BasicBlock();
         hopcropBlock = new HopCropBlock();
+        counterBlock = register(new BlockCounter());
+        dataBlock = new DataBlock();
 
     }
 
@@ -27,6 +29,7 @@ public class BBSBlocks {
     public static void initModels(){
         basicBlock.initModel();
         hopcropBlock.initModel();
+
     }
 
     private static <T extends Block> T register(T block, ItemBlock itemBlock) {
@@ -35,6 +38,12 @@ public class BBSBlocks {
 
         if (block instanceof BlockBase) {
             ((BlockBase)block).registerItemModel(itemBlock);
+        }
+
+
+
+        if(block instanceof BlockTileEntity) {
+            GameRegistry.registerTileEntity(((BlockTileEntity<?>)block).getTileEntityClass(), block.getRegistryName().toString()) ;
         }
 
         return block;

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "bbs_mod:blocks/basicblock",
+    "down": "bbs_mod:blocks/basicblock",
+    "up": "bbs_mod:blocks/basicblock",
+    "east": "bbs_mod:blocks/basicblock",
+    "west": "bbs_mod:blocks/basicblock",
+    "north": "bbs_mod:blocks/datablock",
+    "south": "bbs_mod:blocks/basicblock"
+  }
+}

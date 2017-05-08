@@ -1,14 +1,13 @@
 package com.rafacost3d.bbs_mod.compat.top;
 
 import com.rafacost3d.bbs_mod.BBSMod;
+import mcjty.theoneprobe.api.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.event.FMLInterModComms;
-import mcjty.theoneprobe.api.*;
 
 import javax.annotation.Nullable;
-import java.util.logging.Level;
 
 public class TOPCompatibility {
 
@@ -18,7 +17,7 @@ public class TOPCompatibility {
         if (registered)
             return;
         registered = true;
-        FMLInterModComms.sendFunctionMessage("theoneprobe", "getTheOneProbe", "mcjty.modtut.compat.top.TOPCompatibility$GetTheOneProbe");
+        FMLInterModComms.sendFunctionMessage("theoneprobe", "getTheOneProbe", "com.rafacost3d.bbs_mod.compat.top.TOPCompatibility$GetTheOneProbe");
     }
 
 
@@ -30,7 +29,7 @@ public class TOPCompatibility {
         @Override
         public Void apply(ITheOneProbe theOneProbe) {
             probe = theOneProbe;
-            //BBSMod.logger.log(Level.INFO, "Enabled support for The One Probe");
+            System.out.println(" << " + BBSMod.MODNAME + " Enabled Support for The One Probe >> ");
             probe.registerProvider(new IProbeInfoProvider() {
                 @Override
                 public String getID() {

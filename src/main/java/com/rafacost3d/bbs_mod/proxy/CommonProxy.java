@@ -2,6 +2,7 @@ package com.rafacost3d.bbs_mod.proxy;
 
 import com.rafacost3d.bbs_mod.BBSBlocks;
 import com.rafacost3d.bbs_mod.BBSItems;
+import com.rafacost3d.bbs_mod.compat.MainCompatHandler;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -13,6 +14,7 @@ public class CommonProxy {
 
     }
     public void preInit(FMLPreInitializationEvent e) {
+        MainCompatHandler.registerTOP();
         BBSBlocks.init();
         BBSItems.init();
     }

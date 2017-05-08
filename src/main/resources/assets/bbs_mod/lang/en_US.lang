@@ -9,3 +9,5 @@ item.bbs_mod.hopsleaf_aa3.name=American Perle Leaf Hops
 item.bbs_mod.hopseeds.name=Hop Seeds
 tile.bbs_mod.basicblock.name=Basic Block
 tile.bbs_mod.hopcropblock.name=Hops Crop
+tile.bbs_mod.counter.name=Counter Block
+tile.bbs_mod.datablock.name=Data Block

@@ -3,6 +3,7 @@ For now this is the basic foundation for a future mod called Beer Brewing Simula
 It's created by rafacost3d, for Minecraft 1.11.2
 
 **Resource Tutorials Links**
+
 If your site is at the list below, thank you so much for your tutorials!
 
 - MCJTY - http://wiki.mcjty.eu/modding/index.php/Main_Page
@@ -14,10 +15,12 @@ If your site is at the list below, thank you so much for your tutorials!
 - Forestry - https://github.com/ForestryMC/ForestryMC
 
 **To-Do List**
-- [x] Implement Basic HopSeedsItem
-- [x] Implement Hop Growth Block
-- [x] Create Generic HopsLeafItem with Hops Type, and Alpha Acid
-- [x] Implement CreativeTabs
+- [x] Implemented Basic HopSeedsItem
+- [x] Implemented Hop Growth Block
+- [x] Created Generic HopsLeafItem with Hops Type, and Alpha Acid
+- [x] Implemented CreativeTabs
+- [x] Added Support for The One Probe
+- [x] Created BaseMachineBlock, with BaseTileEntity with TOP Support
 - [ ] Create PelleterMachineBlock, to double Hops production
 - [ ] Create StoveBlock
 - [ ] Create BoilPotBlock
