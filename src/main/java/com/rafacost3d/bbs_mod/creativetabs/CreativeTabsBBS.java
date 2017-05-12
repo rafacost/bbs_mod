@@ -40,7 +40,7 @@ public class CreativeTabsBBS {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() {
-            return BBSItems.stirringspoon.getDefaultInstance();
+            return BBSItems.sanitizer.getDefaultInstance();
         }
     };
 

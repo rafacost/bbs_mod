@@ -84,6 +84,7 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
             Integer i = d.intValue();
             probeInfo.horizontal().text(TextFormatting.GREEN + "Beer: " + tile.getBeerType());
             probeInfo.horizontal().text(TextFormatting.GREEN + "Clean: " + tile.getClean());
+            probeInfo.horizontal().text(TextFormatting.GREEN + "Water: " + tile.getWater());
             probeInfo.text(TextFormatting.GREEN + "Temperature: ").progress(i, 212, probeInfo.defaultProgressStyle().suffix(DEGREE));
             probeInfo.horizontal().text(TextFormatting.GREEN + "Time Boiling: " + tile.getCount() + "s");
             probeInfo.horizontal().text(TextFormatting.GREEN + "Heat Rate: " + tile.getHeatRate());
@@ -92,14 +93,26 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
 
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ){
-        if (!world.isRemote) {
+        if (!world.isRemote && player.isSneaking()) {
             TileEntityBoilingPot tile = getTileEntity(world, pos);
             player.sendMessage(new TextComponentString("Beer: " + tile.getBeerType()));
             player.sendMessage(new TextComponentString("Clean: " + tile.getClean()));
+            player.sendMessage(new TextComponentString("Water: " + tile.getWater()));
             player.sendMessage(new TextComponentString("Temperature: " + tile.getTemp() + DEGREE));
             player.sendMessage(new TextComponentString("Time Boiling: " + tile.getCount() + "s"));
             player.sendMessage(new TextComponentString("Heat Rate: " + tile.getHeatRate()));
 
+        } else if(!world.isRemote && !player.isSneaking()) {
+            TileEntityBoilingPot tile = getTileEntity(world, pos);
+            ItemStack itemStack = player.getHeldItem(hand);
+            if (itemStack.getItem() == BBSItems.sanitizer) {
+                player.sendMessage(new TextComponentString("Cleaning Boiling Pot."));
+                tile.setClean(true);
+            }
+            if (itemStack.getItem() == BBSItems.watergallon) {
+                player.sendMessage(new TextComponentString("Putting 1 Gallon of Water."));
+                tile.setWater(true);
+            }
         }
         return true;
     }

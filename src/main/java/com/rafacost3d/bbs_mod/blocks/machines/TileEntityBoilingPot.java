@@ -1,5 +1,6 @@
 package com.rafacost3d.bbs_mod.blocks.machines;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -14,6 +15,7 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
 
     private String beerType = "Weizen German Wheat Ale";
     private boolean isClean = false;
+    private boolean hasWater = false;
     private double temp = 70;
     private int count;
     private int delayCounter = 20;
@@ -24,6 +26,7 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     public NBTTagCompound writeToNBT(NBTTagCompound compound) {
         compound.setString("beerType", beerType);
         compound.setBoolean("clean", isClean);
+        compound.setBoolean("water", hasWater);
         compound.setDouble("temperature", temp);
         compound.setInteger("seconds", count);
         return super.writeToNBT(compound);
@@ -33,6 +36,7 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     public void readFromNBT(NBTTagCompound compound) {
         beerType = compound.getString("beerType");
         isClean = compound.getBoolean("clean");
+        hasWater = compound.getBoolean("water");
         temp = compound.getInteger("temperature");
         count = compound.getInteger("seconds");
         super.readFromNBT(compound);
@@ -44,6 +48,11 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     public Boolean getClean() {
         return isClean;
     }
+    public Boolean setClean(Boolean clean) { isClean = clean; return isClean;}
+    public Boolean getWater() {
+        return hasWater;
+    }
+    public Boolean setWater(Boolean water) { hasWater = water; return hasWater;}
     public double getTemp() {
         return temp;
     }
@@ -73,7 +82,7 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
                 temp--;
                 markDirty();
             }
-        } else if (delayCounter <=0 && heat > 0) {
+        } else if (delayCounter <=0 && heat > 0 && isClean && hasWater) {
             delayCounter = 20;
             if(temp>=211)
             {

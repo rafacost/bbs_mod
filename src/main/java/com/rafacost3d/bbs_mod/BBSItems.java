@@ -18,6 +18,9 @@ public class BBSItems {
     public static HopsWholeLeafItem hopsLeafItemAA3;
     public static HopSeedsItem hopSeedsItem;
     public static ItemBase stirringspoon;
+    public static ItemBase sanitizer;
+    public static ItemBase watergallon;
+    public static ItemBase lme;
 
 
     public static void init(){
@@ -27,6 +30,9 @@ public class BBSItems {
         hopSeedsItem = new HopSeedsItem(BBSBlocks.hopcropBlock, Blocks.DIRT);
         stirringspoon = register(new ItemBase("stirringspoon").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
         stirringspoon.canHarvestBlock(BBSBlocks.boilingPotBlock.getBlockState().getBaseState());
+        sanitizer = register(new ItemBase("sanitizer").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
+        watergallon = register(new ItemBase("watergallon").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
+        lme = register(new ItemBase("lme").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
     }
 
 

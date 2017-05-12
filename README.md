@@ -23,14 +23,13 @@ If your site is at the list below, thank you so much for your tutorials!
 - [x] Added Support for The One Probe
 - [x] Created BaseMachineBlock, with BaseTileEntity with TOP Support
 - [x] Creating PelleterMachineBlock, to double Hops production
-- [ ] Create StoveBlock
+- [x] Added HeatSource Algorithm
 - [x] Creating BoilPotBlock, started to check for Boiling Point...
 - [x] Created StirringSpoonItem
-- [ ] Create MeasuringCupItem
-- [ ] Create StrainerItem
+- [x] Create WaterGallonItem
+- [x] Create LiquidMaltExtractItem
 - [ ] Create ThermometerItem
-- [ ] Create CleanerItem
-- [ ] Create SanitizerItem
+- [x] Create SanitizerItem
 - [ ] Create FermenterBlock
 - [ ] Create AirlockItem
 - [ ] Create RackingCaneItem
