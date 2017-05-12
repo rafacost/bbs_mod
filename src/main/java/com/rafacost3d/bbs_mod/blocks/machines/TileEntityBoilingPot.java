@@ -1,6 +1,5 @@
 package com.rafacost3d.bbs_mod.blocks.machines;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -16,10 +15,11 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     private String beerType = "Weizen German Wheat Ale";
     private boolean isClean = false;
     private boolean hasWater = false;
+    private int waterGL = 0;
     private double temp = 70;
     private int count;
     private int delayCounter = 20;
-    private int totalCal = 283875;
+
 
 
     @Override
@@ -27,6 +27,7 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
         compound.setString("beerType", beerType);
         compound.setBoolean("clean", isClean);
         compound.setBoolean("water", hasWater);
+        compound.setInteger("waterGL", waterGL);
         compound.setDouble("temperature", temp);
         compound.setInteger("seconds", count);
         return super.writeToNBT(compound);
@@ -37,6 +38,7 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
         beerType = compound.getString("beerType");
         isClean = compound.getBoolean("clean");
         hasWater = compound.getBoolean("water");
+        waterGL = compound.getInteger("waterGL");
         temp = compound.getInteger("temperature");
         count = compound.getInteger("seconds");
         super.readFromNBT(compound);
@@ -59,6 +61,10 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     public int getCount() {
         return count;
     }
+    public int getWaterGL() {
+        return waterGL;
+    }
+    public int setWaterGL(int gl) { waterGL = gl; return waterGL;}
 
 
     @Override
@@ -90,7 +96,7 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
                 temp=212;
                 markDirty();
             } else {
-                temp += (0.25 * heat);
+                temp += ((0.25/waterGL) * heat);
                 markDirty();
             }
         }

@@ -31,7 +31,11 @@ public class BBSItems {
         stirringspoon = register(new ItemBase("stirringspoon").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
         stirringspoon.canHarvestBlock(BBSBlocks.boilingPotBlock.getBlockState().getBaseState());
         sanitizer = register(new ItemBase("sanitizer").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
+        sanitizer.setMaxDamage(64);
+        sanitizer.setMaxStackSize(1);
         watergallon = register(new ItemBase("watergallon").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
+        watergallon.setMaxDamage(64);
+        watergallon.setMaxStackSize(1);
         lme = register(new ItemBase("lme").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
     }
 
