@@ -2,7 +2,7 @@
 For now this is the basic foundation for a future mod called Beer Brewing Simulator.
 It's created by rafacost3d, for Minecraft 1.11.2
 
-**Resource Links for 1.11.2 **
+**Resource Links for 1.11.2**
 
 If your site is at the list below, thank you so much for your tutorials!
 
@@ -21,10 +21,10 @@ If your site is at the list below, thank you so much for your tutorials!
 - [x] Implemented CreativeTabs
 - [x] Added Support for The One Probe
 - [x] Created BaseMachineBlock, with BaseTileEntity with TOP Support
-- [x] Create PelleterMachineBlock, to double Hops production
+- [x] Creating PelleterMachineBlock, to double Hops production
 - [ ] Create StoveBlock
 - [x] Creating BoilPotBlock, started to check for Boiling Point...
-- [x] Create StirringSpoonItem
+- [x] Created StirringSpoonItem
 - [ ] Create MeasuringCupItem
 - [ ] Create StrainerItem
 - [ ] Create ThermometerItem
