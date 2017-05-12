@@ -31,7 +31,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 
 public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> implements TOPInfoProvider {
-    //final String DEGREE  = "\u2109";
+    final String DEGREE  = "\u2109";
 
     private ResourceLocation nameBlock;
     public BoilingPotBlock(){
@@ -72,9 +72,11 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world, IBlockState blockState, IProbeHitData data) {
         TileEntity te = world.getTileEntity(data.getPos());
         if (te instanceof TileEntityBoilingPot) {
-            TileEntityBoilingPot tileEntity = (TileEntityBoilingPot) te;
-            probeInfo.horizontal().text("Beer: American Pale Ale");
-            probeInfo.text(TextFormatting.GREEN + "Seconds: ").progress(tileEntity.getCount() % 100, 100, probeInfo.defaultProgressStyle().suffix("%"));
+            TileEntityBoilingPot tile = (TileEntityBoilingPot) te;
+            probeInfo.horizontal().text(TextFormatting.GREEN + "Beer: " + tile.getBeerType());
+            probeInfo.horizontal().text(TextFormatting.GREEN + "Clean: " + tile.getClean());
+            probeInfo.text(TextFormatting.GREEN + "Temperature: ").progress(tile.getTemp(), 212, probeInfo.defaultProgressStyle().suffix(DEGREE));
+            probeInfo.horizontal().text(TextFormatting.GREEN + "Time Boiling: " + tile.getCount() + "s");
         }
     }
 
@@ -82,7 +84,11 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ){
         if (!world.isRemote) {
             TileEntityBoilingPot tile = getTileEntity(world, pos);
-            player.sendMessage(new TextComponentString("Seconds Boiling: " + tile.getCount() + "s"));
+            player.sendMessage(new TextComponentString("Beer: " + tile.getBeerType()));
+            player.sendMessage(new TextComponentString("Clean: " + tile.getClean()));
+            player.sendMessage(new TextComponentString("Temperature: " + tile.getTemp() + DEGREE));
+            player.sendMessage(new TextComponentString("Time Boiling: " + tile.getCount() + "s"));
+
         }
         return true;
     }
