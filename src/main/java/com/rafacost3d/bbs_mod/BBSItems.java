@@ -26,6 +26,7 @@ public class BBSItems {
         hopsLeafItemAA3 = new HopsWholeLeafItem("aa3", 7);
         hopSeedsItem = new HopSeedsItem(BBSBlocks.hopcropBlock, Blocks.DIRT);
         stirringspoon = register(new ItemBase("stirringspoon").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
+        stirringspoon.canHarvestBlock(BBSBlocks.boilingPotBlock.getBlockState().getBaseState());
     }
 
 

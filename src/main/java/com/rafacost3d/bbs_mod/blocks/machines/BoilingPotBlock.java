@@ -1,6 +1,7 @@
 package com.rafacost3d.bbs_mod.blocks.machines;
 
 
+import com.rafacost3d.bbs_mod.BBSItems;
 import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.blocks.BlockTileEntity;
 import com.rafacost3d.bbs_mod.compat.top.TOPInfoProvider;
@@ -14,6 +15,8 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -29,6 +32,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> implements TOPInfoProvider {
     final String DEGREE  = "\u2109";
@@ -38,6 +43,8 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
         super(Material.IRON, "boilingpot");
         setUnlocalizedName(BBSMod.MODID + ".boilingpot");
         setCreativeTab(CreativeTabsBBS.BBSTabsMachines);
+        setHarvestLevel("shovel", -1);
+        setHardness(1F);
         GameRegistry.register(this);
         if(getRegistryName()!=null) {
             nameBlock = getRegistryName();
@@ -73,10 +80,13 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
         TileEntity te = world.getTileEntity(data.getPos());
         if (te instanceof TileEntityBoilingPot) {
             TileEntityBoilingPot tile = (TileEntityBoilingPot) te;
+            Double d = tile.getTemp();
+            Integer i = d.intValue();
             probeInfo.horizontal().text(TextFormatting.GREEN + "Beer: " + tile.getBeerType());
             probeInfo.horizontal().text(TextFormatting.GREEN + "Clean: " + tile.getClean());
-            probeInfo.text(TextFormatting.GREEN + "Temperature: ").progress(tile.getTemp(), 212, probeInfo.defaultProgressStyle().suffix(DEGREE));
+            probeInfo.text(TextFormatting.GREEN + "Temperature: ").progress(i, 212, probeInfo.defaultProgressStyle().suffix(DEGREE));
             probeInfo.horizontal().text(TextFormatting.GREEN + "Time Boiling: " + tile.getCount() + "s");
+            probeInfo.horizontal().text(TextFormatting.GREEN + "Heat Rate: " + tile.getHeatRate());
         }
     }
 
@@ -88,6 +98,7 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
             player.sendMessage(new TextComponentString("Clean: " + tile.getClean()));
             player.sendMessage(new TextComponentString("Temperature: " + tile.getTemp() + DEGREE));
             player.sendMessage(new TextComponentString("Time Boiling: " + tile.getCount() + "s"));
+            player.sendMessage(new TextComponentString("Heat Rate: " + tile.getHeatRate()));
 
         }
         return true;
@@ -103,4 +114,7 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
     public TileEntityBoilingPot createTileEntity(World world, IBlockState state) {
         return new TileEntityBoilingPot();
     }
+
+
+
 }

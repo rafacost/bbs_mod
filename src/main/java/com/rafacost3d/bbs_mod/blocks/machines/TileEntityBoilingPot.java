@@ -1,23 +1,30 @@
 package com.rafacost3d.bbs_mod.blocks.machines;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 
 public class TileEntityBoilingPot extends TileEntity implements ITickable {
 
     private String beerType = "Weizen German Wheat Ale";
     private boolean isClean = false;
-    private int temp = 70;
+    private double temp = 70;
     private int count;
     private int delayCounter = 20;
+    private int totalCal = 283875;
+
 
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound compound) {
         compound.setString("beerType", beerType);
         compound.setBoolean("clean", isClean);
-        compound.setInteger("temperature", temp);
+        compound.setDouble("temperature", temp);
         compound.setInteger("seconds", count);
         return super.writeToNBT(compound);
     }
@@ -37,7 +44,7 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     public Boolean getClean() {
         return isClean;
     }
-    public int getTemp() {
+    public double getTemp() {
         return temp;
     }
     public int getCount() {
@@ -55,11 +62,59 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
 
     private void updateCounter() {
         //Count by seconds.
+        Integer heat = getHeatRate();
         delayCounter--;
-        if (delayCounter <= 0) {
+        if (delayCounter <= 0 && heat ==0) {
             delayCounter = 20;
-            count++;
-            markDirty();
+            if(temp<=70){
+                temp = 70;
+                markDirty();
+            } else {
+                temp--;
+                markDirty();
+            }
+        } else if (delayCounter <=0 && heat > 0) {
+            delayCounter = 20;
+            if(temp>=211)
+            {
+                count++;
+                temp=212;
+                markDirty();
+            } else {
+                temp += (0.25 * heat);
+                markDirty();
+            }
         }
+    }
+
+    public int getHeatRate() {
+        BlockPos posBelow = pos.add(0, -1, 0);
+        IBlockState stateBelow = world.getBlockState(posBelow);
+        if (stateBelow == null)
+        {
+            return 0;
+        }
+
+        int heat;
+        Block heatSource = stateBelow.getBlock();
+        if (heatSource == Blocks.LIT_FURNACE) {
+            heat = 2;
+        } else if (heatSource == Blocks.TORCH) {
+            heat = 1;
+        } else if (heatSource == Blocks.LAVA) {
+            heat = 4;
+        } else if (heatSource == Blocks.FLOWING_LAVA) {
+            heat = 4;
+        } else if (heatSource == Blocks.FIRE) {
+            heat = 3;
+        } else { heat = 0;}
+
+        return heat;
+    }
+
+    @Override
+    public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate)
+    {
+        return false;
     }
 }
