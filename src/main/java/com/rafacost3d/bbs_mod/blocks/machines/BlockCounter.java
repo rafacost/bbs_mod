@@ -36,7 +36,7 @@ public class BlockCounter extends BlockTileEntity<TileEntityCounter> implements 
             } else if (side == EnumFacing.UP) {
                 tile.incrementCount();
             }
-            player.sendMessage(new TextComponentString("Count: " + tile.getCount()));
+            player.sendMessage(new TextComponentString("Quality: " + tile.getCount() + "%"));
         }
         return true;
     }
@@ -58,7 +58,7 @@ public class BlockCounter extends BlockTileEntity<TileEntityCounter> implements 
         TileEntity te = world.getTileEntity(data.getPos());
         if (te instanceof TileEntityCounter) {
             TileEntityCounter tileEntity = (TileEntityCounter) te;
-            probeInfo.text(TextFormatting.GREEN + "Time: " + TextFormatting.WHITE + tileEntity.getCount());
+            probeInfo.text(TextFormatting.GREEN + "Quality: ").progress(tileEntity.getCount() % 100, 100, probeInfo.defaultProgressStyle().suffix("%"));
         }
     }
 }

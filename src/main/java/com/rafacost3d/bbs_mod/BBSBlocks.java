@@ -3,7 +3,8 @@ package com.rafacost3d.bbs_mod;
 
 import com.rafacost3d.bbs_mod.blocks.*;
 import com.rafacost3d.bbs_mod.blocks.machines.BlockCounter;
-import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
+import com.rafacost3d.bbs_mod.blocks.machines.BoilingPotBlock;
+import com.rafacost3d.bbs_mod.blocks.machines.PelleterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -15,13 +16,15 @@ public class BBSBlocks {
     public static BasicBlock basicBlock;
     public static HopCropBlock hopcropBlock;
     public static BlockCounter counterBlock;
-    public static DataBlock dataBlock;
+    public static PelleterBlock pelleterBlock;
+    public static BoilingPotBlock boilingPotBlock;
 
     public static void init(){
         basicBlock = new BasicBlock();
         hopcropBlock = new HopCropBlock();
+        boilingPotBlock = new BoilingPotBlock();
         counterBlock = register(new BlockCounter());
-        dataBlock = new DataBlock();
+        pelleterBlock = register(new PelleterBlock());
 
     }
 
@@ -29,6 +32,7 @@ public class BBSBlocks {
     public static void initModels(){
         basicBlock.initModel();
         hopcropBlock.initModel();
+        boilingPotBlock.initModel();
 
     }
 
@@ -39,8 +43,6 @@ public class BBSBlocks {
         if (block instanceof BlockBase) {
             ((BlockBase)block).registerItemModel(itemBlock);
         }
-
-
 
         if(block instanceof BlockTileEntity) {
             GameRegistry.registerTileEntity(((BlockTileEntity<?>)block).getTileEntityClass(), block.getRegistryName().toString()) ;
