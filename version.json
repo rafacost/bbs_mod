@@ -3,10 +3,11 @@
   "1.11.2": {
     "01.16": "https://github.com/rafacost/bbs_mod/releases/r01.16",
     "01.19": "https://github.com/rafacost/bbs_mod/releases/r01.19",
-    "01.24": "https://github.com/rafacost/bbs_mod/releases/r01.24"
+    "01.24": "https://github.com/rafacost/bbs_mod/releases/r01.24",
+    "01.31": "https://github.com/rafacost/bbs_mod/releases/r01.31"
   },
   "promos": {
-    "1.11.2-latest": "01.24",
-    "1.11.2-recommended": "01.16"
+    "1.11.2-latest": "01.31",
+    "1.11.2-recommended": "01.31"
   }
 }

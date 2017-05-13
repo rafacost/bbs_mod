@@ -1,9 +1,8 @@
 package com.rafacost3d.bbs_mod;
 
 import com.rafacost3d.bbs_mod.proxy.CommonProxy;
-import net.minecraft.init.Blocks;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -17,6 +16,7 @@ public class BBSMod
     public static final String MODNAME = "Beer Brewery Simulator";
     public static final String VERSION = "${version}";
 
+
     @SidedProxy(clientSide = "com.rafacost3d.bbs_mod.proxy.ClientProxy", serverSide = "com.rafacost3d.bbs_mod.proxy.ServerProxy")
     public static CommonProxy proxy;
 
@@ -24,10 +24,15 @@ public class BBSMod
     @Mod.Instance(MODID)
     public static BBSMod instance;
 
+    static {
+        FluidRegistry.enableUniversalBucket();
+    }
+
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e)
     {
         this.proxy.preInit(e);
+
         System.out.println(" << " + MODNAME + " PreInit Successfully! >> ");
     }
 

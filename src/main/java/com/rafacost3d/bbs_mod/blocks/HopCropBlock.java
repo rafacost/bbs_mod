@@ -2,15 +2,21 @@ package com.rafacost3d.bbs_mod.blocks;
 
 import com.rafacost3d.bbs_mod.BBSItems;
 import com.rafacost3d.bbs_mod.BBSMod;
+import com.rafacost3d.bbs_mod.blocks.machines.TileEntityCounter;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
@@ -18,6 +24,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -55,6 +62,19 @@ public class HopCropBlock extends BlockCrops {
         }
 
 
+    }
+
+    @Override
+    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ){
+        if(!world.isRemote) {
+            if (this.isMaxAge(state)) {
+                EntityItem item = new EntityItem(world,pos.getX(), pos.getY(), pos.getZ(), new ItemStack(getCrop(), 1));
+                world.spawnEntity((item));
+                world.setBlockState(pos, this.withAge(6));
+                return true;
+            }
+        }
+        return false;
     }
 
     @SideOnly(Side.CLIENT)

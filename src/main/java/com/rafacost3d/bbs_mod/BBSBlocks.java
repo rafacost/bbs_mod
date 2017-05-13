@@ -19,13 +19,13 @@ public class BBSBlocks {
     public static PelleterBlock pelleterBlock;
     public static BoilingPotBlock boilingPotBlock;
 
+
     public static void init(){
         basicBlock = new BasicBlock();
         hopcropBlock = new HopCropBlock();
         boilingPotBlock = new BoilingPotBlock();
         counterBlock = register(new BlockCounter());
         pelleterBlock = register(new PelleterBlock());
-
     }
 
     @SideOnly(Side.CLIENT)
@@ -34,7 +34,9 @@ public class BBSBlocks {
         hopcropBlock.initModel();
         boilingPotBlock.initModel();
 
+
     }
+
 
     private static <T extends Block> T register(T block, ItemBlock itemBlock) {
         GameRegistry.register(block);

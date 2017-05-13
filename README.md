@@ -28,6 +28,7 @@ If your site is at the list below, thank you so much for your tutorials!
 - [x] Created StirringSpoonItem
 - [x] Create WaterGallonItem
 - [x] Create LiquidMaltExtractItem
+- [x] Implemented Fluids: Weizen Beer and Wort
 - [ ] Create ThermometerItem
 - [x] Create SanitizerItem
 - [ ] Create FermenterBlock

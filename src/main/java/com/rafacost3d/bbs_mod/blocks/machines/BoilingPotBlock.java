@@ -32,6 +32,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,10 +83,12 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
             TileEntityBoilingPot tile = (TileEntityBoilingPot) te;
             Double d = tile.getTemp();
             Integer i = d.intValue();
+            Double dg = tile.getWaterGL();
+            Integer ig = dg.intValue();
             probeInfo.horizontal().text(TextFormatting.GREEN + "Beer: " + tile.getBeerType());
             probeInfo.horizontal().text(TextFormatting.GREEN + "Clean: " + tile.getClean());
             //probeInfo.horizontal().text(TextFormatting.GREEN + "Water: " + tile.getWater());
-            probeInfo.text(TextFormatting.GREEN + "Water GL: ").progress(tile.getWaterGL(), 5, probeInfo.defaultProgressStyle().suffix(" gl"));
+            probeInfo.text(TextFormatting.GREEN + "Water GL: ").progress(ig , 5, probeInfo.defaultProgressStyle().suffix(" gl"));
             probeInfo.text(TextFormatting.GREEN + "Temperature: ").progress(i, 212, probeInfo.defaultProgressStyle().suffix(DEGREE));
             probeInfo.horizontal().text(TextFormatting.GREEN + "Time Boiling: " + tile.getCount() + "s");
             probeInfo.horizontal().text(TextFormatting.GREEN + "Heat Rate: " + tile.getHeatRate());
@@ -99,7 +102,9 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
             player.sendMessage(new TextComponentString("Beer: " + tile.getBeerType()));
             player.sendMessage(new TextComponentString("Clean: " + tile.getClean()));
             //player.sendMessage(new TextComponentString("Water: " + tile.getWater()));
-            player.sendMessage(new TextComponentString("Water GL: " + tile.getWaterGL() + " gl"));
+            DecimalFormat df = new DecimalFormat("0.00");
+            Double dvalue = tile.getWaterGL();
+            player.sendMessage(new TextComponentString("Water GL: " + df.format(dvalue) + " gl"));
             player.sendMessage(new TextComponentString("Temperature: " + tile.getTemp() + DEGREE));
             player.sendMessage(new TextComponentString("Time Boiling: " + tile.getCount() + "s"));
             player.sendMessage(new TextComponentString("Heat Rate: " + tile.getHeatRate()));
