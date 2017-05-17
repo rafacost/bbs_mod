@@ -13,9 +13,7 @@ public class BlockBase extends Block {
 
     public BlockBase(Material material, String name) {
         super(material);
-
         this.name = name;
-
         setUnlocalizedName(BBSMod.MODID + "." + name);
         setRegistryName(name);
     }

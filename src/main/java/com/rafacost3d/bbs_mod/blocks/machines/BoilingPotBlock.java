@@ -6,11 +6,13 @@ import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.blocks.BlockTileEntity;
 import com.rafacost3d.bbs_mod.compat.top.TOPInfoProvider;
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
+import com.rafacost3d.bbs_mod.items.HopsWholeLeafItem;
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.ProbeMode;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -34,7 +36,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> implements TOPInfoProvider {
     final String DEGREE  = "\u2109";
@@ -87,7 +89,8 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
             Integer ig = dg.intValue();
             probeInfo.horizontal().text(TextFormatting.GREEN + "Beer: " + tile.getBeerType());
             probeInfo.horizontal().text(TextFormatting.GREEN + "Clean: " + tile.getClean());
-            //probeInfo.horizontal().text(TextFormatting.GREEN + "Water: " + tile.getWater());
+            probeInfo.horizontal().text(TextFormatting.GREEN + "Malt: " + tile.getMalt());
+            probeInfo.horizontal().text(TextFormatting.GREEN + "Hops: " + tile.getHops());
             probeInfo.text(TextFormatting.GREEN + "Water GL: ").progress(ig , 5, probeInfo.defaultProgressStyle().suffix(" gl"));
             probeInfo.text(TextFormatting.GREEN + "Temperature: ").progress(i, 212, probeInfo.defaultProgressStyle().suffix(DEGREE));
             probeInfo.horizontal().text(TextFormatting.GREEN + "Time Boiling: " + tile.getCount() + "s");
@@ -101,7 +104,9 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
             TileEntityBoilingPot tile = getTileEntity(world, pos);
             player.sendMessage(new TextComponentString("Beer: " + tile.getBeerType()));
             player.sendMessage(new TextComponentString("Clean: " + tile.getClean()));
-            //player.sendMessage(new TextComponentString("Water: " + tile.getWater()));
+            player.sendMessage(new TextComponentString("Water: " + tile.getWater()));
+            player.sendMessage(new TextComponentString("Malt: " + tile.getMalt()));
+            player.sendMessage(new TextComponentString("Hops: " + tile.getHops()));
             DecimalFormat df = new DecimalFormat("0.00");
             Double dvalue = tile.getWaterGL();
             player.sendMessage(new TextComponentString("Water GL: " + df.format(dvalue) + " gl"));
@@ -123,10 +128,24 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
                     player.sendMessage(new TextComponentString("Putting 1 Gallon of Water."));
                     tile.setWaterGL(tile.getWaterGL() + 1);
                     tile.setWater(true);
+                    tile.setBeerType("Water");
                 } else {
                     player.sendMessage(new TextComponentString("This Pot is full!"));
                 }
-
+            }
+            if (itemStack.getItem() == BBSItems.lme) {
+                itemStack.damageItem(64, player);
+                player.sendMessage(new TextComponentString( "3.3lb Wheat LME added to the recipe"));
+                tile.setMalt(true);
+                tile.setMaltType("Wheat Malt");
+                tile.setBeerType("Wort");
+            }
+            if (itemStack.getItem() instanceof HopsWholeLeafItem) {
+                itemStack.setCount(itemStack.getCount()-1);
+                player.sendMessage(new TextComponentString( "Hops added to the recipe"));
+                tile.setHops(true);
+                tile.setMaltType(itemStack.getDisplayName());
+                tile.setBeerType("Wort with " + itemStack.getDisplayName());
             }
         }
         return true;
@@ -144,5 +163,37 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
     }
 
 
+    @Override
+    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
+    {
+        if (hasTileEntity(state) && !(this instanceof BoilingPotBlock))
+        {
+            //this.harvestBlock(worldIn, Minecraft.getMinecraft().player, pos, state, this.getTileEntity(worldIn, pos), this.getSilkTouchDrop(state));
+            TileEntityBoilingPot tile = (TileEntityBoilingPot)worldIn.getTileEntity(pos);
+            worldIn.removeTileEntity(pos);
+        }
+    }
+
+
+    public ArrayList<ItemStack> getDrops(World world, BlockPos pos, int metadata, int fortune) {
+        ArrayList<ItemStack> items = new ArrayList<ItemStack>();
+
+        TileEntity t = world.getTileEntity(pos);
+
+        if (t instanceof TileEntityBoilingPot) {
+            TileEntityBoilingPot tile = (TileEntityBoilingPot)t;
+            String name = tile.getBeerType();
+
+            ItemStack stack = new ItemStack(world.getBlockState(pos).getBlock(), 1, metadata);
+            if (!stack.hasTagCompound()) {
+                stack.setTagCompound(new NBTTagCompound());
+            }
+            stack.getTagCompound().setString("beerType", name);
+            items.add(stack);
+        }
+
+        return items;
+
+    }
 
 }

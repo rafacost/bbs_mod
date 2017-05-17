@@ -20,12 +20,14 @@ public class BBSBlocks {
     public static BoilingPotBlock boilingPotBlock;
 
 
+
     public static void init(){
         basicBlock = new BasicBlock();
         hopcropBlock = new HopCropBlock();
         boilingPotBlock = new BoilingPotBlock();
         counterBlock = register(new BlockCounter());
         pelleterBlock = register(new PelleterBlock());
+
     }
 
     @SideOnly(Side.CLIENT)
@@ -33,8 +35,6 @@ public class BBSBlocks {
         basicBlock.initModel();
         hopcropBlock.initModel();
         boilingPotBlock.initModel();
-
-
     }
 
 

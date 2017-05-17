@@ -4,6 +4,7 @@ import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
 import com.rafacost3d.bbs_mod.items.HopSeedsItem;
 import com.rafacost3d.bbs_mod.items.HopsWholeLeafItem;
 import com.rafacost3d.bbs_mod.items.ItemBase;
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -37,6 +38,8 @@ public class BBSItems {
         watergallon.setMaxDamage(64);
         watergallon.setMaxStackSize(1);
         lme = register(new ItemBase("lme").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
+        lme.setMaxDamage(64);
+        lme.setMaxStackSize(1);
     }
 
 

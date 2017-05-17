@@ -1,6 +1,6 @@
 # Beer Brewing Simulator Mod
 For now this is the basic foundation for a future mod called Beer Brewing Simulator.
-It's created by rafacost3d, for Minecraft 1.11.2
+It's being developed by rafacost3d, for Minecraft 1.11.2
 
 **Resource Links for 1.11.2**
 

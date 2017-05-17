@@ -26,20 +26,24 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BBSFluids {
+
     private static ModelResourceLocation beer_location = new ModelResourceLocation(BBSMod.MODID + ":" + BlockBeer.name, "fluid");
     private static ModelResourceLocation wort_location = new ModelResourceLocation(BBSMod.MODID + ":" + BlockWort.name, "fluid");
-
 
 
     public static void register() {
         FluidRegistry.registerFluid(BBSFluids.FluidBeer.instance);
         FluidRegistry.registerFluid(BBSFluids.FluidWort.instance);
+
         FluidRegistry.addBucketForFluid(BBSFluids.FluidBeer.instance);
         FluidRegistry.addBucketForFluid(BBSFluids.FluidWort.instance);
+
         registerBlock(BlockBeer.instance);
         registerBlock(BlockWort.instance);
+
         Item beer = Item.getItemFromBlock(BlockBeer.instance);
         Item wort = Item.getItemFromBlock(BlockWort.instance);
+
         ModelLoader.setCustomMeshDefinition(beer, new ItemMeshDefinition() {
             @Override
             public ModelResourceLocation getModelLocation(ItemStack stack) {
@@ -64,7 +68,6 @@ public class BBSFluids {
                 return wort_location;
             }
         });
-
 
     }
 

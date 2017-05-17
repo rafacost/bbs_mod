@@ -1,9 +1,6 @@
 package com.rafacost3d.bbs_mod.creativetabs;
 
-import com.rafacost3d.bbs_mod.BBSBlocks;
-import com.rafacost3d.bbs_mod.BBSFluids;
-import com.rafacost3d.bbs_mod.BBSItems;
-import com.rafacost3d.bbs_mod.BBSMod;
+import com.rafacost3d.bbs_mod.*;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -49,7 +46,7 @@ public class CreativeTabsBBS {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() {
-            return Item.getItemFromBlock(BBSFluids.BlockBeer.instance).getDefaultInstance();
+            return Item.getItemFromBlock(BBSFluids.FluidBeer.instance.getBlock()).getDefaultInstance();
         }
     };
 

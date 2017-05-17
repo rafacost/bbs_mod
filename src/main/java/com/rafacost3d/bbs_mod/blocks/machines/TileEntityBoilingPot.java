@@ -12,9 +12,13 @@ import net.minecraft.world.World;
 
 public class TileEntityBoilingPot extends TileEntity implements ITickable {
 
-    private String beerType = "Weizen German Wheat Ale";
+    private String beerType = "";
+    private String maltType = "";
+    private String hopsType = "";
     private boolean isClean = false;
     private boolean hasWater = false;
+    private boolean hasMalt = false;
+    private boolean hasHops = false;
     private double waterGL = 0;
     private double temp = 70;
     private int count;
@@ -25,8 +29,12 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound compound) {
         compound.setString("beerType", beerType);
+        compound.setString("maltType", maltType);
+        compound.setString("hopsType", hopsType);
         compound.setBoolean("clean", isClean);
         compound.setBoolean("water", hasWater);
+        compound.setBoolean("malt", hasMalt);
+        compound.setBoolean("hops", hasHops);
         compound.setDouble("waterGL", waterGL);
         compound.setDouble("temperature", temp);
         compound.setInteger("seconds", count);
@@ -36,8 +44,12 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     @Override
     public void readFromNBT(NBTTagCompound compound) {
         beerType = compound.getString("beerType");
+        maltType = compound.getString("maltType");
+        hopsType = compound.getString("hopsType");
         isClean = compound.getBoolean("clean");
         hasWater = compound.getBoolean("water");
+        hasMalt = compound.getBoolean("hasMalt");
+        hasHops = compound.getBoolean("hasHops");
         waterGL = compound.getDouble("waterGL");
         temp = compound.getInteger("temperature");
         count = compound.getInteger("seconds");
@@ -47,6 +59,15 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     public String getBeerType() {
         return beerType;
     }
+    public String getMaltType() {
+        return maltType;
+    }
+    public String getHopsType() {
+        return hopsType;
+    }
+    public String setBeerType(String beer) {beerType = beer; return beerType;}
+    public String setMaltType(String malt) {maltType = malt; return maltType;}
+    public String setHopsType(String hops) {hopsType = hops; return hopsType;}
     public Boolean getClean() {
         return isClean;
     }
@@ -55,6 +76,14 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
         return hasWater;
     }
     public Boolean setWater(Boolean water) { hasWater = water; return hasWater;}
+    public Boolean getMalt() {
+        return hasMalt;
+    }
+    public Boolean setMalt(Boolean malt) { hasMalt = malt; return hasMalt;}
+    public Boolean getHops() {
+        return hasHops;
+    }
+    public Boolean setHops(Boolean hops) { hasHops = hops; return hasHops;}
     public double getTemp() {
         return temp;
     }
@@ -76,30 +105,38 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     }
 
     private void updateCounter() {
-        //Count by seconds.
+        //Get HeatRate.
         Integer heat = getHeatRate();
         delayCounter--;
+        //Check if a second has passed and Heat is off
         if (delayCounter <= 0 && heat ==0) {
             delayCounter = 20;
+            //If Yes set Room Temperature
             if(temp<=70){
                 temp = 70;
                 markDirty();
+            //If Heat is off and Water is hot cool water
             } else {
                 temp--;
                 markDirty();
             }
+        //Check if Second Passed, Heat is On, Is Clean, and Has Water
         } else if (delayCounter <=0 && heat > 0 && isClean && hasWater) {
             delayCounter = 20;
+            //Check if Water is Boiling start Boiling Counter
             if(temp>=211)
             {
                 count++;
                 temp=212;
+                //Check if Water is dry
                 if (waterGL<=0) {
                     waterGL = 0;
+                //Evaporate the water
                 } else {
                     waterGL -= 0.001;
                 }
                 markDirty();
+            //Heat Water using HeatRate/Water Quantity formula
             } else {
                 temp += ((0.25/waterGL) * heat);
                 markDirty();
@@ -137,4 +174,6 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     {
         return false;
     }
+
+
 }
