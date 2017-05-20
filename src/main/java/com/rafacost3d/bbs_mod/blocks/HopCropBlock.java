@@ -1,8 +1,7 @@
 package com.rafacost3d.bbs_mod.blocks;
 
-import com.rafacost3d.bbs_mod.BBSItems;
+import com.rafacost3d.bbs_mod.init.BBSItems;
 import com.rafacost3d.bbs_mod.BBSMod;
-import com.rafacost3d.bbs_mod.blocks.machines.TileEntityCounter;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -16,7 +15,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
@@ -24,7 +22,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -42,7 +39,10 @@ public class HopCropBlock extends BlockCrops {
         GameRegistry.register(new ItemBlock(this), nameBlock);
     }
 
-
+    @SideOnly(Side.CLIENT)
+    public void initModel() {
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+    }
 
     @Override
     protected Item getSeed() {
@@ -60,8 +60,6 @@ public class HopCropBlock extends BlockCrops {
             case 2: return BBSItems.hopsLeafItemAA3;
             default: return BBSItems.hopSeedsItem;
         }
-
-
     }
 
     @Override
@@ -75,11 +73,6 @@ public class HopCropBlock extends BlockCrops {
             }
         }
         return false;
-    }
-
-    @SideOnly(Side.CLIENT)
-    public void initModel() {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(nameBlock, "inventory"));
     }
 
     @Override
@@ -120,7 +113,5 @@ public class HopCropBlock extends BlockCrops {
     private boolean haveQuality(ItemStack stack) {
         return getTagCompoundSafe(stack).hasKey("Quality");
     }
-
-
 
 }

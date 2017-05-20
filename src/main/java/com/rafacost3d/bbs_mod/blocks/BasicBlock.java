@@ -25,22 +25,22 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BasicBlock extends Block implements TOPInfoProvider {
 
-    private ResourceLocation nameBlock;
-    public BasicBlock(){
-        super(Material.ROCK);
-        setRegistryName("basicblock");
-        setUnlocalizedName(BBSMod.MODID + ".basicblock");
+
+    protected String name;
+
+    public BasicBlock(Material material, String name){
+        super(material);
+        this.name = name;
+        setUnlocalizedName(BBSMod.MODID + "." + name);
+        setRegistryName(name);
         setCreativeTab(CreativeTabsBBS.BBSTabsMachines);
         GameRegistry.register(this);
-        if(getRegistryName()!=null) {
-            nameBlock = getRegistryName();
-        }
-        GameRegistry.register(new ItemBlock(this), nameBlock);
+        GameRegistry.register(new ItemBlock(this), getRegistryName());
     }
 
     @SideOnly(Side.CLIENT)
     public void initModel() {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(nameBlock, "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
     }
 
     @Override

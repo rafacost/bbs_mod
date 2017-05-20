@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "bbs_mod:blocks/basicblock"
+    "all": "bbs_mod:block/basicblock"
   }
 }

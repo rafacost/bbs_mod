@@ -1,7 +1,7 @@
 {
   "parent": "builtin/generated",
   "textures": {
-    "layer0": "bbs_mod:items/hopseeds"
+    "layer0": "bbs_mod:item/hopseeds"
   },
   "display": {
     "thirdperson": {

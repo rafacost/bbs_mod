@@ -1,6 +1,6 @@
 {
   "parent": "block/crop",
   "textures": {
-    "crop": "bbs_mod:blocks/hops_stage7"
+    "crop": "bbs_mod:block/hops_stage7"
   }
 }

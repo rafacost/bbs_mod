@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "bbs_mod:fluids/beer_still"
+    "all": "bbs_mod:fluid/beer_still"
   }
 }

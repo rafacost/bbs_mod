@@ -1,4 +1,4 @@
-package com.rafacost3d.bbs_mod.blocks.machines;
+package com.rafacost3d.bbs_mod.blocks;
 
 
 import net.minecraft.nbt.NBTTagCompound;

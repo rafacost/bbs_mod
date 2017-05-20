@@ -1,7 +1,7 @@
 {
   "parent": "builtin/generated",
   "textures": {
-    "layer0": "bbs_mod:blocks/hops_stage7"
+    "layer0": "bbs_mod:block/hops_stage7"
   },
   "display": {
     "thirdperson": {

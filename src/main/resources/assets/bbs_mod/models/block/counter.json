@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "bbs_mod:blocks/counter"
+    "all": "bbs_mod:block/counter"
   }
 }

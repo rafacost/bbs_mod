@@ -1,7 +1,7 @@
 itemGroup.bbs_mod.hops=Beer Brewing Simulator Hops
 itemGroup.bbs_mod.seeds=Beer Brewing Simulator Seeds
 itemGroup.bbs_mod.machines=Beer Brewing Simulator Machines
-itemGroup.bbs_mod.items=Beer Brewing Simulator Items
+itemGroup.bbs_mod.item=Beer Brewing Simulator Items
 itemGroup.bbs_mod.fluid=Beer Brewing Simulator Fluids
 item.bbs_mod.stirringspoon.name=Stirring Spoon
 item.bbs_mod.sanitizer.name=Sanitizer

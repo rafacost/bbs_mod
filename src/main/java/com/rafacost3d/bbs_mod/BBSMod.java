@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.apache.logging.log4j.Logger;
 
 @Mod(modid = BBSMod.MODID, name = BBSMod.MODNAME, version = BBSMod.VERSION, useMetadata = true, updateJSON = "https://github.com/rafacost/bbs_mod/version.json")
 
@@ -15,11 +16,7 @@ public class BBSMod
     public static final String MODID = "bbs_mod";
     public static final String MODNAME = "Beer Brewery Simulator";
     public static final String VERSION = "${version}";
-
-
-    @SidedProxy(clientSide = "com.rafacost3d.bbs_mod.proxy.ClientProxy", serverSide = "com.rafacost3d.bbs_mod.proxy.ServerProxy")
-    public static CommonProxy proxy;
-
+    public static Logger logger;
 
     @Mod.Instance(MODID)
     public static BBSMod instance;
@@ -28,25 +25,29 @@ public class BBSMod
         FluidRegistry.enableUniversalBucket();
     }
 
+    @SidedProxy(clientSide = "com.rafacost3d.bbs_mod.proxy.ClientProxy", serverSide = "com.rafacost3d.bbs_mod.proxy.ServerProxy")
+    public static CommonProxy proxy;
+
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e)
     {
-        this.proxy.preInit(e);
-        System.out.println(" << " + MODNAME + " PreInit Successfully! >> ");
+        logger = e.getModLog();
+        logger.info("<<" + MODNAME + " is PreInitializing! >>");
+        proxy.preInit(e);
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent e)
     {
-        this.proxy.init(e);
-        System.out.println(" << " + MODNAME + " Init Successfully! >> ");
+        proxy.init(e);
+        logger.info("<<" + MODNAME + " is Initializing! >>");
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent e)
     {
-        this.proxy.postInit(e);
-        System.out.println(" << " + MODNAME + " PostInit Successfully! >> ");
+        proxy.postInit(e);
+        logger.info("<<" + MODNAME + " is PostInitializing! >>");
     }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "bbs_mod:blocks/pelleter"
+    "all": "bbs_mod:block/pelleter"
   }
 }

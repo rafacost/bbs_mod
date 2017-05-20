@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "bbs_mod:fluids/wort_flow"
+    "all": "bbs_mod:fluid/wort_flow"
   }
 }

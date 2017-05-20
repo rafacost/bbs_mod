@@ -3,22 +3,24 @@ package com.rafacost3d.bbs_mod.items;
 import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.List;
 
 
 public class HopsWholeLeafItem extends Item {
 
     public String hopsType;
     public Integer alphaAcid;
+    public Double weightGrams;
 
     public HopsWholeLeafItem(String hopstype, Integer alphaacid) {
-        super();
-
         setRegistryName("hopsleaf_" + hopstype);
         setUnlocalizedName(BBSMod.MODID + ".hopsleaf_" + hopstype);
         setCreativeTab(CreativeTabsBBS.BBSTabsHops);
@@ -50,4 +52,10 @@ public class HopsWholeLeafItem extends Item {
         ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
     }
 
+    @Override
+    public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+        tooltip.add("Alpha Acid: " + alphaAcid + "%");
+        tooltip.add("Quantity: " + (stack.getCount() * 0.443) + " grams");
+        super.addInformation(stack, playerIn, tooltip, advanced);
+    }
 }

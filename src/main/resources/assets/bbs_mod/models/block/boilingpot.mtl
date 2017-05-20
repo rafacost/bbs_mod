@@ -12,5 +12,5 @@ newmtl 09___Default
 #	Kd 0.5882 0.5882 0.5882
 #	Ks 0.0000 0.0000 0.0000
 #	Ke 0.0000 0.0000 0.0000
-#   map_Ka bbs_mod:blocks/boilingpot
-map_Kd bbs_mod:blocks/boilingpot
+map_Ka bbs_mod:block/boilingpot
+map_Kd bbs_mod:block/boilingpot

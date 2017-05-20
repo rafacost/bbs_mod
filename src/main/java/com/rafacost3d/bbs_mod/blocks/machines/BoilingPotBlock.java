@@ -1,24 +1,23 @@
 package com.rafacost3d.bbs_mod.blocks.machines;
 
 
-import com.rafacost3d.bbs_mod.BBSItems;
+import com.rafacost3d.bbs_mod.blocks.BasicBlock;
+import com.rafacost3d.bbs_mod.init.BBSItems;
 import com.rafacost3d.bbs_mod.BBSMod;
-import com.rafacost3d.bbs_mod.blocks.BlockTileEntity;
 import com.rafacost3d.bbs_mod.compat.top.TOPInfoProvider;
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
 import com.rafacost3d.bbs_mod.items.HopsWholeLeafItem;
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.ProbeMode;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -33,26 +32,18 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nullable;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 
 
-public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> implements TOPInfoProvider {
+public class BoilingPotBlock extends BasicBlock implements ITileEntityProvider, TOPInfoProvider {
     final String DEGREE  = "\u2109";
 
     private ResourceLocation nameBlock;
-    public BoilingPotBlock(){
-        super(Material.IRON, "boilingpot");
-        setUnlocalizedName(BBSMod.MODID + ".boilingpot");
+    public BoilingPotBlock(Material material, String name){
+        super(Material.IRON, name);
         setCreativeTab(CreativeTabsBBS.BBSTabsMachines);
         setHarvestLevel("shovel", -1);
         setHardness(1F);
-        GameRegistry.register(this);
-        if(getRegistryName()!=null) {
-            nameBlock = getRegistryName();
-        }
-        GameRegistry.register(new ItemBlock(this), nameBlock);
         GameRegistry.registerTileEntity(TileEntityBoilingPot.class, BBSMod.MODID + "_boilingpot");
     }
 
@@ -75,6 +66,15 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
     @Override
     public boolean isOpaqueCube(IBlockState blockState) {
         return false;
+    }
+
+    @Override
+    public TileEntity createNewTileEntity(World worldIn, int meta) {
+        return new TileEntityBoilingPot();
+    }
+
+    private TileEntityBoilingPot getTE(World world, BlockPos pos) {
+        return (TileEntityBoilingPot) world.getTileEntity(pos);
     }
 
 
@@ -101,7 +101,7 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ){
         if (!world.isRemote && player.isSneaking()) {
-            TileEntityBoilingPot tile = getTileEntity(world, pos);
+            TileEntityBoilingPot tile = getTE(world, pos);
             player.sendMessage(new TextComponentString("Beer: " + tile.getBeerType()));
             player.sendMessage(new TextComponentString("Clean: " + tile.getClean()));
             player.sendMessage(new TextComponentString("Water: " + tile.getWater()));
@@ -115,7 +115,7 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
             player.sendMessage(new TextComponentString("Heat Rate: " + tile.getHeatRate()));
 
         } else if(!world.isRemote && !player.isSneaking()) {
-            TileEntityBoilingPot tile = getTileEntity(world, pos);
+            TileEntityBoilingPot tile = getTE(world, pos);
             ItemStack itemStack = player.getHeldItem(hand);
             if (itemStack.getItem() == BBSItems.sanitizer) {
                 itemStack.damageItem(1, player);
@@ -151,49 +151,14 @@ public class BoilingPotBlock extends BlockTileEntity<TileEntityBoilingPot> imple
         return true;
     }
 
-    @Override
-    public Class<TileEntityBoilingPot> getTileEntityClass() {
-        return TileEntityBoilingPot.class;
-    }
-
-    @Nullable
-    @Override
-    public TileEntityBoilingPot createTileEntity(World world, IBlockState state) {
-        return new TileEntityBoilingPot();
-    }
-
 
     @Override
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
     {
         if (hasTileEntity(state) && !(this instanceof BoilingPotBlock))
         {
-            //this.harvestBlock(worldIn, Minecraft.getMinecraft().player, pos, state, this.getTileEntity(worldIn, pos), this.getSilkTouchDrop(state));
-            TileEntityBoilingPot tile = (TileEntityBoilingPot)worldIn.getTileEntity(pos);
             worldIn.removeTileEntity(pos);
         }
-    }
-
-
-    public ArrayList<ItemStack> getDrops(World world, BlockPos pos, int metadata, int fortune) {
-        ArrayList<ItemStack> items = new ArrayList<ItemStack>();
-
-        TileEntity t = world.getTileEntity(pos);
-
-        if (t instanceof TileEntityBoilingPot) {
-            TileEntityBoilingPot tile = (TileEntityBoilingPot)t;
-            String name = tile.getBeerType();
-
-            ItemStack stack = new ItemStack(world.getBlockState(pos).getBlock(), 1, metadata);
-            if (!stack.hasTagCompound()) {
-                stack.setTagCompound(new NBTTagCompound());
-            }
-            stack.getTagCompound().setString("beerType", name);
-            items.add(stack);
-        }
-
-        return items;
-
     }
 
 }

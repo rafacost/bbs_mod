@@ -1,13 +1,10 @@
-package com.rafacost3d.bbs_mod;
+package com.rafacost3d.bbs_mod.init;
 
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
 import com.rafacost3d.bbs_mod.items.HopSeedsItem;
 import com.rafacost3d.bbs_mod.items.HopsWholeLeafItem;
 import com.rafacost3d.bbs_mod.items.ItemBase;
-import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -24,24 +21,23 @@ public class BBSItems {
     public static ItemBase lme;
 
 
-    public static void init(){
+    public static void preinit(){
         hopsLeafItemAA1 = new HopsWholeLeafItem("aa1", 3);
         hopsLeafItemAA2 = new HopsWholeLeafItem("aa2", 10);
         hopsLeafItemAA3 = new HopsWholeLeafItem("aa3", 7);
         hopSeedsItem = new HopSeedsItem(BBSBlocks.hopcropBlock, Blocks.DIRT);
-        stirringspoon = register(new ItemBase("stirringspoon").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
-        stirringspoon.canHarvestBlock(BBSBlocks.boilingPotBlock.getBlockState().getBaseState());
-        sanitizer = register(new ItemBase("sanitizer").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
+        stirringspoon = new ItemBase("stirringspoon").setCreativeTab(CreativeTabsBBS.BBSTabsItems);
+        //stirringspoon.canHarvestBlock(BBSBlocks.boilingPotBlock.getBlockState().getBaseState());
+        sanitizer = new ItemBase("sanitizer").setCreativeTab(CreativeTabsBBS.BBSTabsItems);
         sanitizer.setMaxDamage(64);
         sanitizer.setMaxStackSize(1);
-        watergallon = register(new ItemBase("watergallon").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
+        watergallon = new ItemBase("watergallon").setCreativeTab(CreativeTabsBBS.BBSTabsItems);
         watergallon.setMaxDamage(64);
         watergallon.setMaxStackSize(1);
-        lme = register(new ItemBase("lme").setCreativeTab(CreativeTabsBBS.BBSTabsItems));
+        lme = new ItemBase("lme").setCreativeTab(CreativeTabsBBS.BBSTabsItems);
         lme.setMaxDamage(64);
         lme.setMaxStackSize(1);
     }
-
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
@@ -49,16 +45,9 @@ public class BBSItems {
         hopsLeafItemAA2.initModel();
         hopsLeafItemAA3.initModel();
         hopSeedsItem.initModel();
+        stirringspoon.initModel();
+        sanitizer.initModel();
+        watergallon.initModel();
+        lme.initModel();
     }
-
-    private static <T extends Item> T register(T item) {
-        GameRegistry.register(item);
-
-        if (item instanceof ItemBase) {
-            ((ItemBase)item).registerItemModel();
-        }
-        return item;
-    }
-
-
 }

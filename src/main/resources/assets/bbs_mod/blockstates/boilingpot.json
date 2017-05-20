@@ -6,6 +6,30 @@
   },
   "variants": {
     "normal": [{}],
-    "inventory": [{}]
+    "inventory": [{
+      "transform": {
+        "gui": {
+          "rotation": [
+            {
+              "x": 20
+            },
+            {
+              "y": 0
+            },
+            {
+              "z": 0
+            }
+          ],
+          "translation": [
+            0,
+            0.5,
+            0
+          ],
+          "scale": 2.0
+        }
+      }
+
+    }
+    ]
   }
 }
