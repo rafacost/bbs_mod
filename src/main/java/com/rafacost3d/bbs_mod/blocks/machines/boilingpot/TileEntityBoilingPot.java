@@ -1,4 +1,4 @@
-package com.rafacost3d.bbs_mod.blocks.machines;
+package com.rafacost3d.bbs_mod.blocks.machines.boilingpot;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;

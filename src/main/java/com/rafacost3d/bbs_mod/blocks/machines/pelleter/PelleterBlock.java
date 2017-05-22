@@ -1,14 +1,16 @@
-package com.rafacost3d.bbs_mod.blocks.machines;
+package com.rafacost3d.bbs_mod.blocks.machines.pelleter;
 
 
 import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.blocks.BasicBlock;
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
-import com.rafacost3d.bbs_mod.items.HopsWholeLeafItem;
+import com.rafacost3d.bbs_mod.init.BBSGuiHandler;
+import com.rafacost3d.bbs_mod.init.BBSItems;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -56,13 +58,14 @@ public class PelleterBlock extends BasicBlock implements ITileEntityProvider {
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
         ItemStack heldItem = player.getHeldItem(hand);
         Integer heldCount = heldItem.getCount();
+
         Integer retCount;
         if (heldCount * 2 <=64 ) {
             retCount = heldCount *2;
         } else {
             retCount = 64;
         }
-        ItemStack retItem = new ItemStack(heldItem.getItem(), retCount);
+        ItemStack retItem = new ItemStack(BBSItems.hopsPelletsItemAA1, retCount);
         if (!world.isRemote) {
             TileEntityPelleter tile = getTE(world, pos);
             IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
@@ -71,16 +74,14 @@ public class PelleterBlock extends BasicBlock implements ITileEntityProvider {
                 if (heldItem.isEmpty()) {
                         player.setHeldItem(hand, itemHandler.extractItem(0, 1, false));
                 } else {
-                    if (heldItem.getItem() instanceof HopsWholeLeafItem) {
-                        player.setHeldItem(hand, itemHandler.insertItem(0, retItem, false));
-                    }
+                    player.openGui(BBSMod.instance, BBSGuiHandler.PELLETER, world, pos.getX(), pos.getY(), pos.getZ());
                 }
                 tile.markDirty();
 
             } else {
                 ItemStack stack = itemHandler.getStackInSlot(0);
                 if (!stack.isEmpty()) {
-                    String localized = BBSMod.proxy.localize(stack.getUnlocalizedName() + ".name");
+                    String localized = I18n.format(stack.getUnlocalizedName() + ".name");
                     player.sendMessage(new TextComponentString(stack.getCount() + "x " + localized));
                 } else {
                     player.sendMessage(new TextComponentString("Empty"));

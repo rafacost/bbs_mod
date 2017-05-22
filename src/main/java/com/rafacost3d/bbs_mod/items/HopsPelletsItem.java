@@ -13,16 +13,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-
-public class HopsWholeLeafItem extends Item {
+public class HopsPelletsItem extends Item {
 
     public String hopsType;
     public Integer alphaAcid;
-    public Double weightGrams;
 
-    public HopsWholeLeafItem(String hopstype, Integer alphaacid) {
-        setRegistryName("hopsleaf_" + hopstype);
-        setUnlocalizedName(BBSMod.MODID + ".hopsleaf_" + hopstype);
+    public HopsPelletsItem(String hopstype, Integer alphaacid) {
+        setRegistryName("hopspellets_" + hopstype);
+        setUnlocalizedName(BBSMod.MODID + ".hopspellets_" + hopstype);
         setCreativeTab(CreativeTabsBBS.BBSTabsHops);
         setHopsType(hopstype);
         setAlphaAcid(alphaacid);
@@ -55,7 +53,7 @@ public class HopsWholeLeafItem extends Item {
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
         tooltip.add("Alpha Acid: " + alphaAcid + "%");
-        tooltip.add("Quantity: " + (stack.getCount() * 0.44296875) + " grams");
+        tooltip.add("Quantity: " + (stack.getCount() * 0.8859375) + " grams");
         super.addInformation(stack, playerIn, tooltip, advanced);
     }
 }

@@ -2,8 +2,8 @@ package com.rafacost3d.bbs_mod.init;
 
 
 import com.rafacost3d.bbs_mod.blocks.*;
-import com.rafacost3d.bbs_mod.blocks.machines.BoilingPotBlock;
-import com.rafacost3d.bbs_mod.blocks.machines.PelleterBlock;
+import com.rafacost3d.bbs_mod.blocks.machines.boilingpot.BoilingPotBlock;
+import com.rafacost3d.bbs_mod.blocks.machines.pelleter.PelleterBlock;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
