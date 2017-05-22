@@ -1,5 +1,6 @@
 package com.rafacost3d.bbs_mod.blocks.machines.boilingpot;
 
+import com.rafacost3d.bbs_mod.init.BBSConstants;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -20,7 +21,7 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     private boolean hasMalt = false;
     private boolean hasHops = false;
     private double waterGL = 0;
-    private double temp = 70;
+    private double temp = BBSConstants.ROOM_TEMP;
     private int count;
     private int delayCounter = 20;
 
@@ -112,8 +113,8 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
         if (delayCounter <= 0 && heat ==0) {
             delayCounter = 20;
             //If Yes set Room Temperature
-            if(temp<=70){
-                temp = 70;
+            if(temp<=BBSConstants.ROOM_TEMP){
+                temp = BBSConstants.ROOM_TEMP;
                 markDirty();
             //If Heat is off and Water is hot cool water
             } else {
@@ -124,10 +125,10 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
         } else if (delayCounter <=0 && heat > 0 && isClean && hasWater) {
             delayCounter = 20;
             //Check if Water is Boiling start Boiling Counter
-            if(temp>=211)
+            if(temp>=BBSConstants.WATER_BOILING)
             {
                 count++;
-                temp=212;
+                temp=BBSConstants.WATER_BOILING;
                 //Check if Water is dry
                 if (waterGL<=0) {
                     waterGL = 0;

@@ -1,17 +1,24 @@
 package com.rafacost3d.bbs_mod.proxy;
 
-import com.rafacost3d.bbs_mod.init.BBSBlocks;
-import com.rafacost3d.bbs_mod.init.BBSFluids;
-import com.rafacost3d.bbs_mod.init.BBSItems;
+import com.rafacost3d.bbs_mod.init.*;
 import com.rafacost3d.bbs_mod.compat.MainCompatHandler;
-import net.minecraft.util.text.translation.I18n;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 
+import java.io.File;
+
 public abstract class CommonProxy {
 
+    // Config instance
+    public static Configuration config;
+
     public void preInit(FMLPreInitializationEvent e) {
+        File directory = e.getModConfigurationDirectory();
+        config = new Configuration(new File(directory.getPath(), "bbs_mod.cfg"));
+        BBSConfig.readConfig();
+        BBSConstants.preint();
         MainCompatHandler.registerTOP();
         BBSFluids.preinit();
         BBSBlocks.preinit();
@@ -21,10 +28,9 @@ public abstract class CommonProxy {
 
     }
     public void postInit(FMLPostInitializationEvent e) {
-
-    }
-
-    public String localize(String unlocalized, Object... args) {
-        return I18n.translateToLocalFormatted(unlocalized, args);
+        if (config.hasChanged()) {
+            config.addCustomCategoryComment("general","Selected below the Unit System you prefer. Metric (true) or US/Imperial (false)");
+            config.save();
+        }
     }
 }

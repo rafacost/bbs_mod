@@ -2,6 +2,7 @@ package com.rafacost3d.bbs_mod.blocks.machines.pelleter;
 
 
 import com.rafacost3d.bbs_mod.init.BBSItems;
+import com.rafacost3d.bbs_mod.items.HopsWholeLeafItem;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -57,7 +58,7 @@ public class TileEntityPelleter extends TileEntity implements ITickable {
     private void updateCounter() {
         delayCounter--;
         //Check if a second has passed
-        if (delayCounter <= 0 && inventory.getStackInSlot(0).getCount()>0) {
+        if (delayCounter <= 0 && inventory.getStackInSlot(0).getCount()>0 && inventory.getStackInSlot(0).getItem() instanceof HopsWholeLeafItem) {
             delayCounter = 10;
             markDirty();
             hopsType = StringUtils.right(inventory.getStackInSlot(0).getUnlocalizedName(),3);

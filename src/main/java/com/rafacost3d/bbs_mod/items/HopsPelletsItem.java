@@ -2,6 +2,7 @@ package com.rafacost3d.bbs_mod.items;
 
 import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
+import com.rafacost3d.bbs_mod.init.BBSConstants;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -53,7 +54,7 @@ public class HopsPelletsItem extends Item {
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
         tooltip.add("Alpha Acid: " + alphaAcid + "%");
-        tooltip.add("Quantity: " + (stack.getCount() * 0.8859375) + " grams");
+        tooltip.add("Quantity: " + (stack.getCount() * BBSConstants.PELLETS_WEIGHT) + BBSConstants.UNIT_WEIGHT);
         super.addInformation(stack, playerIn, tooltip, advanced);
     }
 }

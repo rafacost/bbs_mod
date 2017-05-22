@@ -2,6 +2,7 @@ package com.rafacost3d.bbs_mod.blocks.machines.boilingpot;
 
 
 import com.rafacost3d.bbs_mod.blocks.BasicBlock;
+import com.rafacost3d.bbs_mod.init.BBSConstants;
 import com.rafacost3d.bbs_mod.init.BBSItems;
 import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.compat.top.TOPInfoProvider;
@@ -35,7 +36,7 @@ import java.text.DecimalFormat;
 
 
 public class BoilingPotBlock extends BasicBlock implements ITileEntityProvider, TOPInfoProvider {
-    final String DEGREE  = "\u2109";
+    final String DEGREE  = BBSConstants.DEGREE;
 
     private ResourceLocation nameBlock;
     public BoilingPotBlock(Material material, String name){
@@ -90,8 +91,8 @@ public class BoilingPotBlock extends BasicBlock implements ITileEntityProvider, 
             probeInfo.horizontal().text(TextFormatting.GREEN + "Clean: " + tile.getClean());
             probeInfo.horizontal().text(TextFormatting.GREEN + "Malt: " + tile.getMalt());
             probeInfo.horizontal().text(TextFormatting.GREEN + "Hops: " + tile.getHops());
-            probeInfo.text(TextFormatting.GREEN + "Water GL: ").progress(ig , 5, probeInfo.defaultProgressStyle().suffix(" gl"));
-            probeInfo.text(TextFormatting.GREEN + "Temperature: ").progress(i, 212, probeInfo.defaultProgressStyle().suffix(DEGREE));
+            probeInfo.text(TextFormatting.GREEN + "Water: ").progress(ig , BBSConstants.BP_MAX_LIQUID.intValue(), probeInfo.defaultProgressStyle().suffix(BBSConstants.KUNIT_LIQUID));
+            probeInfo.text(TextFormatting.GREEN + "Temperature: ").progress(i, BBSConstants.WATER_BOILING, probeInfo.defaultProgressStyle().suffix(DEGREE));
             probeInfo.horizontal().text(TextFormatting.GREEN + "Time Boiling: " + tile.getCount() + "s");
             probeInfo.horizontal().text(TextFormatting.GREEN + "Heat Rate: " + tile.getHeatRate());
         }
@@ -108,7 +109,7 @@ public class BoilingPotBlock extends BasicBlock implements ITileEntityProvider, 
             player.sendMessage(new TextComponentString("Hops: " + tile.getHops()));
             DecimalFormat df = new DecimalFormat("0.00");
             Double dvalue = tile.getWaterGL();
-            player.sendMessage(new TextComponentString("Water GL: " + df.format(dvalue) + " gl"));
+            player.sendMessage(new TextComponentString("Water: " + df.format(dvalue) + BBSConstants.KUNIT_LIQUID));
             player.sendMessage(new TextComponentString("Temperature: " + tile.getTemp() + DEGREE));
             player.sendMessage(new TextComponentString("Time Boiling: " + tile.getCount() + "s"));
             player.sendMessage(new TextComponentString("Heat Rate: " + tile.getHeatRate()));
@@ -124,7 +125,7 @@ public class BoilingPotBlock extends BasicBlock implements ITileEntityProvider, 
             if (itemStack.getItem() == BBSItems.watergallon) {
                 if (tile.getWaterGL() < 5) {
                     itemStack.damageItem(7, player);
-                    player.sendMessage(new TextComponentString("Putting 1 Gallon of Water."));
+                    player.sendMessage(new TextComponentString("Putting " + BBSConstants.BP_MIN_LIQUID  + BBSConstants.KUNIT_LIQUID + " of Water."));
                     tile.setWaterGL(tile.getWaterGL() + 1);
                     tile.setWater(true);
                     tile.setBeerType("Water");
@@ -134,7 +135,7 @@ public class BoilingPotBlock extends BasicBlock implements ITileEntityProvider, 
             }
             if (itemStack.getItem() == BBSItems.lme) {
                 itemStack.damageItem(64, player);
-                player.sendMessage(new TextComponentString( "3.3lb Wheat LME added to the recipe"));
+                player.sendMessage(new TextComponentString( BBSConstants.LME_WEIGHT + BBSConstants.KUNIT_WEIGHT + " Wheat LME added to the recipe"));
                 tile.setMalt(true);
                 tile.setMaltType("Wheat Malt");
                 tile.setBeerType("Wort");

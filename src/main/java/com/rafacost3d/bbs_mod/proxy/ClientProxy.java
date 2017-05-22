@@ -32,7 +32,4 @@ public class ClientProxy extends CommonProxy {
         super.postInit(e);
     }
 
-    public String localize(String unlocalized, Object... args) {
-        return I18n.translateToLocalFormatted(unlocalized, args);
-    }
 }

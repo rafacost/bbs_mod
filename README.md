@@ -29,11 +29,12 @@ If your site is at the list below, thank you so much for your tutorials!
 - [x] Create WaterGallonItem
 - [x] Create LiquidMaltExtractItem
 - [x] Implemented Fluids: Weizen Beer and Wort
-- [x] Create ThermometerItem
-- [x] Create SanitizerItem
-- [x] Create YeastItem
-- [x] Create PrimingSugarItem
-- [x] Create HopsPelletsItem
+- [x] Created ThermometerItem
+- [x] Created SanitizerItem
+- [x] Created YeastItem
+- [x] Created PrimingSugarItem
+- [x] Created HopsPelletsItem
+- [x] Created Config File allowing selection between Metric System or US/Imperial
 - [ ] Create FermenterBlock
 - [ ] Create AirlockItem
 - [ ] Create RackingCaneItem
