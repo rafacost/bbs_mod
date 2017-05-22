@@ -6,6 +6,7 @@ import com.rafacost3d.bbs_mod.blocks.BasicBlock;
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
 import com.rafacost3d.bbs_mod.init.BBSGuiHandler;
 import com.rafacost3d.bbs_mod.init.BBSItems;
+import com.rafacost3d.bbs_mod.items.HopsWholeLeafItem;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -66,7 +67,7 @@ public class PelleterBlock extends BasicBlock implements ITileEntityProvider {
             retCount = 64;
         }
         ItemStack retItem = new ItemStack(BBSItems.hopsPelletsItemAA1, retCount);
-        if (!world.isRemote) {
+        if (!world.isRemote && heldItem.getItem() instanceof HopsWholeLeafItem) {
             TileEntityPelleter tile = getTE(world, pos);
             IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
             if (!player.isSneaking()) {
