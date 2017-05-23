@@ -23,8 +23,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BasicBlock extends Block implements TOPInfoProvider {
-
+public class BasicBlock extends Block {
 
     protected String name;
 
@@ -42,22 +41,4 @@ public class BasicBlock extends Block implements TOPInfoProvider {
     public void initModel() {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
     }
-
-    @Override
-    public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world, IBlockState blockState, IProbeHitData data) {
-        ItemStack is = data.getPickBlock();
-        Integer quali = getTagCompoundSafe(is).getInteger("Quality");
-        probeInfo.horizontal().text("Country: Domestic");
-        probeInfo.horizontal().text("Quality: ").progress(quali % 100, 100, probeInfo.defaultProgressStyle().suffix("%"));
-    }
-
-    private NBTTagCompound getTagCompoundSafe(ItemStack stack) {
-        NBTTagCompound tagCompound = stack.getTagCompound();
-        if (tagCompound == null) {
-            tagCompound = new NBTTagCompound();
-            stack.setTagCompound(tagCompound);
-        }
-        return tagCompound;
-    }
-
 }

@@ -10,9 +10,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BBSBlocks {
 
-    public static BasicBlock basicBlock;
+    //public static BasicBlock basicBlock;
+    //public static BlockTileEntity counterBlock;
     public static HopCropBlock hopcropBlock;
-    public static BlockTileEntity counterBlock;
     public static PelleterBlock pelleterBlock;
     public static BoilingPotBlock boilingPotBlock;
 
@@ -20,9 +20,9 @@ public class BBSBlocks {
 
     public static void preinit(){
         //basicBlock = new BasicBlock(Material.ROCK, "basicblock");
+        //counterBlock = new BlockTileEntity(Material.ROCK, "counter");
         hopcropBlock = new HopCropBlock();
         boilingPotBlock = new BoilingPotBlock(Material.IRON, "boilingpot");
-        counterBlock = new BlockTileEntity(Material.ROCK, "counter");
         pelleterBlock = new PelleterBlock(Material.ROCK, "pelleter");
 
     }
@@ -30,9 +30,9 @@ public class BBSBlocks {
     @SideOnly(Side.CLIENT)
     public static void initModels(){
         //basicBlock.initModel();
+        //counterBlock.initModel();
         hopcropBlock.initModel();
-        counterBlock.initModel();
-        pelleterBlock.initModel();
         boilingPotBlock.initModel();
+        pelleterBlock.initModel();
     }
 }

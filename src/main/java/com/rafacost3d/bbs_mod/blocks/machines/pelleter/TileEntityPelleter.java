@@ -20,7 +20,7 @@ import java.util.Random;
 public class TileEntityPelleter extends TileEntity implements ITickable {
     private int delayCounter = 20;
     private static final Random RANDOM = new Random();
-    private ItemStackHandler inventory = new ItemStackHandler(1);
+    public ItemStackHandler inventory = new ItemStackHandler(1);
     private String hopsType = null;
 
     @Override
@@ -58,22 +58,20 @@ public class TileEntityPelleter extends TileEntity implements ITickable {
     private void updateCounter() {
         delayCounter--;
         //Check if a second has passed
-        if (delayCounter <= 0 && inventory.getStackInSlot(0).getCount()>0 && inventory.getStackInSlot(0).getItem() instanceof HopsWholeLeafItem) {
+        if (!world.isRemote && delayCounter <= 0 && inventory.getStackInSlot(0).getCount()>0 && inventory.getStackInSlot(0).getItem() instanceof HopsWholeLeafItem) {
             delayCounter = 10;
             markDirty();
             hopsType = StringUtils.right(inventory.getStackInSlot(0).getUnlocalizedName(),3);
-            System.out.println(hopsType);
             ItemStack itemStack = null;
-            if (hopsType.equals("aa1")) {itemStack = BBSItems.hopsPelletsItemAA1.getDefaultInstance();}
-            if (hopsType.equals("aa2")) {itemStack = BBSItems.hopsPelletsItemAA2.getDefaultInstance();}
-            if (hopsType.equals("aa3")) {itemStack = BBSItems.hopsPelletsItemAA3.getDefaultInstance();}
-
+            if (hopsType.equals("aa1")) {itemStack = new ItemStack(BBSItems.hopsPelletsItemAA1);
+                itemStack.grow(1);}
+            if (hopsType.equals("aa2")) {itemStack = new ItemStack(BBSItems.hopsPelletsItemAA2);
+                itemStack.grow(1);}
+            if (hopsType.equals("aa3")) {itemStack = new ItemStack(BBSItems.hopsPelletsItemAA3);
+                itemStack.grow(1);}
             inventory.getStackInSlot(0).shrink(1);
             EntityItem entityItem = new EntityItem(world, this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), itemStack);
-            EntityItem entityItem2 = new EntityItem(world, this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), itemStack);
             world.spawnEntity(entityItem);
-            world.spawnEntity(entityItem2);
-            System.out.println(hopsType);
         } else {
             markDirty();
         }

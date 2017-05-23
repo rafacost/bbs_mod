@@ -34,7 +34,7 @@ public class CreativeTabsBBS {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() {
-            return Item.getItemFromBlock(BBSBlocks.boilingPotBlock).getDefaultInstance();
+            return Item.getItemFromBlock(BBSBlocks.pelleterBlock).getDefaultInstance();
         }
     };
 
