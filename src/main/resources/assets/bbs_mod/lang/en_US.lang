@@ -22,6 +22,7 @@ tile.bbs_mod.hopcropblock.name=Hops Crop
 tile.bbs_mod.counter.name=Counter Block
 tile.bbs_mod.pelleter.name=Hops Pelleting Machine
 tile.bbs_mod.boilingpot.name=Boiling Pot
+tile.bbs_mod.aluminiumpot.name=Aluminium Boiling Pot
 tile.bbs_mod.beer.name=Weizen Beer
 tile.bbs_mod.wort.name=Wort
 fluid.beer=Weizen Beer

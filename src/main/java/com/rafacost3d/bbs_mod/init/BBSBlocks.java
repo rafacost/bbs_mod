@@ -2,6 +2,7 @@ package com.rafacost3d.bbs_mod.init;
 
 
 import com.rafacost3d.bbs_mod.blocks.*;
+import com.rafacost3d.bbs_mod.blocks.machines.aluminiumpot.AluminiumPot;
 import com.rafacost3d.bbs_mod.blocks.machines.boilingpot.BoilingPotBlock;
 import com.rafacost3d.bbs_mod.blocks.machines.pelleter.PelleterBlock;
 import net.minecraft.block.material.Material;
@@ -15,6 +16,8 @@ public class BBSBlocks {
     public static HopCropBlock hopcropBlock;
     public static PelleterBlock pelleterBlock;
     public static BoilingPotBlock boilingPotBlock;
+    public static AluminiumPot aluminiumPot;
+
 
 
 
@@ -24,6 +27,7 @@ public class BBSBlocks {
         hopcropBlock = new HopCropBlock();
         boilingPotBlock = new BoilingPotBlock(Material.IRON, "boilingpot");
         pelleterBlock = new PelleterBlock(Material.ROCK, "pelleter");
+        aluminiumPot = new AluminiumPot(Material.IRON, "aluminiumpot");
 
     }
 
@@ -34,5 +38,6 @@ public class BBSBlocks {
         hopcropBlock.initModel();
         boilingPotBlock.initModel();
         pelleterBlock.initModel();
+        aluminiumPot.initModel();
     }
 }

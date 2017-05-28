@@ -22,9 +22,7 @@ If your site is at the list below, thank you so much for your tutorials!
 - [x] Implemented CreativeTabs
 - [x] Added Support for The One Probe
 - [x] Created BaseMachineBlock, with BaseTileEntity with TOP Support
-- [x] Creating PelleterMachineBlock, to double Hops production
 - [x] Added HeatSource Algorithm
-- [x] Creating BoilPotBlock, started to check for Boiling Point...
 - [x] Created StirringSpoonItem
 - [x] Create WaterGallonItem
 - [x] Create LiquidMaltExtractItem
@@ -35,6 +33,8 @@ If your site is at the list below, thank you so much for your tutorials!
 - [x] Created PrimingSugarItem
 - [x] Created HopsPelletsItem
 - [x] Created Config File allowing selection between Metric System or US/Imperial
+- [x] Created PelleterMachineBlock, to double Hops production
+- [x] Created AluminiumPotBlock, implemented first Recipe Wort for Weizein Beer.
 - [ ] Create FermenterBlock
 - [ ] Create AirlockItem
 - [ ] Create RackingCaneItem

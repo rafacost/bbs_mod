@@ -96,7 +96,6 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     }
     public double setWaterGL(double gl) { waterGL = gl; return waterGL;}
 
-
     @Override
     public void update() {
         // This method is called every tick (20 times per second normally)
@@ -175,6 +174,4 @@ public class TileEntityBoilingPot extends TileEntity implements ITickable {
     {
         return false;
     }
-
-
 }
