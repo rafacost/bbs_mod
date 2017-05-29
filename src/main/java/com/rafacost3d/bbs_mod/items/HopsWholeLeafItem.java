@@ -19,7 +19,6 @@ public class HopsWholeLeafItem extends Item {
 
     public String hopsType;
     public Integer alphaAcid;
-    public Double weightGrams;
 
     public HopsWholeLeafItem(String hopstype, Integer alphaacid) {
         setRegistryName("hopsleaf_" + hopstype);
