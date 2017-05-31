@@ -35,6 +35,7 @@ If your site is at the list below, thank you so much for your tutorials!
 - [x] Created Config File allowing selection between Metric System or US/Imperial
 - [x] Created PelleterMachineBlock, to double Hops production
 - [x] Created AluminiumPotBlock, implemented first Recipe Wort for Weizein Beer.
+- [x] Created WortBucket, this Item store the information about the Brewing Process.
 - [ ] Create FermenterBlock
 - [ ] Create AirlockItem
 - [ ] Create RackingCaneItem

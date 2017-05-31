@@ -178,27 +178,26 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
                             resultBucket.setTagCompound(new NBTTagCompound());
                             String nameHop[] = inventory.getStackInSlot(2).getUnlocalizedName().split("[.]");
                             resultBucket.getTagCompound().setString("wortType", nameHop[2]);
-
-
                             //Use Water
                             inventory.getStackInSlot(1).shrink(1);
-
                             //Use Hops
                             if(inventory.getStackInSlot(2).getItem() instanceof HopsWholeLeafItem) {
-
-                                //wb.setHopsQuant(inventory.getStackInSlot(2).getCount() * BBSConstants.HOPS_WEIGHT);
+                                Double quantD=0.0;
+                                quantD = inventory.getStackInSlot(2).getCount() * BBSConstants.HOPS_WEIGHT;
+                                String quant = String.format("%.2f", quantD) + BBSConstants.UNIT_WEIGHT;
+                                resultBucket.getTagCompound().setString("wortQuant", quant);
                                 inventory.getStackInSlot(2).shrink(64);
-
                             } else {
-                                //wb.setHopsQuant(inventory.getStackInSlot(2).getCount() * BBSConstants.PELLETS_WEIGHT);
+                                Double quantD=0.0;
+                                quantD = inventory.getStackInSlot(2).getCount() * BBSConstants.PELLETS_WEIGHT;
+                                String quant = String.format("%.2f", quantD) + BBSConstants.UNIT_WEIGHT;
+                                resultBucket.getTagCompound().setString("wortQuant", quant);
                                 inventory.getStackInSlot(2).shrink(32);
                             }
                             inventory.getStackInSlot(3).shrink(1);
                             inventory.getStackInSlot(0).shrink(1);
-
                             inventory.setStackInSlot(4,resultBucket);
-
-                            BBSMod.logger.info("Wort is Done!");
+                            BBSMod.logger.info("Wort is Done! Type:" + resultBucket.getTagCompound().getString("wortType") + " Quant: " + resultBucket.getTagCompound().getString("wortQuant"));
                             temp=BBSConstants.ROOM_TEMP;
                             count=0;
                         }
@@ -216,8 +215,6 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
             }
         }
     }
-
-
 
 
     public int getHeatRate() {
