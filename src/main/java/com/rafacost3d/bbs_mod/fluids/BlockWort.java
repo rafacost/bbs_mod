@@ -31,8 +31,6 @@ import java.util.List;
 public class BlockWort extends BlockFluidClassic {
 
     public static String name = "wort";
-    public static Integer alphaAcid =0;
-    public static String hopType="";
 
     public BlockWort(Fluid fluid, Material material) {
         super(FluidWort.instance, Material.WATER);

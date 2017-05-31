@@ -3,9 +3,11 @@ package com.rafacost3d.bbs_mod.blocks.machines.aluminiumpot;
 import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.fluids.FluidWort;
 import com.rafacost3d.bbs_mod.init.BBSConstants;
+import com.rafacost3d.bbs_mod.init.BBSFluids;
 import com.rafacost3d.bbs_mod.init.BBSItems;
 import com.rafacost3d.bbs_mod.items.HopsPelletsItem;
 import com.rafacost3d.bbs_mod.items.HopsWholeLeafItem;
+import com.rafacost3d.bbs_mod.items.WortBucket;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -17,13 +19,16 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import scala.xml.PrettyPrinter;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Thread.sleep;
@@ -165,30 +170,35 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
                 count++;
                 temp=BBSConstants.WATER_BOILING;
                 markDirty();
-                if(count>=60) {
+                if(count>=1) {
                     try {
                         if(!inventory.getStackInSlot(1).isEmpty() && !inventory.getStackInSlot(3).isEmpty() && !inventory.getStackInSlot(0).isEmpty() && inventory.getStackInSlot(2).getCount()>=32) {
+                            WortBucket wb = BBSItems.wortBucket;
+                            ItemStack resultBucket = new ItemStack(wb);
+                            resultBucket.setTagCompound(new NBTTagCompound());
+                            String nameHop[] = inventory.getStackInSlot(2).getUnlocalizedName().split("[.]");
+                            resultBucket.getTagCompound().setString("wortType", nameHop[2]);
+
+
+                            //Use Water
                             inventory.getStackInSlot(1).shrink(1);
-                            ItemStack resultBucket = UniversalBucket.getFilledBucket(ForgeModContainer.getInstance().universalBucket,FluidWort.instance);
-                            String hopsType = inventory.getStackInSlot(2).getDisplayName();
-                            Double hopsQuant = null;
 
-
+                            //Use Hops
                             if(inventory.getStackInSlot(2).getItem() instanceof HopsWholeLeafItem) {
-                                hopsQuant = inventory.getStackInSlot(2).getCount() * BBSConstants.HOPS_WEIGHT;
+
+                                //wb.setHopsQuant(inventory.getStackInSlot(2).getCount() * BBSConstants.HOPS_WEIGHT);
                                 inventory.getStackInSlot(2).shrink(64);
 
                             } else {
-                                hopsQuant = inventory.getStackInSlot(2).getCount() * BBSConstants.PELLETS_WEIGHT;
+                                //wb.setHopsQuant(inventory.getStackInSlot(2).getCount() * BBSConstants.PELLETS_WEIGHT);
                                 inventory.getStackInSlot(2).shrink(32);
                             }
                             inventory.getStackInSlot(3).shrink(1);
                             inventory.getStackInSlot(0).shrink(1);
 
                             inventory.setStackInSlot(4,resultBucket);
-                            inventory.getStackInSlot(4).getOrCreateSubCompound("HopsType").setString("hopsType", hopsType);
-                            inventory.getStackInSlot(4).getOrCreateSubCompound("HopsType").setDouble("hopsQuant", hopsQuant);
-                            BBSMod.logger.info("Wort is Done! Hops Type: " + inventory.getStackInSlot(4).getOrCreateSubCompound("HopsType").getString("hopsType") + " Quant: " + inventory.getStackInSlot(4).getOrCreateSubCompound("HopsType").getDouble("hopsQuant"));
+
+                            BBSMod.logger.info("Wort is Done!");
                             temp=BBSConstants.ROOM_TEMP;
                             count=0;
                         }
@@ -206,6 +216,8 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
             }
         }
     }
+
+
 
 
     public int getHeatRate() {

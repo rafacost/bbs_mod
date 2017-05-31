@@ -1,10 +1,8 @@
 package com.rafacost3d.bbs_mod.init;
 
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
-import com.rafacost3d.bbs_mod.items.HopSeedsItem;
-import com.rafacost3d.bbs_mod.items.HopsPelletsItem;
-import com.rafacost3d.bbs_mod.items.HopsWholeLeafItem;
-import com.rafacost3d.bbs_mod.items.ItemBase;
+import com.rafacost3d.bbs_mod.fluids.BlockWort;
+import com.rafacost3d.bbs_mod.items.*;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -26,6 +24,7 @@ public class BBSItems {
     public static ItemBase priming_sugar;
     public static ItemBase yeast;
     public static ItemBase thermometer;
+    public static WortBucket wortBucket;
 
 
     public static void preinit(){
@@ -49,6 +48,7 @@ public class BBSItems {
         priming_sugar = new ItemBase("priming_sugar").setCreativeTab(CreativeTabsBBS.BBSTabsItems);
         yeast = new ItemBase("yeast").setCreativeTab(CreativeTabsBBS.BBSTabsItems);
         thermometer = new ItemBase("thermometer").setCreativeTab(CreativeTabsBBS.BBSTabsItems);
+        wortBucket = new WortBucket(BBSFluids.blockWort);
     }
 
     @SideOnly(Side.CLIENT)
@@ -67,5 +67,6 @@ public class BBSItems {
         priming_sugar.initModel();
         yeast.initModel();
         thermometer.initModel();
+        wortBucket.initModel();
     }
 }
