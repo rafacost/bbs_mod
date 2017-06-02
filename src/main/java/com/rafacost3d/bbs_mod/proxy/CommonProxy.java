@@ -25,7 +25,7 @@ public abstract class CommonProxy {
         BBSItems.preinit();
     }
     public void init(FMLInitializationEvent e) {
-
+        BBSRecipes.init();
     }
     public void postInit(FMLPostInitializationEvent e) {
         if (config.hasChanged()) {

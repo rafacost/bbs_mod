@@ -2,6 +2,7 @@ package com.rafacost3d.bbs_mod.blocks;
 
 import com.rafacost3d.bbs_mod.init.BBSItems;
 import com.rafacost3d.bbs_mod.BBSMod;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -45,8 +46,8 @@ public class HopCropBlock extends BlockCrops {
     }
 
     @Override
-    protected Item getSeed() {
-        return BBSItems.hopSeedsItem;
+    public Item getSeed() {
+        return BBSItems.rhizomesItem;
     }
 
     @Override
@@ -58,7 +59,7 @@ public class HopCropBlock extends BlockCrops {
             case 0: return BBSItems.hopsLeafItemAA1;
             case 1: return BBSItems.hopsLeafItemAA2;
             case 2: return BBSItems.hopsLeafItemAA3;
-            default: return BBSItems.hopSeedsItem;
+            default: return BBSItems.rhizomesItem;
         }
     }
 

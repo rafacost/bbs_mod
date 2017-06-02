@@ -2,7 +2,6 @@ package com.rafacost3d.bbs_mod.items;
 
 import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
-import com.rafacost3d.bbs_mod.init.BBSConstants;
 import net.minecraft.item.Item;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -102,7 +101,6 @@ public class WortBucket extends ItemBucket {
         else
         {
             tooltip.add(I18n.translateToLocal("tooltip.bbs_mod.worttype.nullWort.desc"));
-            tooltip.add("Hops Quantity: 0");
         }
     }
 }

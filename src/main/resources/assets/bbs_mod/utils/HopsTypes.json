@@ -1,0 +1,334 @@
+{
+  "Admiral": {
+    "alpha": 14.5,
+    "price": 10
+  },
+  "Ahtanum": {
+    "alpha": 5.5,
+    "price": 10
+  },
+  "Amarillo": {
+    "alpha": 8.6,
+    "price": 10
+  },
+  "Aquila": {
+    "alpha": 7,
+    "price": 10
+  },
+  "BC Goldings": {
+    "alpha": 5,
+    "price": 10
+  },
+  "Banner": {
+    "alpha": 10,
+    "price": 10
+  },
+  "Bramling Cross": {
+    "alpha": 6.5,
+    "price": 10
+  },
+  "Brewer's Gold": {
+    "alpha": 9,
+    "price": 49.95
+  },
+  "Bullion": {
+    "alpha": 7.5,
+    "price": 10
+  },
+  "Cascade": {
+    "alpha": 7,
+    "price": 39.95
+  },
+  "Centennial": {
+    "alpha": 7.8,
+    "price": 49.95
+  },
+  "Challenger": {
+    "alpha": 8.5,
+    "price": 10
+  },
+  "Chinook": {
+    "alpha": 13,
+    "price": 49.95
+  },
+  "Citra": {
+    "alpha": 11,
+    "price": 10
+  },
+  "Cluster": {
+    "alpha": 6.5,
+    "price": 10
+  },
+  "Columbus": {
+    "alpha": 15,
+    "price": 10
+  },
+  "Comet": {
+    "alpha": 10,
+    "price": 49.95
+  },
+  "Crystal": {
+    "alpha": 4.3,
+    "price": 49.95
+  },
+  "Domestic Hallertau": {
+    "alpha": 3.9,
+    "price": 10
+  },
+  "East Kent Goldings": {
+    "alpha": 5,
+    "price": 10
+  },
+  "Eroica": {
+    "alpha": 12,
+    "price": 10
+  },
+  "First Gold": {
+    "alpha": 7.5,
+    "price": 10
+  },
+  "Fuggles": {
+    "alpha": 4.5,
+    "price": 46.95
+  },
+  "Galena": {
+    "alpha": 13,
+    "price": 49.95
+  },
+  "Glacier": {
+    "alpha": 5.5,
+    "price": 10
+  },
+  "Goldings": {
+    "alpha": 4.5,
+    "price": 10
+  },
+  "Hallertau Mittelfruh": {
+    "alpha": 3.75,
+    "price": 79.95
+  },
+  "Hallertau Hersbrucker": {
+    "alpha": 4,
+    "price": 89.95
+  },
+  "Herald": {
+    "alpha": 12,
+    "price": 10
+  },
+  "Hersbrucker": {
+    "alpha": 4,
+    "price": 10
+  },
+  "Horizon": {
+    "alpha": 12.5,
+    "price": 10
+  },
+  "Huller Bitterer": {
+    "alpha": 5.75,
+    "price": 10
+  },
+  "Kent Goldings": {
+    "alpha": 5,
+    "price": 49.95
+  },
+  "Liberty": {
+    "alpha": 4,
+    "price": 46.95
+  },
+  "Lublin": {
+    "alpha": 4.5,
+    "price": 10
+  },
+  "Magnum": {
+    "alpha": 15,
+    "price": 49.95
+  },
+  "Millenium": {
+    "alpha": 15.5,
+    "price": 10
+  },
+  "Mount Hood": {
+    "alpha": 4.8,
+    "price": 46.95
+  },
+  "Mount Rainier": {
+    "alpha": 6.2,
+    "price": 49.95
+  },
+  "Motueka": {
+    "alpha": 7,
+    "price": 10
+  },
+  "Nelson Sauvin": {
+    "alpha": 12.5,
+    "price": 10
+  },
+  "Newport": {
+    "alpha": 15.5,
+    "price": 54.95
+  },
+  "Northdown": {
+    "alpha": 8.6,
+    "price": 10
+  },
+  "Northern Brewer": {
+    "alpha": 7.8,
+    "price": 49.95
+  },
+  "Nugget": {
+    "alpha": 14,
+    "price": 46.95
+  },
+  "Olympic": {
+    "alpha": 12,
+    "price": 10
+  },
+  "Omega": {
+    "alpha": 10,
+    "price": 10
+  },
+  "Orion": {
+    "alpha": 7,
+    "price": 10
+  },
+  "Pacific Gem": {
+    "alpha": 15.4,
+    "price": 10
+  },
+  "Perle": {
+    "alpha": 8.2,
+    "price": 49.95
+  },
+  "Phoenix": {
+    "alpha": 10,
+    "price": 10
+  },
+  "Pioneer": {
+    "alpha": 9,
+    "price": 10
+  },
+  "Pride of RingWood": {
+    "alpha": 10,
+    "price": 49.95
+  },
+  "Progress": {
+    "alpha": 6.25,
+    "price": 10
+  },
+  "Record": {
+    "alpha": 6.5,
+    "price": 10
+  },
+  "Saaz": {
+    "alpha": 3.5,
+    "price": 89.95
+  },
+  "Santiam": {
+    "alpha": 6.5,
+    "price": 10
+  },
+  "Satus": {
+    "alpha": 13,
+    "price": 10
+  },
+  "Simcoe": {
+    "alpha": 12.7,
+    "price": 10
+  },
+  "Sorachi Ace": {
+    "alpha": 11.1,
+    "price": 69.95
+  },
+  "Spalt": {
+    "alpha": 4.5,
+    "price": 10
+  },
+  "Sterling": {
+    "alpha": 8.7,
+    "price": 49.95
+  },
+  "Sticklebract": {
+    "alpha": 11.5,
+    "price": 10
+  },
+  "Strisselspalt": {
+    "alpha": 3.5,
+    "price": 10
+  },
+  "Styrian Goldings": {
+    "alpha": 5.5,
+    "price": 10
+  },
+  "Super Alpha": {
+    "alpha": 13,
+    "price": 10
+  },
+  "Super Styrians": {
+    "alpha": 9,
+    "price": 10
+  },
+  "Summit": {
+    "alpha": 18.5,
+    "price": 10
+  },
+  "Talisman": {
+    "alpha": 8,
+    "price": 10
+  },
+  "Target": {
+    "alpha": 11.5,
+    "price": 10
+  },
+  "Tettnanger": {
+    "alpha": 4.5,
+    "price": 69.95
+  },
+  "Tomahawk": {
+    "alpha": 15,
+    "price": 10
+  },
+  "Ultra": {
+    "alpha": 4.5,
+    "price": 10
+  },
+  "Vanguard": {
+    "alpha": 5,
+    "price": 10
+  },
+  "Warrior": {
+    "alpha": 16,
+    "price": 10
+  },
+  "Whitbread Golding": {
+    "alpha": 6,
+    "price": 10
+  },
+  "Willamette": {
+    "alpha": 4.5,
+    "price": 49.95
+  },
+  "Wye Target": {
+    "alpha": 10,
+    "price": 10
+  },
+  "Yamhill Goldings": {
+    "alpha": 4,
+    "price": 10
+  },
+  "Yakima Cluster": {
+    "alpha": 7,
+    "price": 10
+  },
+  "Yeoman": {
+    "alpha": 7.25,
+    "price": 10
+  },
+  "Zenith": {
+    "alpha": 9,
+    "price": 10
+  },
+  "Zeus": {
+    "alpha": 16,
+    "price": 100
+  }
+}

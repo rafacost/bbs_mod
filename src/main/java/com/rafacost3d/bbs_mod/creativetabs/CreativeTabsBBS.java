@@ -26,7 +26,7 @@ public class CreativeTabsBBS {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() {
-            return BBSItems.hopSeedsItem.getDefaultInstance();
+            return BBSItems.rhizomesItem.getDefaultInstance();
         }
     };
 

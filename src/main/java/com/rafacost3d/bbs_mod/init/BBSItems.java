@@ -1,11 +1,17 @@
 package com.rafacost3d.bbs_mod.init;
 
+import com.rafacost3d.bbs_mod.blocks.HopCropBlock;
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
 import com.rafacost3d.bbs_mod.fluids.BlockWort;
 import com.rafacost3d.bbs_mod.items.*;
+import javafx.collections.transformation.SortedList;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 
 public class BBSItems {
@@ -16,7 +22,7 @@ public class BBSItems {
     public static HopsPelletsItem hopsPelletsItemAA1;
     public static HopsPelletsItem hopsPelletsItemAA2;
     public static HopsPelletsItem hopsPelletsItemAA3;
-    public static HopSeedsItem hopSeedsItem;
+    //public static HopSeedsItem hopSeedsItem;
     public static ItemBase stirringspoon;
     public static ItemBase sanitizer;
     public static ItemBase watergallon;
@@ -25,6 +31,8 @@ public class BBSItems {
     public static ItemBase yeast;
     public static ItemBase thermometer;
     public static WortBucket wortBucket;
+    public static RhizomesItem rhizomesItem;
+
 
 
     public static void preinit(){
@@ -34,7 +42,7 @@ public class BBSItems {
         hopsPelletsItemAA1 = new HopsPelletsItem("aa1", 3);
         hopsPelletsItemAA2 = new HopsPelletsItem("aa2", 10);
         hopsPelletsItemAA3 = new HopsPelletsItem("aa3", 7);
-        hopSeedsItem = new HopSeedsItem(BBSBlocks.hopcropBlock, Blocks.DIRT);
+        //hopSeedsItem = new HopSeedsItem(BBSBlocks.hopcropBlock, Blocks.DIRT);
         stirringspoon = new ItemBase("stirringspoon").setCreativeTab(CreativeTabsBBS.BBSTabsItems);
         sanitizer = new ItemBase("sanitizer").setCreativeTab(CreativeTabsBBS.BBSTabsItems);
         sanitizer.setMaxDamage(64);
@@ -49,6 +57,8 @@ public class BBSItems {
         yeast = new ItemBase("yeast").setCreativeTab(CreativeTabsBBS.BBSTabsItems);
         thermometer = new ItemBase("thermometer").setCreativeTab(CreativeTabsBBS.BBSTabsItems);
         wortBucket = new WortBucket(BBSFluids.blockWort);
+        rhizomesItem = new RhizomesItem(BBSBlocks.hopcropBlock);
+
     }
 
     @SideOnly(Side.CLIENT)
@@ -59,7 +69,7 @@ public class BBSItems {
         hopsPelletsItemAA1.initModel();
         hopsPelletsItemAA2.initModel();
         hopsPelletsItemAA3.initModel();
-        hopSeedsItem.initModel();
+        //hopSeedsItem.initModel();
         stirringspoon.initModel();
         sanitizer.initModel();
         watergallon.initModel();
@@ -68,5 +78,6 @@ public class BBSItems {
         yeast.initModel();
         thermometer.initModel();
         wortBucket.initModel();
+        rhizomesItem.initModel();
     }
 }
