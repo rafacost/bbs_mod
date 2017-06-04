@@ -13,9 +13,10 @@ import java.util.HashMap;
 
 public class BBSCropRegistry {
 
-    public static final String CROP_BLOCK_NAME = "hop{0}Crop";
+    public static final String CROP_BLOCK_NAME = "hop{0}.crop";
     public static final String ITEM_NAME = "{0}.item";
     public static final String SEED_ITEM_NAME = "{0}.rhizome";
+    public static final String PELLET_ITEM_NAME = "{0}.pellet";
 
     public static final String SAAZ = "saaz";
     public static final String STRISSELSPALT = "strisselspalt";
@@ -192,6 +193,7 @@ public class BBSCropRegistry {
 
     private static final HashMap<String, Item> seeds = new HashMap<String, Item>();
     private static final HashMap<String, ItemSeedFood> foods = new HashMap<String, ItemSeedFood>();
+    private static final HashMap<String, ItemSeedFood> pellets = new HashMap<String, ItemSeedFood>();
     private static final HashMap<String, BlockCrop> crops = new HashMap<String, BlockCrop>();
 
     public static HashMap<String, Item> getSeeds() {
@@ -200,6 +202,10 @@ public class BBSCropRegistry {
 
     public static HashMap<String, ItemSeedFood> getFoods() {
         return foods;
+    }
+
+    public static HashMap<String, ItemSeedFood> getPellets() {
+        return pellets;
     }
 
     public static HashMap<String, BlockCrop> getCrops() {
@@ -244,6 +250,21 @@ public class BBSCropRegistry {
         return foods.get(cropName);
     }
 
+    public static ItemSeedFood getPellet(String cropName) {
+        if (!isInitialized()) {
+            FMLLog.bigWarning("Crop registry has not been initialized yet.");
+            return null;
+        }
+
+        if (!pellets.containsKey(cropName)) {
+            FMLLog.bigWarning("No food for key %s", cropName);
+            return null;
+        }
+
+
+        return pellets.get(cropName);
+    }
+
     public static BlockCrop getCrop(String cropName) {
         if (!isInitialized()) {
             FMLLog.bigWarning("Crop registry has not been initialized yet.");
@@ -280,12 +301,17 @@ public class BBSCropRegistry {
         BBSCropItemRegistry.registerItem(item, MessageFormat.format(ITEM_NAME, cropName));
         cropBlock.setFood(item);
 
+        final ItemSeedFood itemPellet = createItem(cropBlock);
+        BBSCropItemRegistry.registerItem(itemPellet, MessageFormat.format(PELLET_ITEM_NAME, cropName));
+        //cropBlock.setFood(itemPellet);
+
         final Item seedItem = createSeed(cropBlock);
         BBSCropItemRegistry.registerItem(seedItem, getSeedName(cropName));
         cropBlock.setSeed(seedItem);
 
         seeds.put(cropName, seedItem);
         foods.put(cropName, item);
+        pellets.put(cropName, itemPellet);
         crops.put(cropName, cropBlock);
 
     }

@@ -3,11 +3,15 @@ package com.rafacost3d.bbs_mod.blocks.crops;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -51,21 +55,19 @@ public class BlockCrop extends BlockCrops implements IPlantable {
         this.setDefaultState(blockState.getBaseState().withProperty(getAgeProperty(), 0));
     }
 
-    //Olhar Como solucionar Isto!
-    public String getStageId(int stage) {
+     public String getStageId(int stage) {
         if (BASE_STAGE_ID == null) {
             BASE_STAGE_ID = registerName.replaceFirst("hop", "").replace("Crop", "") + "_stage";
         }
         return BASE_STAGE_ID + stage;
     }
 
-    /*
+
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         // CROPS_AABB is based on an age range from 0 to 7. Times two should fix that issue.
-        return CROPS_AABB[state.getValue(AGE) * 2];
+        return CROPS_AABB[state.getValue(AGE)];
     }
-*/
 
     private boolean isSuitableSoilBlock(Block soilBlock) {
         return soilBlock == Blocks.FARMLAND;
@@ -266,4 +268,18 @@ public class BlockCrop extends BlockCrops implements IPlantable {
     public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
         return getAge(state) < getMaxAge();
     }
+
+    @Override
+    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ){
+        if(!world.isRemote) {
+            if (this.isMaxAge(state)) {
+                EntityItem item = new EntityItem(world,pos.getX(), pos.getY(), pos.getZ(), new ItemStack(getCrop(), 1));
+                world.spawnEntity((item));
+                world.setBlockState(pos, this.withAge(6));
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

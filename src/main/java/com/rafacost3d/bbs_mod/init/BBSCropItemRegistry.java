@@ -26,10 +26,10 @@ public class BBSCropItemRegistry {
     public static Item registerItem(Item item, String registryName) {
         String name[] = registryName.split("[.]");
         if (name[1].equals("rhizome")) {
-            BBSMod.logger.info("Rhizome: " + (name[1].equals("rhizome")) + " name: " + name[1]);
             item.setCreativeTab(CreativeTabsBBS.BBSTabsSeeds);
+        } else if (name[1].equals("pellet")) {
+            item.setCreativeTab(CreativeTabsBBS.BBSTabsPellets);
         } else {
-           BBSMod.logger.info("Hops: " + (name[1].equals("rhizome")) + " name: " + name[1]);
             item.setCreativeTab(CreativeTabsBBS.BBSTabsHops);
         }
         item.setRegistryName(registryName);

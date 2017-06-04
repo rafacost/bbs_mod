@@ -22,7 +22,7 @@ public class HopsPelletsItem extends Item {
     public HopsPelletsItem(String hopstype, Integer alphaacid) {
         setRegistryName("hopspellets_" + hopstype);
         setUnlocalizedName(BBSMod.MODID + ".hopspellets_" + hopstype);
-        setCreativeTab(CreativeTabsBBS.BBSTabsHops);
+        setCreativeTab(CreativeTabsBBS.BBSTabsPellets);
         setHopsType(hopstype);
         setAlphaAcid(alphaacid);
         GameRegistry.register(this);

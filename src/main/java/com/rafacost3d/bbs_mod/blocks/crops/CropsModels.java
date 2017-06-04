@@ -27,7 +27,7 @@ public class CropsModels {
     private static void defineItemModels() {
 
         for (BlockCrop crop : BBSCropRegistry.getCrops().values()) {
-            registerItemModels(getItem(crop), new CropsModelList("crops/")
+            registerItemModels(getItem(crop), new CropsModelList("")
                     .add(0, crop.getStageId(0))
                     .add(1, crop.getStageId(1))
                     .add(2, crop.getStageId(2))
@@ -36,7 +36,6 @@ public class CropsModels {
                     .add(5, crop.getStageId(5))
                     .add(6, crop.getStageId(6))
                     .add(7, crop.getStageId(7))
-
             );
         }
     }

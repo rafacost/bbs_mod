@@ -1,7 +1,7 @@
 package com.rafacost3d.bbs_mod.blocks.crops;
 
 import com.rafacost3d.bbs_mod.compat.top.TOPInfoProvider;
-import com.rafacost3d.bbs_mod.init.BBSItems;
+import com.rafacost3d.bbs_mod.init.BBSCropRegistry;
 import com.rafacost3d.bbs_mod.BBSMod;
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
@@ -60,7 +60,7 @@ public class HopCropBlock extends BlockCrops implements TOPInfoProvider {
 
     @Override
     public Item getSeed() {
-        return BBSItems.hopsLeafItemAA1;
+        return BBSCropRegistry.getSeed(BBSCropRegistry.ADMIRAL);
     }
 
     @Override
@@ -68,10 +68,10 @@ public class HopCropBlock extends BlockCrops implements TOPInfoProvider {
         Random rand = new Random();
         Integer i = rand.nextInt(3);
         switch (i){
-            case 0: return BBSItems.hopsLeafItemAA1;
-            case 1: return BBSItems.hopsLeafItemAA2;
-            case 2: return BBSItems.hopsLeafItemAA3;
-            default: return BBSItems.hopsLeafItemAA1;
+            case 0: return BBSCropRegistry.getFood(BBSCropRegistry.ADMIRAL);
+            case 1: return BBSCropRegistry.getFood(BBSCropRegistry.ADMIRAL);
+            case 2: return BBSCropRegistry.getFood(BBSCropRegistry.ADMIRAL);
+            default: return BBSCropRegistry.getSeed(BBSCropRegistry.ADMIRAL);
         }
     }
 
