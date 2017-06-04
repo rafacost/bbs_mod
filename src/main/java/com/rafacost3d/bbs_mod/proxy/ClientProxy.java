@@ -1,8 +1,10 @@
 package com.rafacost3d.bbs_mod.proxy;
 
 
+import com.rafacost3d.bbs_mod.blocks.crops.CropsModels;
 import com.rafacost3d.bbs_mod.init.BBSBlocks;
 import com.rafacost3d.bbs_mod.init.BBSFluids;
+import com.rafacost3d.bbs_mod.init.BBSItemRenderRegister;
 import com.rafacost3d.bbs_mod.init.BBSItems;
 import com.rafacost3d.bbs_mod.BBSMod;
 import net.minecraft.util.text.translation.I18n;
@@ -20,11 +22,14 @@ public class ClientProxy extends CommonProxy {
         BBSFluids.initModels();
         BBSBlocks.initModels();
         BBSItems.initModels();
+        CropsModels.preInit();
     }
 
     @Override
     public void init(FMLInitializationEvent e) {
         super.init(e);
+        CropsModels.init();
+        BBSItemRenderRegister.registerItemRenderer();
     }
 
     @Override

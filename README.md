@@ -4,7 +4,7 @@ It's being developed by rafacost3d, for Minecraft 1.11.2
 
 **Resource Links for 1.11.2**
 
-If your site is at the list below, thank you so much for your tutorials!
+If your site is at the list below, thank you so much for your tutorials/code repositories, you guys helped me a lot!
 
 - MCJTY - http://wiki.mcjty.eu/modding/index.php/Main_Page
 - ShadowFacts - https://shadowfacts.net/tutorials/forge-modding-1112/
@@ -14,6 +14,7 @@ If your site is at the list below, thank you so much for your tutorials!
 - SilentChaos512 - https://github.com/SilentChaos512/Tutorial-1.11
 - Forestry - https://github.com/ForestryMC/ForestryMC
 - MikeLydeamore - https://github.com/MikeLydeamore/ExNihiloAdscensio
+- MatrexsVigil - https://github.com/MatrexsVigil/harvestcraft
 
 **To-Do List**
 - [x] Implemented Basic HopSeedsItem

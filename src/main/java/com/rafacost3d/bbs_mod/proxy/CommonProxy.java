@@ -1,5 +1,6 @@
 package com.rafacost3d.bbs_mod.proxy;
 
+import com.rafacost3d.bbs_mod.blocks.crops.CropsModels;
 import com.rafacost3d.bbs_mod.init.*;
 import com.rafacost3d.bbs_mod.compat.MainCompatHandler;
 import net.minecraftforge.common.config.Configuration;
@@ -23,9 +24,13 @@ public abstract class CommonProxy {
         BBSFluids.preinit();
         BBSBlocks.preinit();
         BBSItems.preinit();
+        BBSCropRegistry.registerCrops();
+        BBSCropBlockRegistry.initBlockRegistry();
+        BBSCropItemRegistry.registerItems();
     }
     public void init(FMLInitializationEvent e) {
         BBSRecipes.init();
+
     }
     public void postInit(FMLPostInitializationEvent e) {
         if (config.hasChanged()) {

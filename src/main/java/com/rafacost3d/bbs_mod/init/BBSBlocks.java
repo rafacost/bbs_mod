@@ -1,7 +1,7 @@
 package com.rafacost3d.bbs_mod.init;
 
 
-import com.rafacost3d.bbs_mod.blocks.*;
+import com.rafacost3d.bbs_mod.blocks.crops.HopCropBlock;
 import com.rafacost3d.bbs_mod.blocks.machines.aluminiumpot.AluminiumPot;
 import com.rafacost3d.bbs_mod.blocks.machines.pelleter.PelleterBlock;
 import net.minecraft.block.material.Material;

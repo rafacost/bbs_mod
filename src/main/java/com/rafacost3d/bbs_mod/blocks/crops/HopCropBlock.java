@@ -1,8 +1,11 @@
-package com.rafacost3d.bbs_mod.blocks;
+package com.rafacost3d.bbs_mod.blocks.crops;
 
+import com.rafacost3d.bbs_mod.compat.top.TOPInfoProvider;
 import com.rafacost3d.bbs_mod.init.BBSItems;
 import com.rafacost3d.bbs_mod.BBSMod;
-import net.minecraft.block.Block;
+import mcjty.theoneprobe.api.IProbeHitData;
+import mcjty.theoneprobe.api.IProbeInfo;
+import mcjty.theoneprobe.api.ProbeMode;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -16,6 +19,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
@@ -26,8 +30,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.List;
 import java.util.Random;
 
-public class HopCropBlock extends BlockCrops {
+public class HopCropBlock extends BlockCrops implements TOPInfoProvider {
     private ResourceLocation nameBlock;
+
 
     public  HopCropBlock(){
         super();
@@ -40,6 +45,14 @@ public class HopCropBlock extends BlockCrops {
         GameRegistry.register(new ItemBlock(this), nameBlock);
     }
 
+
+    @Override
+    public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world, IBlockState blockState, IProbeHitData data) {
+
+            probeInfo.horizontal().text(TextFormatting.GREEN + "Rhizome: ");
+
+    }
+
     @SideOnly(Side.CLIENT)
     public void initModel() {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
@@ -47,19 +60,18 @@ public class HopCropBlock extends BlockCrops {
 
     @Override
     public Item getSeed() {
-        return BBSItems.rhizomesItem;
+        return BBSItems.hopsLeafItemAA1;
     }
 
     @Override
     protected Item getCrop() {
         Random rand = new Random();
         Integer i = rand.nextInt(3);
-
         switch (i){
             case 0: return BBSItems.hopsLeafItemAA1;
             case 1: return BBSItems.hopsLeafItemAA2;
             case 2: return BBSItems.hopsLeafItemAA3;
-            default: return BBSItems.rhizomesItem;
+            default: return BBSItems.hopsLeafItemAA1;
         }
     }
 
@@ -85,9 +97,8 @@ public class HopCropBlock extends BlockCrops {
             int k = 1 + fortune;
 
             for(int i = 0; i < k; ++i) {
-                if(rand.nextInt(2 * this.getMaxAge()) <= age) {
+                if(rand.nextInt(4 * this.getMaxAge()) <= age) {
                     ItemStack seeds = new ItemStack(this.getSeed(), 1, 0);
-
                     if (haveQuality(seeds)) {
                         getTagCompoundSafe(seeds).setInteger("Quality", getTagCompoundSafe(seeds).getInteger("Quality")+1);
                     } else {
@@ -114,5 +125,4 @@ public class HopCropBlock extends BlockCrops {
     private boolean haveQuality(ItemStack stack) {
         return getTagCompoundSafe(stack).hasKey("Quality");
     }
-
 }
