@@ -6,7 +6,6 @@ import com.rafacost3d.bbs_mod.init.BBSConstants;
 import com.rafacost3d.bbs_mod.init.BBSFluids;
 import com.rafacost3d.bbs_mod.init.BBSItems;
 import com.rafacost3d.bbs_mod.items.HopsPelletsItem;
-import com.rafacost3d.bbs_mod.items.HopsWholeLeafItem;
 import com.rafacost3d.bbs_mod.items.WortBucket;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -70,22 +69,22 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
     }
     public Boolean getHops() {
         ItemStack itemStackinv = inventory.getStackInSlot(2);
-        if(itemStackinv.getItem() instanceof HopsWholeLeafItem || itemStackinv.getItem() instanceof HopsPelletsItem) {
+        //if(itemStackinv.getItem() instanceof HopsWholeLeafItem || itemStackinv.getItem() instanceof HopsPelletsItem) {
             hasHops=true;
-            hopsType = itemStackinv.getDisplayName();
-        } else {
-            hasHops=false;
-            hopsType="";
-        }
+        //    hopsType = itemStackinv.getDisplayName();
+        //} else {
+        //    hasHops=false;
+        //    hopsType="";
+        //}
         return hasHops;
     }
     public String getHopsType() {
         ItemStack itemStackinv = inventory.getStackInSlot(2);
-        if(itemStackinv.getItem() instanceof HopsWholeLeafItem || itemStackinv.getItem() instanceof HopsPelletsItem) {
+        //if(itemStackinv.getItem() instanceof HopsWholeLeafItem || itemStackinv.getItem() instanceof HopsPelletsItem) {
             hopsType = itemStackinv.getDisplayName();
-        } else {
-            hopsType="";
-        }
+        //} else {
+        //    hopsType="";
+        //}
         return hopsType;
     }
     public Boolean getBucket() {
@@ -181,6 +180,7 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
                             //Use Water
                             inventory.getStackInSlot(1).shrink(1);
                             //Use Hops
+                            /*
                             if(inventory.getStackInSlot(2).getItem() instanceof HopsWholeLeafItem) {
                                 Double quantD=0.0;
                                 quantD = inventory.getStackInSlot(2).getCount() * BBSConstants.HOPS_WEIGHT;
@@ -194,6 +194,7 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
                                 resultBucket.getTagCompound().setString("wortQuant", quant);
                                 inventory.getStackInSlot(2).shrink(32);
                             }
+                            */
                             inventory.getStackInSlot(3).shrink(1);
                             inventory.getStackInSlot(0).shrink(1);
                             inventory.setStackInSlot(4,resultBucket);

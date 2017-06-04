@@ -13,9 +13,9 @@ import java.util.HashMap;
 
 public class BBSCropRegistry {
 
-    public static final String CROP_BLOCK_NAME = "pam{0}Crop";
-    public static final String ITEM_NAME = "{0}Item";
-    public static final String SEED_ITEM_NAME = "{0}seedItem";
+    public static final String CROP_BLOCK_NAME = "hop{0}Crop";
+    public static final String ITEM_NAME = "{0}.item";
+    public static final String SEED_ITEM_NAME = "{0}.rhizome";
 
     public static final String SAAZ = "saaz";
     public static final String STRISSELSPALT = "strisselspalt";

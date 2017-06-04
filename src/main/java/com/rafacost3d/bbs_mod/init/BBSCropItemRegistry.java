@@ -24,8 +24,14 @@ public class BBSCropItemRegistry {
     }
 
     public static Item registerItem(Item item, String registryName) {
-        BBSMod.logger.info("Registering: " + registryName);
-        item.setCreativeTab(CreativeTabsBBS.BBSTabsSeeds);
+        String name[] = registryName.split("[.]");
+        if (name[1].equals("rhizome")) {
+            BBSMod.logger.info("Rhizome: " + (name[1].equals("rhizome")) + " name: " + name[1]);
+            item.setCreativeTab(CreativeTabsBBS.BBSTabsSeeds);
+        } else {
+           BBSMod.logger.info("Hops: " + (name[1].equals("rhizome")) + " name: " + name[1]);
+            item.setCreativeTab(CreativeTabsBBS.BBSTabsHops);
+        }
         item.setRegistryName(registryName);
         item.setUnlocalizedName(registryName);
         items.put(registryName, item);

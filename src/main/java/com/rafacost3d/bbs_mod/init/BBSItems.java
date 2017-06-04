@@ -8,9 +8,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BBSItems {
 
-    public static HopsWholeLeafItem hopsLeafItemAA1;
-    public static HopsWholeLeafItem hopsLeafItemAA2;
-    public static HopsWholeLeafItem hopsLeafItemAA3;
     public static HopsPelletsItem hopsPelletsItemAA1;
     public static HopsPelletsItem hopsPelletsItemAA2;
     public static HopsPelletsItem hopsPelletsItemAA3;
@@ -26,9 +23,6 @@ public class BBSItems {
 
 
     public static void preinit(){
-        hopsLeafItemAA1 = new HopsWholeLeafItem("aa1", 3);
-        hopsLeafItemAA2 = new HopsWholeLeafItem("aa2", 10);
-        hopsLeafItemAA3 = new HopsWholeLeafItem("aa3", 7);
         hopsPelletsItemAA1 = new HopsPelletsItem("aa1", 3);
         hopsPelletsItemAA2 = new HopsPelletsItem("aa2", 10);
         hopsPelletsItemAA3 = new HopsPelletsItem("aa3", 7);
@@ -50,9 +44,6 @@ public class BBSItems {
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
-        hopsLeafItemAA1.initModel();
-        hopsLeafItemAA2.initModel();
-        hopsLeafItemAA3.initModel();
         hopsPelletsItemAA1.initModel();
         hopsPelletsItemAA2.initModel();
         hopsPelletsItemAA3.initModel();

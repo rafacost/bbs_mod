@@ -7,7 +7,6 @@ import com.rafacost3d.bbs_mod.compat.top.TOPInfoProvider;
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
 import com.rafacost3d.bbs_mod.init.BBSGuiHandler;
 import com.rafacost3d.bbs_mod.init.BBSItems;
-import com.rafacost3d.bbs_mod.items.HopsWholeLeafItem;
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.ProbeMode;
@@ -88,6 +87,7 @@ public class PelleterBlock extends BasicBlock implements ITileEntityProvider{
             retCount = 64;
         }
         ItemStack retItem = new ItemStack(BBSItems.hopsPelletsItemAA1, retCount);
+        /*
         if (!world.isRemote && heldItem.getItem() instanceof HopsWholeLeafItem) {
             TileEntityPelleter tile = getTE(world, pos);
             IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
@@ -112,6 +112,7 @@ public class PelleterBlock extends BasicBlock implements ITileEntityProvider{
                 }
             }
         }
+        */
         return true;
     }
 
