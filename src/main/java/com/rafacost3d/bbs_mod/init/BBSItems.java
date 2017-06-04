@@ -8,9 +8,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BBSItems {
 
-    public static HopsPelletsItem hopsPelletsItemAA1;
-    public static HopsPelletsItem hopsPelletsItemAA2;
-    public static HopsPelletsItem hopsPelletsItemAA3;
     public static ItemBase stirringspoon;
     public static ItemBase sanitizer;
     public static ItemBase watergallon;
@@ -23,9 +20,6 @@ public class BBSItems {
 
 
     public static void preinit(){
-        hopsPelletsItemAA1 = new HopsPelletsItem("aa1", 3);
-        hopsPelletsItemAA2 = new HopsPelletsItem("aa2", 10);
-        hopsPelletsItemAA3 = new HopsPelletsItem("aa3", 7);
         stirringspoon = new ItemBase("stirringspoon").setCreativeTab(CreativeTabsBBS.BBSTabsItems);
         sanitizer = new ItemBase("sanitizer").setCreativeTab(CreativeTabsBBS.BBSTabsItems);
         sanitizer.setMaxDamage(64);
@@ -44,9 +38,6 @@ public class BBSItems {
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
-        hopsPelletsItemAA1.initModel();
-        hopsPelletsItemAA2.initModel();
-        hopsPelletsItemAA3.initModel();
         stirringspoon.initModel();
         sanitizer.initModel();
         watergallon.initModel();

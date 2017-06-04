@@ -86,7 +86,7 @@ public class PelleterBlock extends BasicBlock implements ITileEntityProvider{
         } else {
             retCount = 64;
         }
-        ItemStack retItem = new ItemStack(BBSItems.hopsPelletsItemAA1, retCount);
+        //ItemStack retItem = new ItemStack(BBSItems.hopsPelletsItemAA1, retCount);
         /*
         if (!world.isRemote && heldItem.getItem() instanceof HopsWholeLeafItem) {
             TileEntityPelleter tile = getTE(world, pos);

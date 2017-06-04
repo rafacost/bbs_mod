@@ -16,7 +16,7 @@ public class CreativeTabsBBS {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() {
-            return BBSCropRegistry.getFood(BBSCropRegistry.ADMIRAL).getDefaultInstance();
+            return BBSCropRegistry.getFood(BBSCropRegistry.HORIZON).getDefaultInstance();
         }
     };
 
@@ -24,7 +24,7 @@ public class CreativeTabsBBS {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() {
-            return BBSItems.hopsPelletsItemAA1.getDefaultInstance();
+            return BBSCropRegistry.getPellet(BBSCropRegistry.HORIZON).getDefaultInstance();
         }
     };
 
@@ -32,7 +32,7 @@ public class CreativeTabsBBS {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() {
-            return BBSCropRegistry.getSeed(BBSCropRegistry.ADMIRAL).getDefaultInstance();
+            return BBSCropRegistry.getSeed(BBSCropRegistry.HORIZON).getDefaultInstance();
         }
     };
 

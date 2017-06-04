@@ -5,7 +5,6 @@ import com.rafacost3d.bbs_mod.fluids.FluidWort;
 import com.rafacost3d.bbs_mod.init.BBSConstants;
 import com.rafacost3d.bbs_mod.init.BBSFluids;
 import com.rafacost3d.bbs_mod.init.BBSItems;
-import com.rafacost3d.bbs_mod.items.HopsPelletsItem;
 import com.rafacost3d.bbs_mod.items.WortBucket;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
