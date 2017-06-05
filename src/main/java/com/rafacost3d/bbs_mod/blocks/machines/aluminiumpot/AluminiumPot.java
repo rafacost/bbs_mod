@@ -35,7 +35,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 
-import java.util.List;
 
 public class AluminiumPot extends BasicBlock implements ITileEntityProvider, TOPInfoProvider {
 
@@ -90,6 +89,14 @@ public class AluminiumPot extends BasicBlock implements ITileEntityProvider, TOP
                     player.sendMessage(new TextComponentString("Cleaning Boiling Pot."));
                     tile.setClean(true);
                 }
+                if (itemStack.getItem() == BBSItems.stirringspoon) {
+                    if(tile.getTimeBoil()<=105) {
+                        tile.setTimeBoil(tile.getTimeBoil() + 15);
+                        player.sendMessage(new TextComponentString("Boil Time: " + tile.getTimeBoil() + " min"));
+                    } else {
+                        tile.setTimeBoil(0);
+                    }
+                }
             } else {
                 player.openGui(BBSMod.instance, BBSGuiHandler.ALUMINIUMPOT, world, pos.getX(), pos.getY(), pos.getZ());
             }
@@ -104,20 +111,22 @@ public class AluminiumPot extends BasicBlock implements ITileEntityProvider, TOP
     @Override
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world, IBlockState blockState, IProbeHitData data) {
         TileEntity te = world.getTileEntity(data.getPos());
-        if (te instanceof TileEntityAluminiumPot) {
-            TileEntityAluminiumPot tile = (TileEntityAluminiumPot) te;
-            Double d = tile.getTemp();
-            Integer i = d.intValue();
-            //Double dg = tile.getWaterGL();
-            //Integer ig = dg.intValue();
-            probeInfo.horizontal().text(TextFormatting.GREEN + "Bitter: " + tile.getHopsType());
-            probeInfo.horizontal().text(TextFormatting.GREEN + "Clean: " + tile.getClean());
-            probeInfo.horizontal().text(TextFormatting.GREEN + "Malt: " + tile.getMalt());
-            probeInfo.horizontal().text(TextFormatting.GREEN + "Hops: " + tile.getHops());
-            //probeInfo.text(TextFormatting.GREEN + "Water: ").progress(ig , BBSConstants.BP_MAX_LIQUID.intValue(), probeInfo.defaultProgressStyle().suffix(BBSConstants.KUNIT_LIQUID));
-            probeInfo.text(TextFormatting.GREEN + "Temperature: ").progress(i, BBSConstants.WATER_BOILING, probeInfo.defaultProgressStyle().suffix(BBSConstants.DEGREE));
-            probeInfo.horizontal().text(TextFormatting.GREEN + "Time Boiling: " + tile.getCount() + " min");
-            probeInfo.horizontal().text(TextFormatting.GREEN + "Heat Rate: " + tile.getHeatRate());
+        try {
+            if (te instanceof TileEntityAluminiumPot) {
+                TileEntityAluminiumPot tile = (TileEntityAluminiumPot) te;
+                Double d = tile.getTemp();
+                Integer i = d.intValue();
+                probeInfo.horizontal().text(TextFormatting.GREEN + "Hops: " + tile.getHopsType());
+                probeInfo.horizontal().text(TextFormatting.GREEN + "Clean: " + tile.getClean());
+                probeInfo.horizontal().text(TextFormatting.GREEN + "Malt: " + tile.getMalt());
+                probeInfo.horizontal().text(TextFormatting.GREEN + "Hops: " + tile.getHops());
+                probeInfo.text(TextFormatting.GREEN + "Temperature: ").progress(i, BBSConstants.WATER_BOILING, probeInfo.defaultProgressStyle().suffix(BBSConstants.DEGREE));
+                probeInfo.horizontal().text(TextFormatting.GREEN + "Boil Time: " + tile.getTimeBoil() + " min");
+                probeInfo.horizontal().text(TextFormatting.GREEN + "Time Boiling: " + tile.getCount() + " min");
+                probeInfo.horizontal().text(TextFormatting.GREEN + "Heat Rate: " + tile.getHeatRate());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

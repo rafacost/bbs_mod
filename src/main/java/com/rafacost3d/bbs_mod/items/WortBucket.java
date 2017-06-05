@@ -2,6 +2,7 @@ package com.rafacost3d.bbs_mod.items;
 
 import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.item.Item;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -10,7 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.text.translation.I18n;
+
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -60,7 +61,7 @@ public class WortBucket extends ItemBucket {
     }
 
     // This is an array of all the types I am going to be adding.
-    String[] wortTypes = { "hopsleaf_aa1", "hopsleaf_aa2", "hopsleaf_aa3", "hopspellets_aa1", "hopspellets_aa2", "hopspellets_aa3" };
+    String[] wortTypes = { "hopsleaf"};
 
     @Override
     public String getUnlocalizedName(ItemStack stack)
@@ -95,12 +96,14 @@ public class WortBucket extends ItemBucket {
         if ( stack.hasTagCompound()
                 && stack.getTagCompound().hasKey("wortType"))
         {
-            tooltip.add(I18n.translateToLocal("tooltip.bbs_mod.worttype." + stack.getTagCompound().getString("wortType") + ".desc"));
+            tooltip.add(I18n.format("item." + stack.getTagCompound().getString("wortType") + "." + stack.getTagCompound().getString("hopType") + ".name"));
+            //tooltip.add("Type: " + stack.getTagCompound().getString("hopType"));
             tooltip.add("Hops Quantity: " + stack.getTagCompound().getString("wortQuant"));
+            tooltip.add("Time Boiled: " + stack.getTagCompound().getInteger("timeBoiling") + " min");
         }
         else
         {
-            tooltip.add(I18n.translateToLocal("tooltip.bbs_mod.worttype.nullWort.desc"));
+            tooltip.add(I18n.format("tooltip.bbs_mod.worttype.nullWort.desc"));
         }
     }
 }

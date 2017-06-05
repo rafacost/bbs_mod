@@ -1,14 +1,11 @@
 package com.rafacost3d.bbs_mod.blocks.machines.aluminiumpot;
 
 import com.rafacost3d.bbs_mod.BBSMod;
-import com.rafacost3d.bbs_mod.fluids.FluidWort;
 import com.rafacost3d.bbs_mod.init.BBSConstants;
-import com.rafacost3d.bbs_mod.init.BBSFluids;
 import com.rafacost3d.bbs_mod.init.BBSItems;
 import com.rafacost3d.bbs_mod.items.WortBucket;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -17,31 +14,33 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.translation.I18n;
-import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
-import scala.xml.PrettyPrinter;
+
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
-
-import static java.lang.Thread.sleep;
 
 
 public class TileEntityAluminiumPot extends TileEntity implements ITickable {
     private int count;
     private int delayCounter = 20;
     private double temp = BBSConstants.ROOM_TEMP;
-    private boolean isClean = true;
+    private boolean isClean = false;
     private boolean hasWater = false;
     private boolean hasMalt = false;
     private boolean hasHops = false;
     private boolean hasBucket = false;
     private String hopsType = "";
+    private int timeBoil=0;
+
+    public int getTimeBoil() {
+        return timeBoil;
+    }
+
+    public void setTimeBoil(int timeBoil) {
+        this.timeBoil = timeBoil;
+    }
 
     private ItemStackHandler inventory = new ItemStackHandler(5);
 
@@ -68,22 +67,32 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
     }
     public Boolean getHops() {
         ItemStack itemStackinv = inventory.getStackInSlot(2);
-        //if(itemStackinv.getItem() instanceof HopsWholeLeafItem || itemStackinv.getItem() instanceof HopsPelletsItem) {
-            hasHops=true;
-        //    hopsType = itemStackinv.getDisplayName();
-        //} else {
-        //    hasHops=false;
-        //    hopsType="";
-        //}
+        if(!itemStackinv.isEmpty()) {
+            String name[] = itemStackinv.getUnlocalizedName().split("[.]");
+            if (name[2].equals("item") || name[2].equals("pellet")) {
+                //BBSMod.logger.info("Name: " + name[2]);
+                hasHops = true;
+                hopsType = itemStackinv.getDisplayName();
+            } else {
+                hasHops = false;
+                hopsType = "";
+            }
+        }
         return hasHops;
     }
     public String getHopsType() {
         ItemStack itemStackinv = inventory.getStackInSlot(2);
-        //if(itemStackinv.getItem() instanceof HopsWholeLeafItem || itemStackinv.getItem() instanceof HopsPelletsItem) {
-            hopsType = itemStackinv.getDisplayName();
-        //} else {
-        //    hopsType="";
-        //}
+        if(!itemStackinv.isEmpty()) {
+            String name[] = itemStackinv.getUnlocalizedName().split("[.]");
+            if (name.length >= 2 && name[2].equals("item") || name[2].equals("pellet")) {
+                //BBSMod.logger.info("Name: " + name[2]);
+                hasHops = true;
+                hopsType = itemStackinv.getDisplayName();
+            } else {
+                hasHops = false;
+                hopsType = "";
+            }
+        }
         return hopsType;
     }
     public Boolean getBucket() {
@@ -168,38 +177,49 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
                 count++;
                 temp=BBSConstants.WATER_BOILING;
                 markDirty();
-                if(count>=1) {
+                if(count>=timeBoil) {
                     try {
                         if(!inventory.getStackInSlot(1).isEmpty() && !inventory.getStackInSlot(3).isEmpty() && !inventory.getStackInSlot(0).isEmpty() && inventory.getStackInSlot(2).getCount()>=32) {
                             WortBucket wb = BBSItems.wortBucket;
                             ItemStack resultBucket = new ItemStack(wb);
                             resultBucket.setTagCompound(new NBTTagCompound());
                             String nameHop[] = inventory.getStackInSlot(2).getUnlocalizedName().split("[.]");
-                            resultBucket.getTagCompound().setString("wortType", nameHop[2]);
+                            resultBucket.getTagCompound().setString("wortType", nameHop[1]);
                             //Use Water
                             inventory.getStackInSlot(1).shrink(1);
                             //Use Hops
-                            /*
-                            if(inventory.getStackInSlot(2).getItem() instanceof HopsWholeLeafItem) {
+                            if(nameHop.length>=2 && nameHop[2].equals("item") && hasHops) {
                                 Double quantD=0.0;
                                 quantD = inventory.getStackInSlot(2).getCount() * BBSConstants.HOPS_WEIGHT;
                                 String quant = String.format("%.2f", quantD) + BBSConstants.UNIT_WEIGHT;
                                 resultBucket.getTagCompound().setString("wortQuant", quant);
+                                resultBucket.getTagCompound().setString("hopType", nameHop[2]);
                                 inventory.getStackInSlot(2).shrink(64);
-                            } else {
+                            } else if(nameHop.length>=2 && nameHop[2].equals("pellet") && hasHops) {
                                 Double quantD=0.0;
                                 quantD = inventory.getStackInSlot(2).getCount() * BBSConstants.PELLETS_WEIGHT;
                                 String quant = String.format("%.2f", quantD) + BBSConstants.UNIT_WEIGHT;
                                 resultBucket.getTagCompound().setString("wortQuant", quant);
+                                resultBucket.getTagCompound().setString("hopType", nameHop[2]);
                                 inventory.getStackInSlot(2).shrink(32);
+                            } else {
+                                hasHops=false;
+                                hopsType="";
                             }
-                            */
+
                             inventory.getStackInSlot(3).shrink(1);
                             inventory.getStackInSlot(0).shrink(1);
+                            resultBucket.getTagCompound().setInteger("timeBoiling", count);
                             inventory.setStackInSlot(4,resultBucket);
                             BBSMod.logger.info("Wort is Done! Type:" + resultBucket.getTagCompound().getString("wortType") + " Quant: " + resultBucket.getTagCompound().getString("wortQuant"));
-                            temp=BBSConstants.ROOM_TEMP;
-                            count=0;
+                            temp = BBSConstants.ROOM_TEMP;
+                            count = 0;
+                            isClean = false;
+                            hasHops = false;
+                            hopsType = "";
+                            hasBucket = false;
+                            hasWater = false;
+
                         }
                     } catch (Exception e) {
                         BBSMod.logger.warn("Couldn't process Wort");
