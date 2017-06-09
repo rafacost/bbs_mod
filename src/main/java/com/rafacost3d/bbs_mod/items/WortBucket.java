@@ -60,7 +60,6 @@ public class WortBucket extends ItemBucket {
         ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
     }
 
-    // This is an array of all the types I am going to be adding.
     String[] wortTypes = { "hopsleaf"};
 
     @Override

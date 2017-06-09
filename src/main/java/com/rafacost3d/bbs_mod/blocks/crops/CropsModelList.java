@@ -12,10 +12,7 @@ public class CropsModelList {
     private final String rootDirectory;
 
     public CropsModelList(String resourceRoot) {
-        //if (resourceRoot.charAt(resourceRoot.length() - 1) != '/') {
-        //    throw new RuntimeException("Resource root path must be relative! (end with '/')");
-        //}
-        this.rootDirectory = getResourcePath(resourceRoot);
+         this.rootDirectory = getResourcePath(resourceRoot);
     }
 
     public CropsModelList add(int meta, String path) {

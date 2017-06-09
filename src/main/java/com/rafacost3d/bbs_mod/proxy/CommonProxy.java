@@ -1,6 +1,5 @@
 package com.rafacost3d.bbs_mod.proxy;
 
-import com.rafacost3d.bbs_mod.blocks.crops.CropsModels;
 import com.rafacost3d.bbs_mod.init.*;
 import com.rafacost3d.bbs_mod.compat.MainCompatHandler;
 import net.minecraftforge.common.config.Configuration;
@@ -12,7 +11,6 @@ import java.io.File;
 
 public abstract class CommonProxy {
 
-    // Config instance
     public static Configuration config;
 
     public void preInit(FMLPreInitializationEvent e) {

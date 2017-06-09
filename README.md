@@ -37,7 +37,7 @@ If your site is at the list below, thank you so much for your tutorials/code rep
 - [x] Created PelleterMachineBlock, to double Hops production
 - [x] Created AluminiumPotBlock, implemented first Recipe Wort for Weizein Beer.
 - [x] Created WortBucket, this Item store the information about the Brewing Process.
-- [x] Created Rhizomes, Hops and Pellets for 83 types of Hops.
+- [x] Created Rhizomes, Hops and Pellets for 137 types of Hops.
 - [ ] Create FermenterBlock
 - [ ] Create AirlockItem
 - [ ] Create RackingCaneItem

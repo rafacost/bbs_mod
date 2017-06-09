@@ -12,7 +12,6 @@ public class BBSBlocks {
     public static PelleterBlock pelleterBlock;
     public static AluminiumPot aluminiumPot;
 
-
     public static void preinit(){
         pelleterBlock = new PelleterBlock(Material.ROCK, "pelleter");
         aluminiumPot = new AluminiumPot(Material.IRON, "aluminiumpot");

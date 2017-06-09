@@ -11,10 +11,7 @@ import net.minecraftforge.items.SlotItemHandler;
 
 public class ContainerPot extends Container {
 
-
-
     public ContainerPot(InventoryPlayer playerInv, final TileEntityAluminiumPot pot) {
-
 
         IItemHandler inventory = pot.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH);
         addSlotToContainer(new SlotItemHandler(inventory, 0, 80, 35) {
@@ -48,8 +45,6 @@ public class ContainerPot extends Container {
             }
         });
 
-
-        //Player Inventory
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
                 addSlotToContainer(new Slot(playerInv, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));

@@ -22,7 +22,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
@@ -38,7 +37,6 @@ import net.minecraftforge.items.IItemHandler;
 
 public class AluminiumPot extends BasicBlock implements ITileEntityProvider, TOPInfoProvider {
 
-    private ResourceLocation nameBlock;
     public AluminiumPot(Material material, String name){
         super(Material.IRON, name);
         setCreativeTab(CreativeTabsBBS.BBSTabsMachines);
@@ -80,7 +78,6 @@ public class AluminiumPot extends BasicBlock implements ITileEntityProvider, TOP
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
         if (!world.isRemote) {
-            // ...
             if (!player.isSneaking()) {
                 TileEntityAluminiumPot tile = getTE(world, pos);
                 ItemStack itemStack = player.getHeldItem(hand);
@@ -104,8 +101,6 @@ public class AluminiumPot extends BasicBlock implements ITileEntityProvider, TOP
         return true;
 
     }
-
-
 
 
     @Override
@@ -141,5 +136,4 @@ public class AluminiumPot extends BasicBlock implements ITileEntityProvider, TOP
         }
         super.breakBlock(world, pos, state);
     }
-
 }

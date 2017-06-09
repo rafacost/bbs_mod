@@ -60,7 +60,6 @@ public class BlockBeer extends BlockFluidClassic {
             ((EntityLivingBase)entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(2), 100, 10, false, true));
             ((EntityLivingBase)entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(25), 10, 10, false, true));
             ((EntityLivingBase)entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(9), 1, 10, false, true));
-
         }
     }
 

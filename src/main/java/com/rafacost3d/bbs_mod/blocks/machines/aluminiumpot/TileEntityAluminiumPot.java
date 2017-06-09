@@ -69,7 +69,7 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
         ItemStack itemStackinv = inventory.getStackInSlot(2);
         if(!itemStackinv.isEmpty()) {
             String name[] = itemStackinv.getUnlocalizedName().split("[.]");
-            if (name[2].equals("item") || name[2].equals("pellet")) {
+            if (name[2].equals("hop") || name[2].equals("pellet")) {
                 //BBSMod.logger.info("Name: " + name[2]);
                 hasHops = true;
                 hopsType = itemStackinv.getDisplayName();
@@ -84,7 +84,7 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
         ItemStack itemStackinv = inventory.getStackInSlot(2);
         if(!itemStackinv.isEmpty()) {
             String name[] = itemStackinv.getUnlocalizedName().split("[.]");
-            if (name.length >= 2 && name[2].equals("item") || name[2].equals("pellet")) {
+            if (name.length >= 2 && name[2].equals("hop") || name[2].equals("pellet")) {
                 //BBSMod.logger.info("Name: " + name[2]);
                 hasHops = true;
                 hopsType = itemStackinv.getDisplayName();
@@ -188,7 +188,7 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
                             //Use Water
                             inventory.getStackInSlot(1).shrink(1);
                             //Use Hops
-                            if(nameHop.length>=2 && nameHop[2].equals("item") && hasHops) {
+                            if(nameHop.length>=2 && nameHop[2].equals("hop") && hasHops) {
                                 Double quantD=0.0;
                                 quantD = inventory.getStackInSlot(2).getCount() * BBSConstants.HOPS_WEIGHT;
                                 String quant = String.format("%.2f", quantD) + BBSConstants.UNIT_WEIGHT;

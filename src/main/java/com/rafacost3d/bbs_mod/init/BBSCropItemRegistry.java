@@ -1,11 +1,17 @@
 package com.rafacost3d.bbs_mod.init;
 
-import com.rafacost3d.bbs_mod.BBSMod;
+
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class BBSCropItemRegistry {
     public static final HashMap<String, Item> items = new HashMap<String, Item>();

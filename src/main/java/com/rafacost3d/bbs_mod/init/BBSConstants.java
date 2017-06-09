@@ -16,10 +16,7 @@ public class BBSConstants {
     public static Double BP_MAX_LIQUID = null;
     public static Double BP_MIN_LIQUID = null;
 
-
-
     public static void preint(){
-
         if(BBSConfig.metric) {
             BBSMod.logger.info("Loading Metric Defaults");
             DEGREE = " \u2103";

@@ -11,7 +11,6 @@ import net.minecraftforge.items.SlotItemHandler;
 
 public class ContainerPelleter extends Container {
 
-
     public ContainerPelleter(InventoryPlayer playerInv, final TileEntityPelleter pelleter) {
         IItemHandler inventory = pelleter.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH);
         addSlotToContainer(new SlotItemHandler(inventory, 0, 80, 35) {
@@ -69,7 +68,6 @@ public class ContainerPelleter extends Container {
 
             slot.onTake(playerIn, itemstack1);
         }
-
         return itemstack;
     }
 

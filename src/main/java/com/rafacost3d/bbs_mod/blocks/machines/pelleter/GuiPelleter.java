@@ -35,6 +35,5 @@ public class GuiPelleter extends GuiContainer{
         String name = I18n.format(BBSBlocks.pelleterBlock.getUnlocalizedName() + ".name");
         fontRendererObj.drawString(name, xSize / 2 - fontRendererObj.getStringWidth(name) / 2, 6, 0x404040);
         fontRendererObj.drawString(playerInv.getDisplayName().getUnformattedText(), 8, ySize - 94, 0x404040);
-
     }
 }

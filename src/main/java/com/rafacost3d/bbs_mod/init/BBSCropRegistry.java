@@ -14,179 +14,287 @@ import java.util.HashMap;
 public class BBSCropRegistry {
 
     public static final String CROP_BLOCK_NAME = "hop{0}.crop";
-    public static final String ITEM_NAME = "{0}.item";
+    public static final String ITEM_NAME = "{0}.hop";
     public static final String SEED_ITEM_NAME = "{0}.rhizome";
     public static final String PELLET_ITEM_NAME = "{0}.pellet";
 
-    public static final String SAAZ = "saaz";
-    public static final String STRISSELSPALT = "strisselspalt";
-    public static final String HALLERTAUMITTELFRUH = "hallertaumittelfruh";
-    public static final String DOMESTICHALLERTAU = "domestichallertau";
-    public static final String HALLERTAUHERSBRUCKER = "hallertauhersbrucker";
-    public static final String HERSBRUCKER = "hersbrucker";
-    public static final String LIBERTY = "liberty";
-    public static final String YAMHILLGOLDINGS = "yamhillgoldings";
-    public static final String CRYSTAL = "crystal";
-    public static final String FUGGLES = "fuggles";
-    public static final String GOLDINGS = "goldings";
-    public static final String LUBLIN = "lublin";
-    public static final String SPALT = "spalt";
-    public static final String TETTNANGER = "tettnanger";
-    public static final String ULTRA = "ultra";
-    public static final String WILLAMETTE = "willamette";
-    public static final String MOUNTHOOD = "mounthood";
-    public static final String BCGOLDINGS = "bcgoldings";
-    public static final String EASTKENTGOLDINGS = "eastkentgoldings";
-    public static final String KENTGOLDINGS = "kentgoldings";
-    public static final String VANGUARD = "vanguard";
-    public static final String AHTANUM = "ahtanum";
-    public static final String GLACIER = "glacier";
-    public static final String STYRIANGOLDINGS = "styriangoldings";
-    public static final String HULLERBITTERER = "hullerbitterer";
-    public static final String WHITBREADGOLDING = "whitbreadgolding";
-    public static final String MOUNTRAINIER = "mountrainier";
-    public static final String PROGRESS = "progress";
-    public static final String BRAMLINGCROSS = "bramlingcross";
-    public static final String CLUSTER = "cluster";
-    public static final String RECORD = "record";
-    public static final String SANTIAM = "santiam";
-    public static final String AQUILA = "aquila";
-    public static final String CASCADE = "cascade";
-    public static final String MOTUEKA = "motueka";
-    public static final String ORION = "orion";
-    public static final String YAKIMACLUSTER = "yakimacluster";
-    public static final String YEOMAN = "yeoman";
-    public static final String BULLION = "bullion";
-    public static final String FIRSTGOLD = "firstgold";
-    public static final String CENTENNIAL = "centennial";
-    public static final String NORTHERNBREWER = "northernbrewer";
-    public static final String TALISMAN = "talisman";
-    public static final String PERLE = "perle";
-    public static final String CHALLENGER = "challenger";
-    public static final String AMARILLO = "amarillo";
-    public static final String NORTHDOWN = "northdown";
-    public static final String STERLING = "sterling";
-    public static final String BREWERSGOLD = "brewersgold";
-    public static final String PIONEER = "pioneer";
-    public static final String SUPERSTYRIANS = "superstyrians";
-    public static final String ZENITH = "zenith";
-    public static final String BANNER = "banner";
-    public static final String COMET = "comet";
-    public static final String OMEGA = "omega";
-    public static final String PHOENIX = "phoenix";
-    public static final String PRIDEOFRINGWOOD = "prideofringwood";
-    public static final String WYETARGET = "wyetarget";
-    public static final String CITRA = "citra";
-    public static final String SORACHIACE = "sorachiace";
-    public static final String STICKLEBRACT = "sticklebract";
-    public static final String TARGET = "target";
-    public static final String EROICA = "eroica";
-    public static final String HERALD = "herald";
-    public static final String OLYMPIC = "olympic";
-    public static final String HORIZON = "horizon";
-    public static final String NELSONSAUVIN = "nelsonsauvin";
-    public static final String SIMCOE = "simcoe";
-    public static final String CHINOOK = "chinook";
-    public static final String GALENA = "galena";
-    public static final String SATUS = "satus";
-    public static final String SUPERALPHA = "superalpha";
-    public static final String NUGGET = "nugget";
     public static final String ADMIRAL = "admiral";
+    public static final String AHTANUM = "ahtanum";
+    public static final String AMARILLO = "amarillo";
+    public static final String AQUILA = "aquila";
+    public static final String ARAMIS = "aramis";
+    public static final String AURORA = "aurora";
+    public static final String BANNER = "banner";
+    public static final String BCGOLDING = "bcgolding";
+    public static final String BITTERGOLD = "bittergold";
+    public static final String BLANC = "blanc";
+    public static final String BOBEK = "bobek";
+    public static final String BRAMLINGCROSS = "bramlingcross";
+    public static final String BRAVO = "bravo";
+    public static final String BREWERSGOLDGERMANY = "brewersgoldgermany";
+    public static final String BREWERSGOLDUSA = "brewersgoldusa";
+    public static final String BULLION = "bullion";
+    public static final String CASCADE = "cascade";
+    public static final String CELEIA = "celeia";
+    public static final String CENTENNIAL = "centennial";
+    public static final String CHALLENGER = "challenger";
+    public static final String CHELAN = "chelan";
+    public static final String CHINOOK = "chinook";
+    public static final String CITRA = "citra";
+    public static final String CLUSTER = "cluster";
     public static final String COLUMBUS = "columbus";
+    public static final String COMET = "comet";
+    public static final String CRYSTAL = "crystal";
+    public static final String DRRUDI = "drrudi";
+    public static final String EASTKENTGOLDING = "eastkentgolding";
+    public static final String EKUANOT = "ekuanot";
+    public static final String ELLA = "ella";
+    public static final String EROICA = "eroica";
+    public static final String FALCONERSFLIGHT = "falconersflight";
+    public static final String FIRSTGOLD = "firstgold";
+    public static final String FUGGLEUK = "fuggleuk";
+    public static final String GALAXY = "galaxy";
+    public static final String GALENA = "galena";
+    public static final String GLACIER = "glacier";
+    public static final String GOLD = "gold";
+    public static final String GOLDINGUK = "goldinguk";
+    public static final String GOLDINGUSA = "goldingusa";
+    public static final String GREENBULLET = "greenbullet";
+    public static final String HALLERTAUMITTELFRUH = "hallertaumittelfruh";
+    public static final String HALLERTAUUSA = "hallertauusa";
+    public static final String HBC431EXPERIMENTAL = "hbc431experimental";
+    public static final String HBC438EXPERIMENTAL = "hbc438experimental";
+    public static final String HBC472EXPERIMENTAL = "hbc472experimental";
+    public static final String HBC682EXPERIMENTAL = "hbc682experimental";
+    public static final String HELGA = "helga";
+    public static final String HERALD = "herald";
+    public static final String HERKULES = "herkules";
+    public static final String HERSBRUCKER = "hersbrucker";
+    public static final String HORIZON = "horizon";
+    public static final String HUELLMELON = "huellmelon";
+    public static final String HULLERBITTERER = "hullerbitterer";
+    public static final String KOHATU = "kohatu";
+    public static final String LIBERTY = "liberty";
+    public static final String LORAL = "loral";
+    public static final String LUBELSKA = "lubelska";
     public static final String MAGNUM = "magnum";
-    public static final String TOMAHAWK = "tomahawk";
-    public static final String PACIFICGEM = "pacificgem";
+    public static final String MANDARINABAVARIA = "mandarinabavaria";
+    public static final String MERKUR = "merkur";
     public static final String MILLENIUM = "millenium";
+    public static final String MOSAIC = "mosaic";
+    public static final String MOTUEKA = "motueka";
+    public static final String MOUNTHOOD = "mounthood";
+    public static final String MOUNTRAINIER = "mountrainier";
+    public static final String NELSONSAUVIN = "nelsonsauvin";
     public static final String NEWPORT = "newport";
-    public static final String WARRIOR = "warrior";
-    public static final String ZEUS = "zeus";
+    public static final String NORTHDOWN = "northdown";
+    public static final String NORTHERNBREWER = "northernbrewer";
+    public static final String NUGGET = "nugget";
+    public static final String OLYMPIC = "olympic";
+    public static final String OMEGA = "omega";
+    public static final String OPAL = "opal";
+    public static final String ORION = "orion";
+    public static final String PACIFICA = "pacifica";
+    public static final String PACIFICGEM = "pacificgem";
+    public static final String PACIFICJADE = "pacificjade";
+    public static final String PALISADE = "palisade";
+    public static final String PERLEGERMANY = "perlegermany";
+    public static final String PERLEUSA = "perleusa";
+    public static final String PHOENIX = "phoenix";
+    public static final String PILGRIM = "pilgrim";
+    public static final String PIONEER = "pioneer";
+    public static final String POLARIS = "polaris";
+    public static final String PREMIANT = "premiant";
+    public static final String PRIDEOFRINGWOOD = "prideofringwood";
+    public static final String PROGRESS = "progress";
+    public static final String RAKAU = "rakau";
+    public static final String RECORD = "record";
+    public static final String RIWAKA = "riwaka";
+    public static final String SAAZ = "saaz";
+    public static final String SANTIAM = "santiam";
+    public static final String SAPHIR = "saphir";
+    public static final String SATUS = "satus";
+    public static final String SAVINJSKIGOLDING = "savinjskigolding";
+    public static final String SELECT = "select";
+    public static final String SIMCOE = "simcoe";
+    public static final String SMARAGD = "smaragd";
+    public static final String SORACHIACE = "sorachiace";
+    public static final String SOUTHERNCROSS = "southerncross";
+    public static final String SOVEREIGN = "sovereign";
+    public static final String SPALT = "spalt";
+    public static final String STERLING = "sterling";
+    public static final String STICKLEBRACT = "sticklebract";
+    public static final String STRISSELSPALT = "strisselspalt";
+    public static final String STYRIANGOLDING = "styriangolding";
+    public static final String SUMMER = "summer";
     public static final String SUMMIT = "summit";
+    public static final String SUPERALPHA = "superalpha";
+    public static final String SUPERPRIDE = "superpride";
+    public static final String SUSSEX = "sussex";
+    public static final String SYLVA = "sylva";
+    public static final String TAHOMA = "tahoma";
+    public static final String TALISMAN = "talisman";
+    public static final String TARGET = "target";
+    public static final String TETTNANGERGERMANY = "tettnangergermany";
+    public static final String TETTNANGERUSA = "tettnangerusa";
+    public static final String TOMAHAWK = "tomahawk";
+    public static final String TRADITION = "tradition";
+    public static final String TRIPLEPEARL = "triplepearl";
+    public static final String TRISKEL = "triskel";
+    public static final String ULTRA = "ultra";
+    public static final String VANGUARD = "vanguard";
+    public static final String WAIITI = "waiiti";
+    public static final String WAIMEA = "waimea";
+    public static final String WAKATU = "wakatu";
+    public static final String WARRIOR = "warrior";
+    public static final String WHITBREADGOLDING = "whitbreadgolding";
+    public static final String WILLAMETTE = "willamette";
+    public static final String YAKIMACLUSTER = "yakimacluster";
+    public static final String YAMHILLGOLDING = "yamhillgolding";
+    public static final String YEOMAN = "yeoman";
+    public static final String ZENITH = "zenith";
+    public static final String ZEUS = "zeus";
+    public static final String ZYTHOS = "zythos";
 
 
     public static final String[] cropNames = new String[]  {
-            SAAZ,
-            STRISSELSPALT,
-            HALLERTAUMITTELFRUH,
-            DOMESTICHALLERTAU,
-            HALLERTAUHERSBRUCKER,
-            HERSBRUCKER,
-            LIBERTY,
-            YAMHILLGOLDINGS,
-            CRYSTAL,
-            FUGGLES,
-            GOLDINGS,
-            LUBLIN,
-            SPALT,
-            TETTNANGER,
-            ULTRA,
-            WILLAMETTE,
-            MOUNTHOOD,
-            BCGOLDINGS,
-            EASTKENTGOLDINGS,
-            KENTGOLDINGS,
-            VANGUARD,
-            AHTANUM,
-            GLACIER,
-            STYRIANGOLDINGS,
-            HULLERBITTERER,
-            WHITBREADGOLDING,
-            MOUNTRAINIER,
-            PROGRESS,
-            BRAMLINGCROSS,
-            CLUSTER,
-            RECORD,
-            SANTIAM,
-            AQUILA,
-            CASCADE,
-            MOTUEKA,
-            ORION,
-            YAKIMACLUSTER,
-            YEOMAN,
-            BULLION,
-            FIRSTGOLD,
-            CENTENNIAL,
-            NORTHERNBREWER,
-            TALISMAN,
-            PERLE,
-            CHALLENGER,
-            AMARILLO,
-            NORTHDOWN,
-            STERLING,
-            BREWERSGOLD,
-            PIONEER,
-            SUPERSTYRIANS,
-            ZENITH,
-            BANNER,
-            COMET,
-            OMEGA,
-            PHOENIX,
-            PRIDEOFRINGWOOD,
-            WYETARGET,
-            CITRA,
-            SORACHIACE,
-            STICKLEBRACT,
-            TARGET,
-            EROICA,
-            HERALD,
-            OLYMPIC,
-            HORIZON,
-            NELSONSAUVIN,
-            SIMCOE,
-            CHINOOK,
-            GALENA,
-            SATUS,
-            SUPERALPHA,
-            NUGGET,
             ADMIRAL,
+            AHTANUM,
+            AMARILLO,
+            AQUILA,
+            ARAMIS,
+            AURORA,
+            BANNER,
+            BCGOLDING,
+            BITTERGOLD,
+            BLANC,
+            BOBEK,
+            BRAMLINGCROSS,
+            BRAVO,
+            BREWERSGOLDGERMANY,
+            BREWERSGOLDUSA,
+            BULLION,
+            CASCADE,
+            CELEIA,
+            CENTENNIAL,
+            CHALLENGER,
+            CHELAN,
+            CHINOOK,
+            CITRA,
+            CLUSTER,
             COLUMBUS,
+            COMET,
+            CRYSTAL,
+            DRRUDI,
+            EASTKENTGOLDING,
+            EKUANOT,
+            ELLA,
+            EROICA,
+            FALCONERSFLIGHT,
+            FIRSTGOLD,
+            FUGGLEUK,
+            GALAXY,
+            GALENA,
+            GLACIER,
+            GOLD,
+            GOLDINGUK,
+            GOLDINGUSA,
+            GREENBULLET,
+            HALLERTAUMITTELFRUH,
+            HALLERTAUUSA,
+            HBC431EXPERIMENTAL,
+            HBC438EXPERIMENTAL,
+            HBC472EXPERIMENTAL,
+            HBC682EXPERIMENTAL,
+            HELGA,
+            HERALD,
+            HERKULES,
+            HERSBRUCKER,
+            HORIZON,
+            HUELLMELON,
+            HULLERBITTERER,
+            KOHATU,
+            LIBERTY,
+            LORAL,
+            LUBELSKA,
             MAGNUM,
-            TOMAHAWK,
-            PACIFICGEM,
+            MANDARINABAVARIA,
+            MERKUR,
             MILLENIUM,
+            MOSAIC,
+            MOTUEKA,
+            MOUNTHOOD,
+            MOUNTRAINIER,
+            NELSONSAUVIN,
             NEWPORT,
+            NORTHDOWN,
+            NORTHERNBREWER,
+            NUGGET,
+            OLYMPIC,
+            OMEGA,
+            OPAL,
+            ORION,
+            PACIFICA,
+            PACIFICGEM,
+            PACIFICJADE,
+            PALISADE,
+            PERLEGERMANY,
+            PERLEUSA,
+            PHOENIX,
+            PILGRIM,
+            PIONEER,
+            POLARIS,
+            PREMIANT,
+            PRIDEOFRINGWOOD,
+            PROGRESS,
+            RAKAU,
+            RECORD,
+            RIWAKA,
+            SAAZ,
+            SANTIAM,
+            SAPHIR,
+            SATUS,
+            SAVINJSKIGOLDING,
+            SELECT,
+            SIMCOE,
+            SMARAGD,
+            SORACHIACE,
+            SOUTHERNCROSS,
+            SOVEREIGN,
+            SPALT,
+            STERLING,
+            STICKLEBRACT,
+            STRISSELSPALT,
+            STYRIANGOLDING,
+            SUMMER,
+            SUMMIT,
+            SUPERALPHA,
+            SUPERPRIDE,
+            SUSSEX,
+            SYLVA,
+            TAHOMA,
+            TALISMAN,
+            TARGET,
+            TETTNANGERGERMANY,
+            TETTNANGERUSA,
+            TOMAHAWK,
+            TRADITION,
+            TRIPLEPEARL,
+            TRISKEL,
+            ULTRA,
+            VANGUARD,
+            WAIITI,
+            WAIMEA,
+            WAKATU,
             WARRIOR,
+            WHITBREADGOLDING,
+            WILLAMETTE,
+            YAKIMACLUSTER,
+            YAMHILLGOLDING,
+            YEOMAN,
+            ZENITH,
             ZEUS,
-            SUMMIT
+            ZYTHOS
     };
 
     private static boolean isInitialized = false;
@@ -257,7 +365,7 @@ public class BBSCropRegistry {
         }
 
         if (!pellets.containsKey(cropName)) {
-            FMLLog.bigWarning("No food for key %s", cropName);
+            FMLLog.bigWarning("No pellet for key %s", cropName);
             return null;
         }
 

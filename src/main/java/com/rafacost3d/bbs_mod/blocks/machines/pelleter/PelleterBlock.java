@@ -3,28 +3,20 @@ package com.rafacost3d.bbs_mod.blocks.machines.pelleter;
 
 import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.blocks.BasicBlock;
-import com.rafacost3d.bbs_mod.compat.top.TOPInfoProvider;
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
 import com.rafacost3d.bbs_mod.init.BBSGuiHandler;
-import com.rafacost3d.bbs_mod.init.BBSItems;
-import mcjty.theoneprobe.api.IProbeHitData;
-import mcjty.theoneprobe.api.IProbeInfo;
-import mcjty.theoneprobe.api.ProbeMode;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
@@ -77,42 +69,8 @@ public class PelleterBlock extends BasicBlock implements ITileEntityProvider{
 
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
-        ItemStack heldItem = player.getHeldItem(hand);
-        Integer heldCount = heldItem.getCount();
-
-        Integer retCount;
-        if (heldCount * 2 <=64 ) {
-            retCount = heldCount *2;
-        } else {
-            retCount = 64;
-        }
-        //ItemStack retItem = new ItemStack(BBSItems.hopsPelletsItemAA1, retCount);
-        /*
-        if (!world.isRemote && heldItem.getItem() instanceof HopsWholeLeafItem) {
-            TileEntityPelleter tile = getTE(world, pos);
-            IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
-            if (!player.isSneaking()) {
-
-                if (heldItem.isEmpty()) {
-                        player.setHeldItem(hand, itemHandler.extractItem(0, 1, false));
-                } else {
-                    player.openGui(BBSMod.instance, BBSGuiHandler.PELLETER, world, pos.getX(), pos.getY(), pos.getZ());
-                    player.openContainer.detectAndSendChanges();
-                }
-                tile.markDirty();
-
-            } else {
-                player.openContainer.detectAndSendChanges();
-                ItemStack stack = itemHandler.getStackInSlot(0);
-                if (!stack.isEmpty()) {
-                    String localized = I18n.format(stack.getUnlocalizedName() + ".name");
-                    player.sendMessage(new TextComponentString(stack.getCount() + "x " + localized));
-                } else {
-                    player.sendMessage(new TextComponentString("Empty"));
-                }
-            }
-        }
-        */
+        player.openGui(BBSMod.instance, BBSGuiHandler.PELLETER, world, pos.getX(), pos.getY(), pos.getZ());
+        player.openContainer.detectAndSendChanges();
         return true;
     }
 
