@@ -4,6 +4,9 @@ package com.rafacost3d.bbs_mod.init;
 import com.rafacost3d.bbs_mod.blocks.machines.aluminiumpot.ContainerPot;
 import com.rafacost3d.bbs_mod.blocks.machines.aluminiumpot.GuiPot;
 import com.rafacost3d.bbs_mod.blocks.machines.aluminiumpot.TileEntityAluminiumPot;
+import com.rafacost3d.bbs_mod.blocks.machines.fermentorbucket.ContainerFermentor;
+import com.rafacost3d.bbs_mod.blocks.machines.fermentorbucket.GuiFermentor;
+import com.rafacost3d.bbs_mod.blocks.machines.fermentorbucket.TileEntityFermentorBucket;
 import com.rafacost3d.bbs_mod.blocks.machines.pelleter.ContainerPelleter;
 import com.rafacost3d.bbs_mod.blocks.machines.pelleter.GuiPelleter;
 import com.rafacost3d.bbs_mod.blocks.machines.pelleter.TileEntityPelleter;
@@ -16,6 +19,7 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 public class BBSGuiHandler implements IGuiHandler {
     public static final int PELLETER = 0;
     public static final int ALUMINIUMPOT = 1;
+    public static final int FERMENTORBUCKET = 2;
 
 
     @Override
@@ -25,6 +29,8 @@ public class BBSGuiHandler implements IGuiHandler {
                 return new ContainerPelleter(player.inventory, (TileEntityPelleter) world.getTileEntity(new BlockPos(x, y, z)));
             case ALUMINIUMPOT:
                 return new ContainerPot(player.inventory, (TileEntityAluminiumPot) world.getTileEntity(new BlockPos(x, y, z)));
+            case FERMENTORBUCKET:
+                return new ContainerFermentor(player.inventory, (TileEntityFermentorBucket) world.getTileEntity(new BlockPos(x, y, z)));
             default:
                 return null;
         }
@@ -37,6 +43,8 @@ public class BBSGuiHandler implements IGuiHandler {
                 return new GuiPelleter(getServerGuiElement(ID, player, world, x, y, z), player.inventory);
             case ALUMINIUMPOT:
                 return new GuiPot(getServerGuiElement(ID, player, world, x, y, z), player.inventory);
+            case FERMENTORBUCKET:
+                return new GuiFermentor(getServerGuiElement(ID, player, world, x, y, z), player.inventory);
             default:
                 return null;
         }

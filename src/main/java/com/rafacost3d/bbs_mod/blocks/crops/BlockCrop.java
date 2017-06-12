@@ -221,6 +221,7 @@ public class BlockCrop extends BlockCrops implements IPlantable {
         final int age = getMetaFromState(state);
 
         final int count = quantityDropped(state, fortune, rand);
+
         for (int i = 0; i < count; i++) {
             final Item item = this.getItemDropped(state, rand, fortune);
             if (item != null) {
@@ -273,7 +274,11 @@ public class BlockCrop extends BlockCrops implements IPlantable {
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ){
         if(!world.isRemote) {
             if (this.isMaxAge(state)) {
-                EntityItem item = new EntityItem(world,pos.getX(), pos.getY(), pos.getZ(), new ItemStack(getCrop(), 1));
+                Random r = new Random();
+                int Low = 1;
+                int High = 6;
+                int Result = r.nextInt(High-Low) + Low;
+                EntityItem item = new EntityItem(world,pos.getX(), pos.getY(), pos.getZ(), new ItemStack(getCrop(), Result));
                 world.spawnEntity((item));
                 world.setBlockState(pos, this.withAge(6));
                 return true;

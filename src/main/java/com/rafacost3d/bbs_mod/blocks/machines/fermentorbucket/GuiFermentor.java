@@ -1,5 +1,4 @@
-package com.rafacost3d.bbs_mod.blocks.machines.aluminiumpot;
-
+package com.rafacost3d.bbs_mod.blocks.machines.fermentorbucket;
 
 import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.init.BBSBlocks;
@@ -11,11 +10,11 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.util.ResourceLocation;
 
-public class GuiPot extends GuiContainer {
+public class GuiFermentor extends GuiContainer {
     private static final ResourceLocation BG_TEXTURE = new ResourceLocation(BBSMod.MODID, "textures/gui/aluminium_kettle.png");
     private InventoryPlayer playerInv;
 
-    public GuiPot(Container container, InventoryPlayer playerInv) {
+    public GuiFermentor(Container container, InventoryPlayer playerInv) {
         super(container);
         this.playerInv = playerInv;
     }
@@ -30,13 +29,13 @@ public class GuiPot extends GuiContainer {
     }
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-        String name = I18n.format(BBSBlocks.aluminiumPot.getUnlocalizedName() + ".name");
+        String name = I18n.format(BBSBlocks.fermentorBucket.getUnlocalizedName() + ".name");
         fontRendererObj.drawString(name, xSize / 2 - fontRendererObj.getStringWidth(name) / 2, 6, 0x404040);
         fontRendererObj.drawString(playerInv.getDisplayName().getUnformattedText(), 8, ySize - 94, 0x404040);
-        fontRendererObj.drawString(BBSConstants.WATER_BOILING + " " + BBSConstants.DEGREE, 138, 73, 0x404040);
+        fontRendererObj.drawString("1 w", 138, 73, 0x404040);
         fontRendererObj.drawString("Water", 27, 21, 0x404040);
-        fontRendererObj.drawString("Hops", 27, 40, 0x404040);
-        fontRendererObj.drawString("Grains", 27, 59, 0x404040);
-        fontRendererObj.drawString("Bucket", 74, 53, 0x404040);
+        fontRendererObj.drawString("Yeast", 27, 40, 0x404040);
+        fontRendererObj.drawString("Flavor", 27, 59, 0x404040);
+        fontRendererObj.drawString("Wort", 74, 53, 0x404040);
     }
 }

@@ -1,334 +1,824 @@
 {
   "Admiral": {
     "alpha": 14.5,
-    "price": 10
-  },
+    "aroma": "citrus, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 4,  "type": "bittering"},
   "Ahtanum": {
     "alpha": 5.5,
-    "price": 10
-  },
-  "Amarillo": {
+    "aroma": "earthy, floral, citrus",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Amarillo®": {
     "alpha": 8.6,
-    "price": 10
-  },
+    "aroma": "floral, citrus",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
   "Aquila": {
     "alpha": 7,
-    "price": 10
-  },
-  "BC Goldings": {
-    "alpha": 5,
-    "price": 10
-  },
-  "Banner": {
+    "aroma": "earthy, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Aramis": {
+    "alpha": 8.1,
+    "aroma": "earthy, citrus, spicy, herbal, green",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Aurora": {
     "alpha": 10,
-    "price": 10
-  },
-  "Bramling Cross": {
+    "aroma": "earthy, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
+  "Banner": {
+    "alpha": 10.7,
+    "aroma": "fruity, floral",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "bittering"},
+  "BC_Golding": {
+    "alpha": 5,
+    "aroma": "spicy, earthy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Bitter_Gold": {
+    "alpha": 13,
+    "aroma": "grassy, stone fruit, tropical fruit",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
+  "Blanc": {
+    "alpha": 10.5,
+    "aroma": "flora, citrus, fruity, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "aroma"},
+  "Bobek": {
+    "alpha": 5,
+    "aroma": "floral, pine",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Bramling_Cross": {
     "alpha": 6.5,
-    "price": 10
-  },
-  "Brewer's Gold": {
-    "alpha": 9,
-    "price": 49.95
-  },
+    "aroma": "spicy, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
+  "Bravo": {
+    "alpha": 16.5,
+    "aroma": "floral, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 4,  "type": "bittering"},
+  "Brewer's_Gold_Germany": {
+    "alpha": 5.5,
+    "aroma": "spicy, fruity",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Brewer's_Gold_USA": {
+    "alpha": 9.5,
+    "aroma": "spicy, fruity",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 2,  "type": "bittering"},
   "Bullion": {
     "alpha": 7.5,
-    "price": 10
-  },
+    "aroma": "spicy, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "bittering"},
   "Cascade": {
     "alpha": 7,
-    "price": 39.95
-  },
+    "aroma": "floral, citrus, spicy",
+    "price": 39.95,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Celeia": {
+    "alpha": 4.5,
+    "aroma": "earthy, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "dual"},
   "Centennial": {
     "alpha": 7.8,
-    "price": 49.95
-  },
+    "aroma": "floral, citrus",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
   "Challenger": {
     "alpha": 8.5,
-    "price": 10
-  },
+    "aroma": "fruity, herbal, cedar",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
+  "Chelan": {
+    "alpha": 13,
+    "aroma": "citrus, stone fruit, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "bittering"},
   "Chinook": {
     "alpha": 13,
-    "price": 49.95
-  },
+    "aroma": "citrus, spicy, pine",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
   "Citra": {
     "alpha": 11,
-    "price": 10
-  },
+    "aroma": "citrus, tropical fruit",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "aroma"},
   "Cluster": {
-    "alpha": 6.5,
-    "price": 10
-  },
+    "alpha": 7.5,
+    "aroma": "earthy, floral, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
   "Columbus": {
-    "alpha": 15,
-    "price": 10
-  },
+    "alpha": 4,
+    "aroma": "earthy, citrus, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "bittering"},
   "Comet": {
-    "alpha": 10,
-    "price": 49.95
-  },
+    "alpha": 9,
+    "aroma": "grassy, citrus",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 2,  "type": "bittering"},
   "Crystal": {
-    "alpha": 4.3,
-    "price": 49.95
-  },
-  "Domestic Hallertau": {
-    "alpha": 3.9,
-    "price": 10
-  },
-  "East Kent Goldings": {
+    "alpha": 4.5,
+    "aroma": "earthy, herbal",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Dr_Rudi": {
+    "alpha": 11,
+    "aroma": "pine, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
+  "East_Kent_Golding": {
     "alpha": 5,
-    "price": 10
-  },
+    "aroma": "citrus, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "dual"},
+  "Ekuanot": {
+    "alpha": 14,
+    "aroma": "citrus, tropical fruit, fruity, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "aroma"},
+  "Ella": {
+    "alpha": 14.8,
+    "aroma": "floral, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 4,  "type": "dual"},
   "Eroica": {
     "alpha": 12,
-    "price": 10
-  },
-  "First Gold": {
+    "aroma": "fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "bittering"},
+  "Falconers_Flight®": {
+    "alpha": 10.8,
+    "aroma": "floral, citrus, tropical fruit",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "aroma"},
+  "First_Gold": {
     "alpha": 7.5,
-    "price": 10
-  },
-  "Fuggles": {
+    "aroma": "floral, citrus, stone fruit, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
+  "Fuggle_UK": {
     "alpha": 4.5,
-    "price": 46.95
-  },
+    "aroma": "earthy",
+    "price": 46.95,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Galaxy": {
+    "alpha": 13.8,
+    "aroma": "fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
   "Galena": {
     "alpha": 13,
-    "price": 49.95
-  },
+    "aroma": "citrus, spicy, fruity",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 3,  "type": "bittering"},
   "Glacier": {
     "alpha": 5.5,
-    "price": 10
-  },
-  "Goldings": {
+    "aroma": "fruity, cedar",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "dual"},
+  "Gold": {
+    "alpha": 5,
+    "aroma": "earthy, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Golding_UK": {
+    "alpha": 5,
+    "aroma": "floral, citrus",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Golding_USA": {
     "alpha": 4.5,
-    "price": 10
-  },
-  "Hallertau Mittelfruh": {
+    "aroma": "floral, fruity, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Green_Bullet": {
+    "alpha": 12.5,
+    "aroma": "floral, spicy, fruity, pine",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
+  "Hallertau_Mittelfruh": {
     "alpha": 3.75,
-    "price": 79.95
-  },
-  "Hallertau Hersbrucker": {
-    "alpha": 4,
-    "price": 89.95
-  },
+    "aroma": "floral, citrus, spicy",
+    "price": 79.95,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Hallertau_USA": {
+    "alpha": 5,
+    "aroma": "earthy, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "HBC_431_Experimental": {
+    "alpha": 15,
+    "aroma": "floral, citrus, spicy, tropical fruit, fruity, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 4,  "type": "dual"},
+  "HBC_438_Experimental": {
+    "alpha": 13.7,
+    "aroma": "citrus, stone fruit, tropical fruit, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
+  "HBC_472_Experimental": {
+    "alpha": 10,
+    "aroma": "floral, tropical fruit, cedar",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "HBC_682_Experimental": {
+    "alpha": 19.5,
+    "aroma": "earthy, spicy, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 5,  "type": "bittering"},
+  "Helga": {
+    "alpha": 6,
+    "aroma": "earthy, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "dual"},
   "Herald": {
     "alpha": 12,
-    "price": 10
-  },
+    "aroma": "fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
+  "Herkules": {
+    "alpha": 14.5,
+    "aroma": "citrus, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 4,  "type": "bittering"},
   "Hersbrucker": {
-    "alpha": 4,
-    "price": 10
-  },
+    "alpha": 3,
+    "aroma": "earthy, citrus",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
   "Horizon": {
-    "alpha": 12.5,
-    "price": 10
-  },
-  "Huller Bitterer": {
+    "alpha": 10.5,
+    "aroma": "floral, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
+  "Huell_Melon": {
+    "alpha": 7,
+    "aroma": "fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Huller_Bitterer": {
     "alpha": 5.75,
-    "price": 10
-  },
-  "Kent Goldings": {
-    "alpha": 5,
-    "price": 49.95
-  },
+    "aroma": "dual",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "floral, spicy"},
+  "Kohatu": {
+    "alpha": 6.5,
+    "aroma": "tropical fruit",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
   "Liberty": {
     "alpha": 4,
-    "price": 46.95
-  },
-  "Lublin": {
+    "aroma": "floral, citrus, spicy",
+    "price": 46.95,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Loral®": {
+    "alpha": 11.8,
+    "aroma": "floral, citrus, fruity, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
+  "Lubelska": {
     "alpha": 4.5,
-    "price": 10
-  },
+    "aroma": "spicy, herbal, floral",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
   "Magnum": {
     "alpha": 15,
-    "price": 49.95
-  },
+    "aroma": "spicy, fruity",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 4,  "type": "bittering"},
+  "Mandarina_Bavaria": {
+    "alpha": 8.5,
+    "aroma": "citrus, fruity",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Merkur": {
+    "alpha": 13,
+    "aroma": "tropical fruit, herbal",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
   "Millenium": {
-    "alpha": 15.5,
-    "price": 10
-  },
-  "Mount Hood": {
-    "alpha": 4.8,
-    "price": 46.95
-  },
-  "Mount Rainier": {
-    "alpha": 6.2,
-    "price": 49.95
-  },
+    "alpha": 17,
+    "aroma": "floral, fruity, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 4,  "type": "bittering"},
+  "Mosaic®": {
+    "alpha": 12,
+    "aroma": "earthy, floral, fruity",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 3,  "type": "aroma"},
   "Motueka": {
     "alpha": 7,
-    "price": 10
-  },
-  "Nelson Sauvin": {
+    "aroma": "citrus, tropical fruit",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Mount_Hood": {
+    "alpha": 4.8,
+    "aroma": "spicy, herbal",
+    "price": 46.95,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Mount_Rainier": {
+    "alpha": 6.2,
+    "aroma": "floral, herbal",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
+  "Nelson_Sauvin": {
     "alpha": 12.5,
-    "price": 10
-  },
+    "aroma": "fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
   "Newport": {
-    "alpha": 15.5,
-    "price": 54.95
-  },
+    "alpha": 11,
+    "aroma": "earthy, citrus",
+    "price": 54.95,
+    "quantity": 10,
+    "stars": 3,  "type": "bittering"},
   "Northdown": {
     "alpha": 8.6,
-    "price": 10
-  },
-  "Northern Brewer": {
+    "aroma": "floral, spicy, fruity, pine",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
+  "Northern_Brewer": {
     "alpha": 7.8,
-    "price": 49.95
-  },
+    "aroma": "grassy, pine, herbal, cedar",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
   "Nugget": {
     "alpha": 14,
-    "price": 46.95
-  },
+    "aroma": "earthy, herbal",
+    "price": 46.95,
+    "quantity": 10,
+    "stars": 3,  "type": "bittering"},
   "Olympic": {
     "alpha": 12,
-    "price": 10
-  },
+    "aroma": "spicy, citrus",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "aroma"},
   "Omega": {
     "alpha": 10,
-    "price": 10
-  },
+    "aroma": "fruity, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Opal": {
+    "alpha": 6.5,
+    "aroma": "floral, citrus, spicy, fruity, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
   "Orion": {
     "alpha": 7,
-    "price": 10
-  },
-  "Pacific Gem": {
-    "alpha": 15.4,
-    "price": 10
-  },
-  "Perle": {
-    "alpha": 8.2,
-    "price": 49.95
-  },
+    "aroma": "floral, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
+  "Pacific_Gem": {
+    "alpha": 14,
+    "aroma": "earthy, floral, spicy, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "bittering"},
+  "Pacific_Jade": {
+    "alpha": 13,
+    "aroma": "citrus, spicy, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
+  "Pacifica": {
+    "alpha": 5.5,
+    "aroma": "floral, citrus",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Palisade®": {
+    "alpha": 8,
+    "aroma": "earthy, floral, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Perle_Germany": {
+    "alpha": 6.5,
+    "aroma": "floral, spicy, fruity, herbal",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Perle_USA": {
+    "alpha": 7.5,
+    "aroma": "floral, spicy",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
   "Phoenix": {
     "alpha": 10,
-    "price": 10
-  },
+    "aroma": "floral, stone",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
+  "Pilgrim": {
+    "alpha": 11,
+    "aroma": "fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
   "Pioneer": {
-    "alpha": 9,
-    "price": 10
-  },
-  "Pride of RingWood": {
     "alpha": 10,
-    "price": 49.95
-  },
+    "aroma": "citrus, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
+  "Polaris": {
+    "alpha": 20.5,
+    "aroma": "tropical fruit, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 5,  "type": "dual"},
+  "Premiant": {
+    "alpha": 8.5,
+    "aroma": "mild",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
+  "Pride_of_RingWood": {
+    "alpha": 9.5,
+    "aroma": "herbal",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 2,  "type": "bittering"},
   "Progress": {
     "alpha": 6.25,
-    "price": 10
-  },
+    "aroma": "earthy, grassy, fruity, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
+  "Rakau": {
+    "alpha": 10.5,
+    "aroma": "stone fruit, fruity, pine",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
   "Record": {
     "alpha": 6.5,
-    "price": 10
-  },
+    "aroma": "fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Riwaka": {
+    "alpha": 5.5,
+    "aroma": "citrus, tropical fruit",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
   "Saaz": {
     "alpha": 3.5,
-    "price": 89.95
-  },
+    "aroma": "floral, citrus, spicy, herbal",
+    "price": 89.95,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
   "Santiam": {
-    "alpha": 6.5,
-    "price": 10
-  },
+    "alpha": 7,
+    "aroma": "floral, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Saphir": {
+    "alpha": 3,
+    "aroma": "flora, citrus, spicy, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
   "Satus": {
     "alpha": 13,
-    "price": 10
-  },
-  "Simcoe": {
-    "alpha": 12.7,
-    "price": 10
-  },
-  "Sorachi Ace": {
-    "alpha": 11.1,
-    "price": 69.95
-  },
+    "aroma": "citrus",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "bittering"},
+  "Savinjski_Golding": {
+    "alpha": 5,
+    "aroma": "earthy, floral, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Select": {
+    "alpha": 4,
+    "aroma": "grassy, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "aroma"},
+  "Simcoe®": {
+    "alpha": 13,
+    "aroma": "earthy, citrus, pine",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
+  "Smaragd": {
+    "alpha": 5,
+    "aroma": "floral, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "dual"},
+  "Sorachi_Ace": {
+    "alpha": 13,
+    "aroma": "citrus, herbal",
+    "price": 69.95,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
+  "Southern_Cross": {
+    "alpha": 12.5,
+    "aroma": "citrus, spicy, tropical fruit, pine",
+    "price": 69.95,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
+  "Sovereign": {
+    "alpha": 5.5,
+    "aroma": "fruity",
+    "price": 69.95,
+    "quantity": 10,
+    "stars": 1,  "type": "dual"},
   "Spalt": {
-    "alpha": 4.5,
-    "price": 10
-  },
+    "alpha": 4,
+    "aroma": "earthy, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
   "Sterling": {
-    "alpha": 8.7,
-    "price": 49.95
-  },
+    "alpha": 7,
+    "aroma": "floral, citrus, spicy, herbal",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
   "Sticklebract": {
     "alpha": 11.5,
-    "price": 10
-  },
+    "aroma": "citrus, pine",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
   "Strisselspalt": {
-    "alpha": 3.5,
-    "price": 10
-  },
-  "Styrian Goldings": {
+    "alpha": 2,
+    "aroma": "earthy, grassy, citrus, spicy, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Styrian_Golding": {
     "alpha": 5.5,
-    "price": 10
-  },
-  "Super Alpha": {
-    "alpha": 13,
-    "price": 10
-  },
-  "Super Styrians": {
-    "alpha": 9,
-    "price": 10
-  },
+    "aroma": "floral, citrus, stone fruit, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "dual"},
+  "Summer": {
+    "alpha": 6,
+    "aroma": "stone fruit, tropical fruit, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
   "Summit": {
-    "alpha": 18.5,
-    "price": 10
-  },
+    "alpha": 16,
+    "aroma": "citrus, spicy, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 4,  "type": "bittering"},
+  "Super_Alpha": {
+    "alpha": 13,
+    "aroma": "floral, spicy, fruity, pine",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
+  "Super_Pride": {
+    "alpha": 14,
+    "aroma": "pine",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "bittering"},
+  "Sussex": {
+    "alpha": 5,
+    "aroma": "earthy, grassy, citrus, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Sylva": {
+    "alpha": 6.5,
+    "aroma": "earthy, floral, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Tahoma": {
+    "alpha": 7,
+    "aroma": "floral, citrus, pine, cedar",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
   "Talisman": {
     "alpha": 8,
-    "price": 10
-  },
+    "aroma": "fruity, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
   "Target": {
     "alpha": 11.5,
-    "price": 10
-  },
-  "Tettnanger": {
+    "aroma": "citrus, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 3,  "type": "dual"},
+  "Tettnanger_Germany": {
     "alpha": 4.5,
-    "price": 69.95
-  },
-  "Tomahawk": {
-    "alpha": 15,
-    "price": 10
-  },
-  "Ultra": {
-    "alpha": 4.5,
-    "price": 10
-  },
-  "Vanguard": {
+    "aroma": "spicy, herbal",
+    "price": 69.95,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Tettnanger_USA": {
     "alpha": 5,
-    "price": 10
-  },
-  "Warrior": {
+    "aroma": "earthy, herbal",
+    "price": 69.95,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Tomahawk®": {
     "alpha": 16,
-    "price": 10
-  },
-  "Whitbread Golding": {
-    "alpha": 6,
-    "price": 10
-  },
-  "Willamette": {
-    "alpha": 4.5,
-    "price": 49.95
-  },
-  "Wye Target": {
+    "aroma": "citrus, spicy, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 4,  "type": "bittering"},
+  "Tradition": {
+    "alpha": 5.5,
+    "aroma": "floral, fruity, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Triplepearl": {
     "alpha": 10,
-    "price": 10
-  },
-  "Yamhill Goldings": {
-    "alpha": 4,
-    "price": 10
-  },
-  "Yakima Cluster": {
+    "aroma": "citrus, spicy, tropical fruit, pine",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Triskel": {
+    "alpha": 8.5,
+    "aroma": "floral, citrus, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Ultra": {
+    "alpha": 9.5,
+    "aroma": "floral, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "aroma"},
+  "Vanguard": {
+    "alpha": 5.5,
+    "aroma": "cedar",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Wai-iti": {
+    "alpha": 3,
+    "aroma": "citrus, stone fruit, spicy, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Waimea": {
+    "alpha": 17.5,
+    "aroma": "citrus, pine",
+    "price": 10,
+    "quantity": 10,
+    "stars": 4,  "type": "dual"},
+  "Wakatu": {
+    "alpha": 7.5,
+    "aroma": "floral, citrus",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
+  "Warrior®": {
+    "alpha": 16.5,
+    "aroma": "pine, herbal",
+    "price": 10,
+    "quantity": 10,
+    "stars": 4,  "type": "bittering"},
+  "Whitbread_Golding": {
+    "alpha": 6.5,
+    "aroma": "earthy, floral, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "earthy, floral, fruity"},
+  "Willamette": {
+    "alpha": 5.5,
+    "aroma": "floral, fruity, herbal",
+    "price": 49.95,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
+  "Yakima_Cluster": {
     "alpha": 7,
-    "price": 10
-  },
+    "aroma": "earthy, floral, fruity",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "bittering"},
+  "Yamhill_Golding": {
+    "alpha": 4,
+    "aroma": "fruity, spicy",
+    "price": 10,
+    "quantity": 10,
+    "stars": 1,  "type": "aroma"},
   "Yeoman": {
     "alpha": 7.25,
-    "price": 10
-  },
+    "aroma": "citrus",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "dual"},
   "Zenith": {
     "alpha": 9,
-    "price": 10
-  },
+    "aroma": "earthy, citrus",
+    "price": 10,
+    "quantity": 10,
+    "stars": 2,  "type": "bittering"},
   "Zeus": {
     "alpha": 16,
-    "price": 100
-  }
+    "aroma": "spicy, herbal",
+    "price": 100,
+    "quantity": 10,
+    "stars": 4,  "type": "bittering"},
+  "Zythos®": {
+    "alpha": 11,
+    "aroma": "citrus, tropical fruit",
+    "price": 100,
+    "quantity": 10,
+    "stars": 3,  "type": "aroma"}
 }
