@@ -2,6 +2,7 @@ package com.rafacost3d.bbs_mod.items;
 
 import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
+import com.rafacost3d.bbs_mod.init.BBSConstants;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.Item;
 import net.minecraft.block.Block;
@@ -95,9 +96,10 @@ public class WortBucket extends ItemBucket {
         if ( stack.hasTagCompound()
                 && stack.getTagCompound().hasKey("wortType"))
         {
-            tooltip.add(I18n.format("item." + stack.getTagCompound().getString("wortType") + "." + stack.getTagCompound().getString("hopType") + ".name"));
+            tooltip.add("Hops: " + I18n.format("item." + stack.getTagCompound().getString("wortType") + "." + stack.getTagCompound().getString("hopType") + ".name"));
             //tooltip.add("Type: " + stack.getTagCompound().getString("hopType"));
-            tooltip.add("Hops Quantity: " + stack.getTagCompound().getString("wortQuant"));
+            tooltip.add("Hops Quantity: " + String.format("%.2f",stack.getTagCompound().getDouble("wortQuant")) + BBSConstants.UNIT_WEIGHT);
+            tooltip.add("Malt Quantity: " + stack.getTagCompound().getInteger("maltQuant"));
             tooltip.add("Time Boiled: " + stack.getTagCompound().getInteger("timeBoiling") + " min");
         }
         else

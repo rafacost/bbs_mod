@@ -38,12 +38,13 @@ If your site is at the list below, thank you so much for your tutorials/code rep
 - [x] Created AluminiumPotBlock, implemented first Recipe Wort for Weizein Beer.
 - [x] Created WortBucket, this Item store the information about the Brewing Process.
 - [x] Created Rhizomes, Hops and Pellets for 137 types of Hops.
-- [ ] Create FermenterBlock
+- [x] Created FermenterBlock
+- [x] Added 7 types of Liquid Malt Extract
+- [x] Implemented All Beer Statistics Variables, SRM, ABV, IBU, OG, FG, and etc...
+- [x] Created 10 Buckets with Dynamic SRM Colors, 30 more to go...
 - [ ] Create AirlockItem
-- [ ] Create RackingCaneItem
 - [ ] Create BottlingBucketBlock
-- [ ] Create BottleFillerItem
-- [ ] Create BottleBrushItem
 - [ ] Create BottlesItem
-- [ ] Create BottleCapsItem
-- [ ] Create BottleCapperItem
+- [ ] Implement Recipes for Items and Blocks
+- [ ] Create Market System
+- [ ] Release Mod.

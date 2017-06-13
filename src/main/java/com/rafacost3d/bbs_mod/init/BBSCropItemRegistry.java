@@ -16,7 +16,6 @@ import java.util.List;
 public class BBSCropItemRegistry {
     public static final HashMap<String, Item> items = new HashMap<String, Item>();
 
-
     public static boolean initialized = false;
 
     public static void registerItems() {

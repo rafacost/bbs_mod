@@ -33,6 +33,7 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
     private boolean hasBucket = false;
     private String hopsType = "";
     private int timeBoil=0;
+    private double lovibond=0.0;
 
     public int getTimeBoil() {
         return timeBoil;
@@ -58,10 +59,30 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
     }
     public Boolean getMalt() {
         ItemStack itemStackinv = inventory.getStackInSlot(3);
-        if(itemStackinv.getItem() == BBSItems.lme) {
+        if(itemStackinv.getItem() == BBSItems.lme_pilsen) {
             hasMalt=true;
+            lovibond=2.0;
+        } else if(itemStackinv.getItem() == BBSItems.lme_extralight) {
+            hasMalt=true;
+            lovibond=2.5;
+        } else if(itemStackinv.getItem() == BBSItems.lme_wheat) {
+            hasMalt=true;
+            lovibond=3.0;
+        } else if(itemStackinv.getItem() == BBSItems.lme_light) {
+            hasMalt=true;
+            lovibond=4.0;
+        } else if(itemStackinv.getItem() == BBSItems.lme_munich) {
+            hasMalt=true;
+            lovibond=8.0;
+        } else if(itemStackinv.getItem() == BBSItems.lme_amber) {
+            hasMalt=true;
+            lovibond=10.0;
+        } else if(itemStackinv.getItem() == BBSItems.lme_dark) {
+            hasMalt=true;
+            lovibond=30.0;
         } else {
             hasMalt=false;
+            lovibond=0.0;
         }
         return hasMalt;
     }
@@ -118,6 +139,7 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
         compound.setBoolean("bucket", hasBucket);
         compound.setDouble("temperature", temp);
         compound.setInteger("seconds", count);
+        compound.setDouble("lovibond", lovibond);
         return super.writeToNBT(compound);
     }
 
@@ -132,6 +154,7 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
         hasBucket = compound.getBoolean("bucket");
         temp = compound.getInteger("temperature");
         count = compound.getInteger("seconds");
+        lovibond = compound.getDouble("lovibond");
         super.readFromNBT(compound);
     }
 
@@ -191,15 +214,15 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
                             if(nameHop.length>=2 && nameHop[2].equals("hop") && hasHops) {
                                 Double quantD=0.0;
                                 quantD = inventory.getStackInSlot(2).getCount() * BBSConstants.HOPS_WEIGHT;
-                                String quant = String.format("%.2f", quantD) + BBSConstants.UNIT_WEIGHT;
-                                resultBucket.getTagCompound().setString("wortQuant", quant);
+                                //String quant = String.format("%.2f", quantD) + BBSConstants.UNIT_WEIGHT;
+                                resultBucket.getTagCompound().setDouble("wortQuant", quantD);
                                 resultBucket.getTagCompound().setString("hopType", nameHop[2]);
                                 inventory.getStackInSlot(2).shrink(64);
                             } else if(nameHop.length>=2 && nameHop[2].equals("pellet") && hasHops) {
                                 Double quantD=0.0;
                                 quantD = inventory.getStackInSlot(2).getCount() * BBSConstants.PELLETS_WEIGHT;
-                                String quant = String.format("%.2f", quantD) + BBSConstants.UNIT_WEIGHT;
-                                resultBucket.getTagCompound().setString("wortQuant", quant);
+                                //String quant = String.format("%.2f", quantD) + BBSConstants.UNIT_WEIGHT;
+                                resultBucket.getTagCompound().setDouble("wortQuant", quantD);
                                 resultBucket.getTagCompound().setString("hopType", nameHop[2]);
                                 inventory.getStackInSlot(2).shrink(32);
                             } else {
@@ -207,7 +230,9 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
                                 hopsType="";
                             }
 
-                            inventory.getStackInSlot(3).shrink(1);
+                            resultBucket.getTagCompound().setInteger("maltQuant", inventory.getStackInSlot(3).getCount());
+                            resultBucket.getTagCompound().setDouble("lovibond", lovibond);
+                            inventory.getStackInSlot(3).shrink(5);
                             inventory.getStackInSlot(0).shrink(1);
                             resultBucket.getTagCompound().setInteger("timeBoiling", count);
                             inventory.setStackInSlot(4,resultBucket);

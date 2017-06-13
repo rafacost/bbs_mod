@@ -36,7 +36,7 @@ public class GuiPot extends GuiContainer {
         fontRendererObj.drawString(BBSConstants.WATER_BOILING + " " + BBSConstants.DEGREE, 138, 73, 0x404040);
         fontRendererObj.drawString("Water", 27, 21, 0x404040);
         fontRendererObj.drawString("Hops", 27, 40, 0x404040);
-        fontRendererObj.drawString("Grains", 27, 59, 0x404040);
+        fontRendererObj.drawString("Malts", 27, 59, 0x404040);
         fontRendererObj.drawString("Bucket", 74, 53, 0x404040);
     }
 }

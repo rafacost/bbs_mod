@@ -32,10 +32,10 @@ public class GuiFermentor extends GuiContainer {
         String name = I18n.format(BBSBlocks.fermentorBucket.getUnlocalizedName() + ".name");
         fontRendererObj.drawString(name, xSize / 2 - fontRendererObj.getStringWidth(name) / 2, 6, 0x404040);
         fontRendererObj.drawString(playerInv.getDisplayName().getUnformattedText(), 8, ySize - 94, 0x404040);
-        fontRendererObj.drawString("1 w", 138, 73, 0x404040);
+        fontRendererObj.drawString(BBSConstants.ROOM_TEMP + " " + BBSConstants.DEGREE, 138, 73, 0x404040);
         fontRendererObj.drawString("Water", 27, 21, 0x404040);
         fontRendererObj.drawString("Yeast", 27, 40, 0x404040);
-        fontRendererObj.drawString("Flavor", 27, 59, 0x404040);
+        fontRendererObj.drawString("Extras", 27, 59, 0x404040);
         fontRendererObj.drawString("Wort", 74, 53, 0x404040);
     }
 }
