@@ -15,6 +15,8 @@ If your site is at the list below, thank you so much for your tutorials/code rep
 - Forestry - https://github.com/ForestryMC/ForestryMC
 - MikeLydeamore - https://github.com/MikeLydeamore/ExNihiloAdscensio
 - MatrexsVigil - https://github.com/MatrexsVigil/harvestcraft
+- Pahimar - https://github.com/pahimar/
+
 
 **To-Do List**
 - [x] Implemented Basic HopSeedsItem
@@ -42,6 +44,7 @@ If your site is at the list below, thank you so much for your tutorials/code rep
 - [x] Added 7 types of Liquid Malt Extract
 - [x] Implemented All Beer Statistics Variables, SRM, ABV, IBU, OG, FG, and etc...
 - [x] Created 10 Buckets with Dynamic SRM Colors, 30 more to go...
+- [x] Implemented Price and Quantity for Hops, Pellets and Rhizomes connection to Firebase Database
 - [ ] Create AirlockItem
 - [ ] Create BottlingBucketBlock
 - [ ] Create BottlesItem

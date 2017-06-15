@@ -4,6 +4,7 @@ package com.rafacost3d.bbs_mod.blocks.machines.pelleter;
 import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.blocks.BasicBlock;
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
+import com.rafacost3d.bbs_mod.init.BBSGetMarketDataFireBase;
 import com.rafacost3d.bbs_mod.init.BBSGuiHandler;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;

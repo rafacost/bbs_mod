@@ -5,13 +5,24 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonStreamParser;
 import com.rafacost3d.bbs_mod.BBSMod;
-
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.HashMap;
+
 
 public class BBSGetMarketDataFireBase extends Thread {
 
     public static BBSGetMarketDataFireBase activeThread;
+    public static HashMap<String, Double> priceList = new HashMap<String, Double>();
+    public static HashMap<String, Integer> quantList = new HashMap<String, Integer>();
+
+    public static HashMap<String, Double> getPriceList() {
+        return priceList;
+    }
+
+    public static HashMap<String, Integer> getQuantList() {
+        return quantList;
+    }
 
     public BBSGetMarketDataFireBase(){
         setName("Beer Brewing Simulator Market Data");
@@ -30,12 +41,19 @@ public class BBSGetMarketDataFireBase extends Thread {
             while(parser.hasNext()) {
                 try{
                     JsonElement je = parser.next();
-                    BBSMarketData market = gson.fromJson(je, BBSMarketData.class);
+                    BBSMarketData[] market = gson.fromJson(je, BBSMarketData[].class);
                     if(market!=null) {
-                        //Minecraft.getMinecraft().player.sendChatMessage(market.beerType);
-                        BBSMod.logger.info("This week the Market wants to buy " + market.beerType + ": " + market.quantity.toString() + " bottles @ MaxPrice:" + market.maxPrice.toString());
+                        for(int i=0; i < market.length; i++ ) {
+                            try {
+                                BBSMod.logger.info("[BBSMod Market Info]: Price and Quantity for " + market[i].getItemKey() + " were updated.");
+                                priceList.put(market[i].getItemKey(), market[i].getUnitPrice());
+                                quantList.put(market[i].getItemKey(), market[i].getQuantity());
+                            }
+                            catch (Exception e) {
+                                //e.printStackTrace();
+                            }
+                        }
                     }
-
                 }catch(Exception exParse) {
                     BBSMod.logger.warn("Error on parsing Today's Market Data");
                     exParse.printStackTrace();

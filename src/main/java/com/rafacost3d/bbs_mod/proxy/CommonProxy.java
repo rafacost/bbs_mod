@@ -25,10 +25,10 @@ public abstract class CommonProxy {
         BBSCropRegistry.registerCrops();
         BBSCropBlockRegistry.initBlockRegistry();
         BBSCropItemRegistry.registerItems();
+        new BBSGetMarketDataFireBase();
     }
     public void init(FMLInitializationEvent e) {
         BBSRecipes.init();
-
     }
     public void postInit(FMLPostInitializationEvent e) {
         if (config.hasChanged()) {

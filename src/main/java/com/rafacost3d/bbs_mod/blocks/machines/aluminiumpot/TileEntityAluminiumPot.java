@@ -224,7 +224,7 @@ public class TileEntityAluminiumPot extends TileEntity implements ITickable {
                                 //String quant = String.format("%.2f", quantD) + BBSConstants.UNIT_WEIGHT;
                                 resultBucket.getTagCompound().setDouble("wortQuant", quantD);
                                 resultBucket.getTagCompound().setString("hopType", nameHop[2]);
-                                inventory.getStackInSlot(2).shrink(32);
+                                inventory.getStackInSlot(2).shrink(64);
                             } else {
                                 hasHops=false;
                                 hopsType="";
