@@ -1,0 +1,16 @@
+[
+{
+  "modid": "bbs_mod",
+  "name": "Beer Brewery Simulator",
+  "description": "Base Mod for Beer Brewery Simulator Modpack.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/rafacost/bbs_mod",
+  "updateUrl": "https://github.com/rafacost/bbs_mod/version.json",
+  "authorList": ["rafacost3d"],
+  "credits": "All rights reserved for rafacost3d",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "bbs_mod:yeast",
+    "count": 8
+  },
+  "pattern": [
+    "iii",
+    "iri",
+    "iii"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "i": {
+      "item": "minecraft:wheat"
+    },
+    "r": {
+      "item": "minecraft:water_bucket"
+    }
+  }
+}

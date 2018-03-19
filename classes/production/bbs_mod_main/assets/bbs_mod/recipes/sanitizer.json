@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "bbs_mod:sanitizer",
+    "count": 8
+  },
+  "pattern": [
+    "iii",
+    "iri",
+    "iii"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "i": {
+      "item": "minecraft:glass_pane"
+    },
+    "r": {
+      "item": "minecraft:water_bucket"
+    }
+  }
+}

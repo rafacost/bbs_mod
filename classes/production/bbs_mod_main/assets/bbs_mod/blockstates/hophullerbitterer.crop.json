@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "age=0": { "model": "bbs_mod:hops_stage0" },
+    "age=1": { "model": "bbs_mod:hops_stage1" },
+    "age=2": { "model": "bbs_mod:hops_stage2" },
+    "age=3": { "model": "bbs_mod:hops_stage3" },
+    "age=4": { "model": "bbs_mod:hops_stage4" },
+    "age=5": { "model": "bbs_mod:hops_stage5" },
+    "age=6": { "model": "bbs_mod:hops_stage6" },
+    "age=7": { "model": "bbs_mod:hops_stage7" }
+  }
+}

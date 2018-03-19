@@ -1,0 +1,18 @@
+{
+  "result": {
+    "item": "bbs_mod:wortkeg",
+    "count": 1
+  },
+  "pattern": [
+    "ir"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "i": {
+      "item": "bbs_mod:hotwortkeg"
+    },
+    "r": {
+      "item": "minecraft:ice"
+    }
+  }
+}
