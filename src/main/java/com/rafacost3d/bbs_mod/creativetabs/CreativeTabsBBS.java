@@ -1,8 +1,9 @@
 package com.rafacost3d.bbs_mod.creativetabs;
 
-import com.rafacost3d.bbs_mod.*;
-import com.rafacost3d.bbs_mod.fluids.FluidBeer;
-import com.rafacost3d.bbs_mod.init.*;
+import com.rafacost3d.bbs_mod.init.BlocksInit;
+import com.rafacost3d.bbs_mod.init.ItemInit;
+import com.rafacost3d.bbs_mod.objects.crops.CropRegistry;
+import com.rafacost3d.bbs_mod.util.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -12,46 +13,38 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class CreativeTabsBBS {
 
-    public static final CreativeTabs BBSTabsHops = new CreativeTabs(BBSMod.MODID + ".hops") {
+    public static final CreativeTabs BBSTabsHops = new CreativeTabs(Reference.MODID + ".hops") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public ItemStack getTabIconItem() { return CropRegistry.getFood(CropRegistry.HORIZON).getDefaultInstance(); }
+    };
+
+    public static final CreativeTabs BBSTabsPellets = new CreativeTabs(Reference.MODID + ".pellets") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public ItemStack getTabIconItem() { return CropRegistry.getPellet(CropRegistry.HORIZON).getDefaultInstance(); }
+    };
+
+    public static final CreativeTabs BBSTabsSeeds = new CreativeTabs(Reference.MODID + ".seeds") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public ItemStack getTabIconItem() { return CropRegistry.getFood(CropRegistry.HORIZON).getDefaultInstance(); }
+    };
+
+    public static final CreativeTabs BBSTabsMachines = new CreativeTabs(Reference.MODID + ".machines") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public ItemStack getTabIconItem() { return Item.getItemFromBlock(BlocksInit.microBrewerBlock).getDefaultInstance(); }
+    };
+
+    public static final CreativeTabs BBSTabsItems = new CreativeTabs(Reference.MODID + ".item") {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() {
-            return BBSCropRegistry.getFood(BBSCropRegistry.HORIZON).getDefaultInstance();
+            return ItemInit.SANITIZER.getDefaultInstance();
         }
     };
-
-    public static final CreativeTabs BBSTabsPellets = new CreativeTabs(BBSMod.MODID + ".pellets") {
-        @Override
-        @SideOnly(Side.CLIENT)
-        public ItemStack getTabIconItem() {
-            return BBSCropRegistry.getPellet(BBSCropRegistry.HORIZON).getDefaultInstance();
-        }
-    };
-
-    public static final CreativeTabs BBSTabsSeeds = new CreativeTabs(BBSMod.MODID + ".seeds") {
-        @Override
-        @SideOnly(Side.CLIENT)
-        public ItemStack getTabIconItem() {
-            return BBSCropRegistry.getSeed(BBSCropRegistry.HORIZON).getDefaultInstance();
-        }
-    };
-
-    public static final CreativeTabs BBSTabsMachines = new CreativeTabs(BBSMod.MODID + ".machines") {
-        @Override
-        @SideOnly(Side.CLIENT)
-        public ItemStack getTabIconItem() {
-            return Item.getItemFromBlock(BBSBlocks.pelleterBlock).getDefaultInstance();
-        }
-    };
-
-    public static final CreativeTabs BBSTabsItems = new CreativeTabs(BBSMod.MODID + ".item") {
-        @Override
-        @SideOnly(Side.CLIENT)
-        public ItemStack getTabIconItem() {
-            return BBSItems.sanitizer.getDefaultInstance();
-        }
-    };
-
+/*
     public static final CreativeTabs BBSTabsFluids = new CreativeTabs(BBSMod.MODID + ".fluid") {
         @Override
         @SideOnly(Side.CLIENT)
@@ -59,5 +52,5 @@ public class CreativeTabsBBS {
             return Item.getItemFromBlock(FluidBeer.instance.getBlock()).getDefaultInstance();
         }
     };
-
+*/
 }

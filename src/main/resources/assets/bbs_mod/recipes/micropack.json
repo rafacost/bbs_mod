@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "bbs_mod:micropack",
+    "count": 4
+  },
+  "pattern": [
+    "iri",
+    "iii"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "i": {
+      "item": "minecraft:glass_pane"
+    },
+    "r": {
+      "item": "bbs_mod:admiral.hop"
+    }
+  }
+}

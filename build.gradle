@@ -1,61 +1,31 @@
-def mainVersion = "0.1"
-def buildNumber = "52"
-
-
 buildscript {
+
+
     repositories {
         jcenter()
         maven { url = "http://files.minecraftforge.net/maven" }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
+
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
-repositories {
-    maven { // TOP
-        name 'tterrag maven'
-        url "http://maven.tterrag.com/"
-    }
-    maven { // The repo from which to get waila
-        name "Mobius Repo"
-        url "http://mobiusstrip.eu/maven"
-    }
-    maven { // JEI
-        url "http://dvs1.progwml6.com/files/maven"
-    }
-}
-
-version = "${mainVersion}.${buildNumber}"
+version = "1.12.2-" + MAJOR + "." + MINOR + "." + BN
 group = "com.rafacost3d.bbs_mod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "bbs_mod"
 
-sourceCompatibility = targetCompatibility = "1.7" // Need this here so eclipse task generates correctly.
+sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {
-    sourceCompatibility = targetCompatibility = "1.7"
+    sourceCompatibility = targetCompatibility = '1.8'
 }
 
 minecraft {
-    version = "1.11.2-latest"
+    version = "1.12.2-14.23.2.2611"
     runDir = "run"
-
-    replace '${version}', project.version
-    
-    // the mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   snapshot are built nightly.
-    // stable_#            stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "snapshot_20161220"
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-}
-
-dependencies {
-    deobfCompile "mcp.mobius.waila:Waila:1.7.1_1.11.2"
-    deobfCompile "mezz.jei:jei_1.11.2:4.3.5.277"
-    deobfCompile "mcjty.theoneprobe:TheOneProbe:1.1x-1.4.6-56"
+    mappings = "snapshot_20171003"
 }
 
 processResources {
@@ -74,5 +44,48 @@ processResources {
     // copy everything else except the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+    }
+}
+
+task increaseVersion {
+    group 'VersionControl'
+    description 'My Versioning System'
+
+    doLast {
+        Properties props = new Properties()
+        File propsFile = new File('gradle.properties')
+        props.load(propsFile.newDataInputStream())
+        Integer nextbuildnum = (((props.getProperty('BN')) as Integer) + 1)
+        props.setProperty('BN', nextbuildnum.toString())
+        props.store(propsFile.newWriter(), null)
+        props.load(propsFile.newDataInputStream())
+    }
+}
+task newminor {
+    group 'VersionControl'
+    description 'My Versioning System'
+
+    doLast {
+        Properties props2 = new Properties()
+        File props2File = new File('gradle.properties')
+        props2.load(props2File.newDataInputStream())
+        Integer nextminornum = (((props2.getProperty('MINOR')) as Integer) + 1)
+        props2.setProperty('MINOR', nextminornum.toString())
+        props2.store(props2File.newWriter(), null)
+        props2.load(props2File.newDataInputStream())
+    }
+}
+task newmajor {
+    group 'VersionControl'
+    description 'My Versioning System'
+
+    doLast {
+        Properties props3 = new Properties()
+        File props3File = new File('gradle.properties')
+        props3.load(props3File.newDataInputStream())
+        Integer nextmajornum = (((props3.getProperty('MAJOR')) as Integer) + 1)
+        props3.setProperty('MAJOR', nextmajornum.toString())
+        props3.store(props3File.newWriter(), null)
+        props3.load(props3File.newDataInputStream())
     }
 }

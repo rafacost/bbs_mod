@@ -1,0 +1,26 @@
+{
+  "forge_marker": 1,
+  "defaults":
+      {
+        "textures":
+        {
+          "all": "bbs_mod:block/microbrewer"
+        },
+        "custom": { "flip-v": true },
+        "model": "bbs_mod:microbrewer_empty",
+        "uvlock": false
+      },
+  "variants":
+  {
+    "facing=east,working=false": {"model": "bbs_mod:microbrewer_empty", "y": 270},
+    "facing=east,working=true": {"model": "bbs_mod:microbrewer", "y": 270},
+    "facing=north,working=false": {"model": "bbs_mod:microbrewer_empty", "y": 180},
+    "facing=north,working=true": {"model": "bbs_mod:microbrewer", "y": 180},
+    "facing=south,working=false": {"model": "bbs_mod:microbrewer_empty"},
+    "facing=south,working=true": {"model": "bbs_mod:microbrewer"},
+    "facing=west,working=false": {"model": "bbs_mod:microbrewer_empty", "y": 90},
+    "facing=west,working=true": {"model": "bbs_mod:microbrewer", "y": 90},
+    "inventory": {"model": "bbs_mod:microbrewer"},
+    "normal": {"model": "bbs_mod:microbrewer_empty"}
+  }
+}
