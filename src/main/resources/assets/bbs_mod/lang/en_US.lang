@@ -28,6 +28,7 @@ item.bbs_mod.hotwortkeg.name=Hot Wort Keg
 item.bbs_mod.wortkeg.name=Wort Keg
 item.bbs_mod.beerkeg.name=Beer Keg
 item.bbs_mod.keg.name=Empty Keg
+item.bbs_mod.grafter.name=Grafter
 
 tile.bbs_mod.microbrewer.name=Micro Brewer
 tile.bbs_mod.micropack.name=Micro Pack
@@ -41,6 +42,17 @@ item.bbs_mod.worttype.nullWort.name=Wort Bucket
 tooltip.bbs_mod.worttype.nullWort.desc=No Hops
 item.bbs_mod.beertype.nullBeer.name=Beer Bucket
 tooltip.bbs_mod.beertype.nullBeer.desc=Unclassified Beer
+
+item.malt.hop.name=Malt
+item.malt.rhizome.name=Malt Seeds
+item.maltpilsen.hop.name=Pilsen Malt
+item.maltpilsen.rhizome.name=Pilsen Malt Seeds
+item.maltmunich.hop.name=Munich Malt
+item.maltmunich.rhizome.name=Munich Malt Seeds
+item.maltamber.hop.name=Amber Malt
+item.maltamber.rhizome.name=Amber Malt Seeds
+item.maltdark.hop.name=Dark Malt
+item.maltdark.rhizome.name=Dark Malt Seeds
 
 item.admiral.hop.name=Admiral
 item.ahtanum.hop.name=Ahtanum

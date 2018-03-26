@@ -1,11 +1,18 @@
 package com.rafacost3d.bbs_mod.objects.crops;
 
 import com.rafacost3d.bbs_mod.creativetabs.CreativeTabsBBS;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,8 +37,8 @@ public class ItemRegistry {
         String name[] = registryName.split("[.]");
         if (name[1].equals("rhizome")) {
             item.setCreativeTab(CreativeTabsBBS.BBSTabsSeeds);
-        } else if (name[1].equals("pellet")) {
-            item.setCreativeTab(CreativeTabsBBS.BBSTabsPellets);
+        //} else if (name[1].equals("pellet")) {
+        //    item.setCreativeTab(CreativeTabsBBS.BBSTabsPellets);
         } else {
             item.setCreativeTab(CreativeTabsBBS.BBSTabsHops);
         }
@@ -46,4 +53,5 @@ public class ItemRegistry {
         reg.registerAll(itemlist.toArray(new Item[0]));
         //GeneralOreRegistry.initOreRegistry();
     }
+
 }

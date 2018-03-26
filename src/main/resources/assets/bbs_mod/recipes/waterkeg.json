@@ -4,7 +4,8 @@
     "count": 1
   },
   "pattern": [
-    "ir"
+    "irr",
+    "rrr"
   ],
   "type": "forge:ore_shaped",
   "key": {

@@ -1,7 +1,6 @@
 package com.rafacost3d.bbs_mod.objects.crops;
 
 import com.rafacost3d.bbs_mod.util.Reference;
-
 import java.util.HashMap;
 
 public class ItemModelList {
@@ -10,11 +9,6 @@ public class ItemModelList {
     private final String rootDirectory;
 
     public ItemModelList(String resourceRoot) {
-        /*
-        if (resourceRoot.charAt(resourceRoot.length() - 1) != '/') {
-            throw new RuntimeException("Resource root path must be relative! (end with '/')");
-        }
-*/
         this.rootDirectory = getResourcePath(resourceRoot);
     }
 

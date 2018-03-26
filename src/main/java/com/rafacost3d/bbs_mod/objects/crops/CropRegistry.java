@@ -1,5 +1,6 @@
 package com.rafacost3d.bbs_mod.objects.crops;
 
+
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSeedFood;
@@ -9,11 +10,18 @@ import net.minecraftforge.fml.common.FMLLog;
 import java.text.MessageFormat;
 import java.util.HashMap;
 
+
 public class CropRegistry {
     public static final String CROP_BLOCK_NAME = "hop{0}.crop";
     public static final String ITEM_NAME = "{0}.hop";
     public static final String SEED_ITEM_NAME = "{0}.rhizome";
-    public static final String PELLET_ITEM_NAME = "{0}.pellet";
+    //public static final String PELLET_ITEM_NAME = "{0}.pellet";
+
+    public static final String MALT = "malt";
+    public static final String MALT_PILSEN = "maltpilsen";
+    public static final String MALT_MUNICH = "maltmunich";
+    public static final String MALT_AMBER = "maltamber";
+    public static final String MALT_DARK = "maltdark";
 
     public static final String ADMIRAL = "admiral";
     public static final String AHTANUM = "ahtanum";
@@ -155,6 +163,11 @@ public class CropRegistry {
 
 
     public static final String[] cropNames = new String[]  {
+            MALT,
+            MALT_PILSEN,
+            MALT_MUNICH,
+            MALT_AMBER,
+            MALT_DARK,
             ADMIRAL,
             AHTANUM,
             AMARILLO,
@@ -402,8 +415,8 @@ public class CropRegistry {
         ItemRegistry.registerItem(item, MessageFormat.format(ITEM_NAME, cropName));
         cropBlock.setFood(item);
 
-        final ItemSeedFood itemPellet = createItem(cropBlock);
-        ItemRegistry.registerItem(itemPellet, MessageFormat.format(PELLET_ITEM_NAME, cropName));
+        //final ItemSeedFood itemPellet = createItem(cropBlock);
+        //ItemRegistry.registerItem(itemPellet, MessageFormat.format(PELLET_ITEM_NAME, cropName));
 
 
         final Item seedItem = createSeed(cropBlock);
@@ -412,7 +425,7 @@ public class CropRegistry {
 
         seeds.put(cropName, seedItem);
         foods.put(cropName, item);
-        pellets.put(cropName, itemPellet);
+        //pellets.put(cropName, itemPellet);
         crops.put(cropName, cropBlock);
     }
 
@@ -423,9 +436,12 @@ public class CropRegistry {
 
     private static ItemSeedFood createItem(BlockBBSCrop cropBlock) {
         return new ItemSeedFood(1, 0.6F, cropBlock, Blocks.FARMLAND);
+
     }
 
     private static Item createSeed(BlockBBSCrop cropBlock) {
         return new ItemSeeds(cropBlock, Blocks.FARMLAND);
     }
+
+
 }

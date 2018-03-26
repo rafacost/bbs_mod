@@ -8,18 +8,21 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlocksInit {
+    /*
     @GameRegistry.ObjectHolder("bbs_mod:modelblock")
     public static ModelBlock modelBlock;
-    @GameRegistry.ObjectHolder("bbs_mod:microbrewer")
-    public static MicroBrewerBlock microBrewerBlock;
     @GameRegistry.ObjectHolder("bbs_mod:micropack")
     public static MicroPackBlock microPackBlock;
+    */
+    @GameRegistry.ObjectHolder("bbs_mod:microbrewer")
+    public static MicroBrewerBlock microBrewerBlock;
+
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
-        modelBlock.initModel();
         microBrewerBlock.initModel();
-        microPackBlock.initModel();
+        //modelBlock.initModel();
+        //microPackBlock.initModel();
     }
 
 }

@@ -1,6 +1,4 @@
 buildscript {
-
-
     repositories {
         jcenter()
         maven { url = "http://files.minecraftforge.net/maven" }
@@ -9,25 +7,20 @@ buildscript {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
-
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
-
 version = "1.12.2-" + MAJOR + "." + MINOR + "." + BN
 group = "com.rafacost3d.bbs_mod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "bbs_mod"
-
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {
     sourceCompatibility = targetCompatibility = '1.8'
 }
-
 minecraft {
     version = "1.12.2-14.23.2.2611"
     runDir = "run"
     mappings = "snapshot_20171003"
 }
-
 processResources {
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
@@ -45,6 +38,26 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+
+repositories {
+    maven {
+        // location of the maven that hosts JEI files
+        name = "Progwml6 maven"
+        url = "http://dvs1.progwml6.com/files/maven"
+    }
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url = "modmaven.k-4u.nl"
+    }
+}
+
+dependencies {
+    // compile against the JEI API but do not include it at runtime
+    deobfProvided "mezz.jei:jei_${mc_version}:${jei_version}:api"
+    // at runtime, use the full JEI jar
+    runtime "mezz.jei:jei_${mc_version}:${jei_version}"
 }
 
 task increaseVersion {

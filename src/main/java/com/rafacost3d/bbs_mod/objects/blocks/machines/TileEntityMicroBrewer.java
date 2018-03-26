@@ -1,8 +1,12 @@
 package com.rafacost3d.bbs_mod.objects.blocks.machines;
 
+import com.rafacost3d.bbs_mod.init.ItemInit;
 import com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewerRecipes;
+import com.rafacost3d.bbs_mod.objects.items.MashKegItem;
+import com.rafacost3d.bbs_mod.util.BeerMath;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -205,10 +209,12 @@ public class TileEntityMicroBrewer extends TileEntity implements IInventory, ITi
                 return 720;
             case "item.liberty.hop":
                 return 1800;
+            case "item.bbs_mod.wortkeg":
+                return 1800;
             case "item.bbs_mod.yeast":
                 return 16000;
             default:
-                return 200;
+                return 20;
         }
     }
 
@@ -240,7 +246,7 @@ public class TileEntityMicroBrewer extends TileEntity implements IInventory, ITi
             ItemStack input2 = (ItemStack)this.inventory.get(1);
 
             //Shrink Recipe Quantity
-            if(input1.getItem()==Items.SUGAR && input2.getItem()==Items.WHEAT) {
+            if(input1.getItem()==Items.SUGAR) {
                 if(input1.getCount()==64 && input2.getCount() == 64){
                     ItemStack result = MicroBrewerRecipes.getInstance().getMicroBrewerResult(input1, input2);
                     ItemStack output = (ItemStack) this.inventory.get(3);
@@ -252,13 +258,117 @@ public class TileEntityMicroBrewer extends TileEntity implements IInventory, ITi
             }
             else {
                 ItemStack result = MicroBrewerRecipes.getInstance().getMicroBrewerResult(input1, input2);
+                ItemStack ic = new ItemStack(result.getItem());
                 ItemStack output = (ItemStack) this.inventory.get(3);
+                Item a = result.getItem();
+                Item b = ItemInit.mashKegItem;
+                Item c = ItemInit.HOTWORT_KEG;
+                Item d = ItemInit.WORT_KEG;
+                Item e = ItemInit.BEER_KEG;
+                if(a == b){
+                    String lme = input1.getItem().getUnlocalizedName();
+                    String malt;
+                    Integer lb;
+                    Double lovi;
+                    switch (lme){
+                        case "item.bbs_mod.lme_pilsen":
+                            malt = "Pilsen";
+                            lb = 1;
+                            lovi = 2.0;
+                            break;
+                        case "item.bbs_mod.lme_extralight":
+                            malt = "Extralight";
+                            lb = 2;
+                            lovi = 2.5;
+                            break;
+                        case "item.bbs_mod.lme_wheat":
+                            malt = "Wheat";
+                            lb = 3;
+                            lovi = 3.0;
+                            break;
+                        case "item.bbs_mod.lme_light":
+                            malt = "Light";
+                            lb = 4;
+                            lovi = 4.0;
+                            break;
+                        case "item.bbs_mod.lme_munich":
+                            malt = "Munich";
+                            lb = 5;
+                            lovi = 8.0;
+                            break;
+                        case "item.bbs_mod.lme_amber":
+                            malt = "Amber";
+                            lb = 6;
+                            lovi = 10.0;
+                            break;
+                        case "item.bbs_mod.lme_dark":
+                            malt = "Dark";
+                            lb = 7;
+                            lovi = 30.0;
+                            break;
+                        default:
+                            return;
+                    }
+                    getTagCompoundSafe(ic).setString("malt", "LME " + malt);
+                    getTagCompoundSafe(ic).setInteger("lb", lb);
+                    getTagCompoundSafe(ic).setDouble("srm", BeerMath.RoundTo2Decimals(BeerMath.SRM(lovi, input1.getCount())));
+                    getTagCompoundSafe(ic).setDouble("og", BeerMath.RoundTo3Decimals(BeerMath.OG(input1.getCount()*3.3,5)));
+                    if (output.isEmpty()) this.inventory.set(3, ic);
+                    input1.shrink(input1.getCount());
+                    input2.shrink(1);
+                } else if(a==c) {
+                    String name[] = input1.getUnlocalizedName().split("[.]");
+                    getTagCompoundSafe(ic).setString("malt", getTagCompoundSafe(input2).getString("malt"));
+                    getTagCompoundSafe(ic).setInteger("lb", getTagCompoundSafe(input2).getInteger("lb"));
+                    getTagCompoundSafe(ic).setDouble("srm", getTagCompoundSafe(input2).getDouble("srm"));
+                    getTagCompoundSafe(ic).setDouble("og", getTagCompoundSafe(input2).getDouble("og"));
+                    getTagCompoundSafe(ic).setDouble("ibu", BeerMath.RoundTo2Decimals(BeerMath.IBU(input1.getCount(),5.0, 5.0,getTagCompoundSafe(input2).getDouble("og"), name[1])));
+                    if (output.isEmpty()) this.inventory.set(3, ic);
+                    input1.shrink(input1.getCount());
+                    input2.shrink(1);
+                } else if(a==d) {
+                    Double lb = getTagCompoundSafe(input2).getDouble("srm");
+                    getTagCompoundSafe(ic).setString("malt", getTagCompoundSafe(input2).getString("malt"));
+                    getTagCompoundSafe(ic).setInteger("lb", lb.intValue());
+                    getTagCompoundSafe(ic).setDouble("srm", getTagCompoundSafe(input2).getDouble("srm"));
+                    getTagCompoundSafe(ic).setDouble("og", getTagCompoundSafe(input2).getDouble("og"));
+                    getTagCompoundSafe(ic).setDouble("ibu", getTagCompoundSafe(input2).getDouble("ibu"));
+                    if (output.isEmpty()) this.inventory.set(3, ic);
+                    input1.shrink(1);
+                    input2.shrink(1);
+
+                } else if(a==e) {
+                    Double og = getTagCompoundSafe(input2).getDouble("og");
+                    Double fg = BeerMath.RoundTo3Decimals(BeerMath.FG(og));
+                    Double abv = BeerMath.RoundTo2Decimals(BeerMath.ABV(og,fg));
+                    getTagCompoundSafe(ic).setString("malt", getTagCompoundSafe(input2).getString("malt"));
+                    getTagCompoundSafe(ic).setInteger("lb", getTagCompoundSafe(input2).getInteger("lb"));
+                    getTagCompoundSafe(ic).setDouble("srm", getTagCompoundSafe(input2).getDouble("srm"));
+                    getTagCompoundSafe(ic).setDouble("og", og);
+                    getTagCompoundSafe(ic).setDouble("ibu", getTagCompoundSafe(input2).getDouble("ibu"));
+                    getTagCompoundSafe(ic).setDouble("fg", fg);
+                    getTagCompoundSafe(ic).setDouble("abv", abv);
+                    if (output.isEmpty()) this.inventory.set(3, ic);
+                    input1.shrink(1);
+                    input2.shrink(1);
+                } else {
                 if (output.isEmpty()) this.inventory.set(3, result.copy());
                 else if (output.getItem() == result.getItem()) output.grow(result.getCount());
                 input1.shrink(1);
                 input2.shrink(1);
+        }
+
             }
         }
+    }
+
+    private NBTTagCompound getTagCompoundSafe(ItemStack stack) {
+        NBTTagCompound tagCompound = stack.getTagCompound();
+        if (tagCompound == null) {
+            tagCompound = new NBTTagCompound();
+            stack.setTagCompound(tagCompound);
+        }
+        return tagCompound;
     }
 
     public static int getItemBurnTime(ItemStack fuel)

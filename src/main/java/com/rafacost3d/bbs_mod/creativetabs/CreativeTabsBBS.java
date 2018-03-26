@@ -16,19 +16,19 @@ public class CreativeTabsBBS {
     public static final CreativeTabs BBSTabsHops = new CreativeTabs(Reference.MODID + ".hops") {
         @Override
         @SideOnly(Side.CLIENT)
-        public ItemStack getTabIconItem() { return CropRegistry.getFood(CropRegistry.HORIZON).getDefaultInstance(); }
+        public ItemStack getTabIconItem() { return CropRegistry.getFood(CropRegistry.POLARIS).getDefaultInstance(); }
     };
-
+/*
     public static final CreativeTabs BBSTabsPellets = new CreativeTabs(Reference.MODID + ".pellets") {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() { return CropRegistry.getPellet(CropRegistry.HORIZON).getDefaultInstance(); }
     };
-
+*/
     public static final CreativeTabs BBSTabsSeeds = new CreativeTabs(Reference.MODID + ".seeds") {
         @Override
         @SideOnly(Side.CLIENT)
-        public ItemStack getTabIconItem() { return CropRegistry.getFood(CropRegistry.HORIZON).getDefaultInstance(); }
+        public ItemStack getTabIconItem() { return CropRegistry.getFood(CropRegistry.POLARIS).getDefaultInstance(); }
     };
 
     public static final CreativeTabs BBSTabsMachines = new CreativeTabs(Reference.MODID + ".machines") {

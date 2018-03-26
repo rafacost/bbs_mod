@@ -4,15 +4,23 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-public class ItemModels {
+public class ItemModels extends Item {
     private static final HashMap<Item, ItemModelList> models = new HashMap<Item, ItemModelList>();
 
     public static void preInit() {
@@ -42,6 +50,7 @@ public class ItemModels {
 
     private static void registerItemModels(Item item, ItemModelList list) {
         models.put(item, list);
+
     }
 
     private static void prepareModels() {

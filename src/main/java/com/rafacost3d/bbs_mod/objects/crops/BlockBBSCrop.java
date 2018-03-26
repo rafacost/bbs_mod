@@ -5,6 +5,7 @@ import net.minecraft.block.BlockCrops;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -21,7 +22,10 @@ import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -224,8 +228,10 @@ public class BlockBBSCrop extends BlockCrops implements IPlantable {
 
         for (int i = 0; i < count; i++) {
             final Item item = this.getItemDropped(state, rand, fortune);
+            final Item seed = getSeed();
             if (item != null) {
-                ret.add(new ItemStack(item, 1, this.damageDropped(state)));
+                ret.add(new ItemStack(item, 2, this.damageDropped(state)));
+                ret.add(new ItemStack(seed, 1, 0));
             }
         }
 
@@ -279,12 +285,13 @@ public class BlockBBSCrop extends BlockCrops implements IPlantable {
                 int High = 6;
                 int Result = r.nextInt(High-Low) + Low;
                 EntityItem item = new EntityItem(world,pos.getX(), pos.getY(), pos.getZ(), new ItemStack(getCrop(), Result));
+                EntityItem item2 = new EntityItem(world,pos.getX(), pos.getY(), pos.getZ(), new ItemStack(getSeed(), Result));
                 world.spawnEntity((item));
+                world.spawnEntity((item2));
                 world.setBlockState(pos, this.withAge(6));
                 return true;
             }
         }
         return false;
     }
-
 }

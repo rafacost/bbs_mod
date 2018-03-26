@@ -1,6 +1,7 @@
 package com.rafacost3d.bbs_mod.proxy;
 
 import com.rafacost3d.bbs_mod.init.BlocksInit;
+import com.rafacost3d.bbs_mod.init.ItemInit;
 import com.rafacost3d.bbs_mod.objects.crops.ItemModels;
 import com.rafacost3d.bbs_mod.objects.crops.ItemRenderRegister;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -42,5 +43,6 @@ public class ClientProxy extends CommonProxy {
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
         BlocksInit.initModels();
+        ItemInit.initModels();
     }
 }
