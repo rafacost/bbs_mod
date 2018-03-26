@@ -1,0 +1,23 @@
+{
+  "result": {
+    "item": "bbs_mod:grafter",
+    "count": 10
+  },
+  "pattern": [
+    "r r",
+    " s ",
+    "i i"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "i": {
+      "item": "minecraft:stick"
+    },
+    "r": {
+      "item": "bbs_mod:liberty.hop"
+    },
+    "s": {
+      "item": "bbs_mod:strisselspalt.rhizome"
+    }
+  }
+}

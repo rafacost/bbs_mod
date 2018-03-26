@@ -1,4 +1,5 @@
 # Beer Brewing Simulator Mod
+
 This Mod is called: Beer Brewing Simulator.
 And that's exactly what it is. If you are a homebrewer you are familiar with the various calculations of abv, ibu, og, fg, srm, and etc.
 With this mod you can play and test with 137 types of hops and 7 types of liquid malt extracts.
@@ -18,7 +19,7 @@ List of Attributes Calculated:
  - LME: Only Liquid Malts are available for now.
  - OneHop: One Type of hops per fermentation.
 
-It's being developed by rafacost3d, for Minecraft 1.12.2
+Developed by rafacost3d, for Minecraft 1.12.2
 
 **Resource Links for 1.12.2**
 
