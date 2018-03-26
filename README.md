@@ -1,6 +1,6 @@
 # Beer Brewing Simulator Mod
 
-![bbs logo](bbs_mod/src/main/resources/assets/bbs_mod/textures/gui/bbs_logo.png)
+![bbs logo](https://raw.githubusercontent.com/rafacost/bbs_mod/1.12.2/src/main/resources/assets/bbs_mod/textures/gui/bbs_logo.png)
 
 This Mod is called: Beer Brewing Simulator.
 And that's exactly what it is. If you are a homebrewer you are familiar with the various calculations of abv, ibu, og, fg, srm, and etc.
