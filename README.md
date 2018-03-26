@@ -3,6 +3,7 @@ This Mod is called: Beer Brewing Simulator.
 And that's exactly what it is. If you are a homebrewer you are familiar with the various calculations of abv, ibu, og, fg, srm, and etc.
 With this mod you can play and test with 137 types of hops and 7 types of liquid malt extracts.
 The result of the process of fermentation will be a keg containing all final numbers of your beer.
+
 List of Attributes Calculated:
  - ABV (Alcohol by Volume)
  - IBU (International Bitterness Unit)
