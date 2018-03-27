@@ -16,7 +16,7 @@ List of Attributes Calculated:
  - Final Gravity
 
  Current known limitations:
- - Batch and Boild: For now we have fixed the Batch size and Boil Size for 5 gallons.
+ - Batch and Boil: For now we have fixed the Batch size and Boil Size for 5 gallons.
  - Extract Method: All recipes are based on Extract Method.
  - LME: Only Liquid Malts are available for now.
  - OneHop: One Type of hops per fermentation.
