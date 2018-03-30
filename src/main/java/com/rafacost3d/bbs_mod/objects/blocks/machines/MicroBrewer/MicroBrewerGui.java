@@ -1,4 +1,4 @@
-package com.rafacost3d.bbs_mod.objects.blocks.machines;
+package com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewer;
 
 import com.rafacost3d.bbs_mod.util.Reference;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -22,7 +22,7 @@ public class MicroBrewerGui extends GuiContainer
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY)
     {
-        String tileName = "Micro Brewer";
+        String tileName = "MicroBrewer";
         this.fontRenderer.drawString(tileName, (this.xSize / 2 - this.fontRenderer.getStringWidth(tileName) / 2) + 3, 8, 4210752);
         this.fontRenderer.drawString(this.player.getDisplayName().getUnformattedText(), 122, this.ySize - 96 + 2, 4210752);
     }

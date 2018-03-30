@@ -1,4 +1,5 @@
 package com.rafacost3d.bbs_mod.integration.jei;
+import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.objects.crops.CropRegistry;
 import mezz.jei.api.*;
 import mezz.jei.api.ingredients.IIngredientBlacklist;
@@ -11,6 +12,8 @@ public class JeiBBSPlugin extends BlankModPlugin {
     @Override
     public void register(@Nonnull IModRegistry registry) {
 
+
+        BBSMod.logger.info(">> Loading Beer Brewing Simulator Jei Plugin");
         IIngredientBlacklist blacklist = registry.getJeiHelpers().getIngredientBlacklist();
         blacklist.addIngredientToBlacklist(new ItemStack(CropRegistry.getSeed("maltpilsen")));
         blacklist.addIngredientToBlacklist(new ItemStack(CropRegistry.getSeed("maltmunich")));

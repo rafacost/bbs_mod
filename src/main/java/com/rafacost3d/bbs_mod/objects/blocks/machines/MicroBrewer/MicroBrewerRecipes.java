@@ -1,16 +1,13 @@
-package com.rafacost3d.bbs_mod.objects.blocks.machines;
+package com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewer;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Table;
 import com.rafacost3d.bbs_mod.init.ItemInit;
 import com.rafacost3d.bbs_mod.objects.crops.CropRegistry;
-import com.rafacost3d.bbs_mod.objects.items.MashKegItem;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 
 import java.util.Map;
 

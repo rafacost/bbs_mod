@@ -1,6 +1,6 @@
-package com.rafacost3d.bbs_mod.objects.blocks.machines.slots;
+package com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewer.slots;
 
-import com.rafacost3d.bbs_mod.objects.blocks.machines.TileEntityMicroBrewer;
+import com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewer.TileEntityMicroBrewer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;

@@ -1,8 +1,6 @@
 package com.rafacost3d.bbs_mod.init;
 
-import com.rafacost3d.bbs_mod.objects.blocks.containers.MicroPackBlock;
-import com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewerBlock;
-import com.rafacost3d.bbs_mod.objects.blocks.ModelBlock;
+import com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewer.MicroBrewerBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;

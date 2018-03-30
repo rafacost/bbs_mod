@@ -1,7 +1,7 @@
-package com.rafacost3d.bbs_mod.objects.blocks.machines;
+package com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewer;
 
-import com.rafacost3d.bbs_mod.objects.blocks.machines.slots.SlotMicroBrewerFuel;
-import com.rafacost3d.bbs_mod.objects.blocks.machines.slots.SlotMicroBrewerOutput;
+import com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewer.slots.SlotMicroBrewerFuel;
+import com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewer.slots.SlotMicroBrewerOutput;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
