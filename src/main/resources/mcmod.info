@@ -3,13 +3,13 @@
   "modid": "bbs_mod",
   "name": "Beer Brewing Simulator",
   "description": "Simulate before you brew",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "version":"${version}",
+  "mcversion":"${mcversion}",
   "url": "https://github.com/rafacost/bbs_mod",
-  "updateUrl": "https://github.com/rafacost/bbs_mod/version.json",
+  "updateUrl": "https://raw.githubusercontent.com/rafacost/bbs_mod/1.12.2/version.json",
   "authorList": ["rafacost3d"],
   "credits": "All rights reserved for rafacost3d",
-  "logoFile": "https://raw.githubusercontent.com/rafacost/bbs_mod/1.12.2/src/main/resources/assets/bbs_mod/textures/gui/bbs_logo.png",
+  "logoFile": "assets/bbs_mod/textures/gui/bbs_logo.png",
   "screenshots": [],
   "dependencies": []
 }
