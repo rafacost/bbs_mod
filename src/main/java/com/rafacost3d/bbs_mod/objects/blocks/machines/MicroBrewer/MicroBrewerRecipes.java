@@ -24,9 +24,10 @@ public class MicroBrewerRecipes {
 
     private MicroBrewerRecipes()
     {
+
         addMicroBrewerRecipe(new ItemStack(CropRegistry.getFood("malt")), new ItemStack(CropRegistry.getFood("malt")), new ItemStack(CropRegistry.getFood("maltpilsen")), 5.0F, 20);
-        addMicroBrewerRecipe(new ItemStack(CropRegistry.getFood("maltpilsen")), new ItemStack(CropRegistry.getFood("maltpilsen")), new ItemStack(CropRegistry.getFood("maltmunich")), 5.0F, 20);addMicroBrewerRecipe(new ItemStack(Items.WHEAT), new ItemStack(Items.SUGAR), new ItemStack(ItemInit.LME_WHEAT), 5.0F, 20);
-        addMicroBrewerRecipe(new ItemStack(CropRegistry.getFood("maltmunich")), new ItemStack(CropRegistry.getFood("maltmunich")), new ItemStack(CropRegistry.getFood("maltamber")), 5.0F, 20);addMicroBrewerRecipe(new ItemStack(Items.WHEAT), new ItemStack(Items.SUGAR), new ItemStack(ItemInit.LME_WHEAT), 5.0F, 240);
+        addMicroBrewerRecipe(new ItemStack(CropRegistry.getFood("maltpilsen")), new ItemStack(CropRegistry.getFood("maltpilsen")), new ItemStack(CropRegistry.getFood("maltmunich")), 5.0F, 20);
+        addMicroBrewerRecipe(new ItemStack(CropRegistry.getFood("maltmunich")), new ItemStack(CropRegistry.getFood("maltmunich")), new ItemStack(CropRegistry.getFood("maltamber")), 5.0F, 20);
         addMicroBrewerRecipe(new ItemStack(CropRegistry.getFood("maltamber")), new ItemStack(CropRegistry.getFood("maltamber")), new ItemStack(CropRegistry.getFood("maltdark")), 5.0F, 20);
 
         addMicroBrewerRecipe(new ItemStack(Items.WHEAT), new ItemStack(Items.SUGAR), new ItemStack(ItemInit.LME_WHEAT), 5.0F, 240);

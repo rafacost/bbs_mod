@@ -1,14 +1,32 @@
 package com.rafacost3d.bbs_mod.integration.jei;
 import com.rafacost3d.bbs_mod.BBSMod;
+import com.rafacost3d.bbs_mod.init.BlocksInit;
+import com.rafacost3d.bbs_mod.integration.jei.microbrewer.MicroBrewerRecipeCategory;
+import com.rafacost3d.bbs_mod.integration.jei.microbrewer.MicroBrewerRecipeMaker;
+import com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewer.MicroBrewerContainer;
+import com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewer.MicroBrewerGui;
 import com.rafacost3d.bbs_mod.objects.crops.CropRegistry;
 import mezz.jei.api.*;
 import mezz.jei.api.ingredients.IIngredientBlacklist;
+import mezz.jei.api.ingredients.IIngredientRegistry;
+import mezz.jei.api.recipe.IRecipeCategory;
+import mezz.jei.api.recipe.IRecipeCategoryRegistration;
+import mezz.jei.api.recipe.transfer.IRecipeTransferRegistry;
 import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nonnull;
 
 @mezz.jei.api.JEIPlugin
 public class JeiBBSPlugin extends BlankModPlugin {
+
+    @Override
+    public void registerCategories(IRecipeCategoryRegistration registry){
+        final IJeiHelpers helpers = registry.getJeiHelpers();
+        final IGuiHelper gui = helpers.getGuiHelper();
+        registry.addRecipeCategories(new MicroBrewerRecipeCategory(gui));
+    }
+
+
     @Override
     public void register(@Nonnull IModRegistry registry) {
 
@@ -19,6 +37,16 @@ public class JeiBBSPlugin extends BlankModPlugin {
         blacklist.addIngredientToBlacklist(new ItemStack(CropRegistry.getSeed("maltmunich")));
         blacklist.addIngredientToBlacklist(new ItemStack(CropRegistry.getSeed("maltamber")));
         blacklist.addIngredientToBlacklist(new ItemStack(CropRegistry.getSeed("maltdark")));
+
+        final IIngredientRegistry ingredientRegistry = registry.getIngredientRegistry();
+        final IJeiHelpers jeiHelpers = registry.getJeiHelpers();
+        //IRecipeTransferRegistry recipeTransfer = registry.getRecipeTransferRegistry();
+
+        registry.addRecipeCategoryCraftingItem(new ItemStack(BlocksInit.microBrewerBlock), RecipeCategories.MICRO);
+        registry.addRecipes(MicroBrewerRecipeMaker.getRecipes(jeiHelpers), RecipeCategories.MICRO);
+        registry.addRecipeClickArea(MicroBrewerGui.class, 44, 33, 24, 17, RecipeCategories.MICRO);
+        //recipeTransfer.addRecipeTransferHandler(MicroBrewerContainer.class, RecipeCategories.MICRO, 0, 1, 3, 36);
+
 
 
         registry.addDescription(new ItemStack(CropRegistry.getFood("admiral")), "Hop Type: " + "Bittering", "Alpha Acid: " + "14.5", "Description: \n" + "Citrus, Herbal");
