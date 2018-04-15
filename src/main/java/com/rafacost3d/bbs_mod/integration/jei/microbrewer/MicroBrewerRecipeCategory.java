@@ -9,8 +9,6 @@ import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
 import net.minecraft.client.Minecraft;
 
-import javax.annotation.Nullable;
-
 public class MicroBrewerRecipeCategory extends AbstractMicroBrewerRecipeCategory<MicroBrewerRecipe> {
     private final IDrawable background;
     private final String name;
@@ -41,7 +39,6 @@ public class MicroBrewerRecipeCategory extends AbstractMicroBrewerRecipeCategory
         return background;
     }
 
-
     @Override
     public void drawExtras(Minecraft minecraft){
         animatedFlame.draw(minecraft,4,42);
@@ -56,5 +53,4 @@ public class MicroBrewerRecipeCategory extends AbstractMicroBrewerRecipeCategory
         stacks.init(output, false, 76,23);
         stacks.set(iIngredients);
     }
-
 }

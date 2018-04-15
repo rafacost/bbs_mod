@@ -3,21 +3,16 @@ import com.rafacost3d.bbs_mod.BBSMod;
 import com.rafacost3d.bbs_mod.init.BlocksInit;
 import com.rafacost3d.bbs_mod.integration.jei.microbrewer.MicroBrewerRecipeCategory;
 import com.rafacost3d.bbs_mod.integration.jei.microbrewer.MicroBrewerRecipeMaker;
-import com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewer.MicroBrewerContainer;
 import com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewer.MicroBrewerGui;
 import com.rafacost3d.bbs_mod.objects.crops.CropRegistry;
 import mezz.jei.api.*;
 import mezz.jei.api.ingredients.IIngredientBlacklist;
-import mezz.jei.api.ingredients.IIngredientRegistry;
-import mezz.jei.api.recipe.IRecipeCategory;
 import mezz.jei.api.recipe.IRecipeCategoryRegistration;
-import mezz.jei.api.recipe.transfer.IRecipeTransferRegistry;
 import net.minecraft.item.ItemStack;
-
 import javax.annotation.Nonnull;
 
 @mezz.jei.api.JEIPlugin
-public class JeiBBSPlugin extends BlankModPlugin {
+public class JeiBBSPlugin implements IModPlugin  {
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registry){
@@ -26,11 +21,8 @@ public class JeiBBSPlugin extends BlankModPlugin {
         registry.addRecipeCategories(new MicroBrewerRecipeCategory(gui));
     }
 
-
     @Override
     public void register(@Nonnull IModRegistry registry) {
-
-
         BBSMod.logger.info(">> Loading Beer Brewing Simulator Jei Plugin");
         IIngredientBlacklist blacklist = registry.getJeiHelpers().getIngredientBlacklist();
         blacklist.addIngredientToBlacklist(new ItemStack(CropRegistry.getSeed("maltpilsen")));
@@ -38,16 +30,11 @@ public class JeiBBSPlugin extends BlankModPlugin {
         blacklist.addIngredientToBlacklist(new ItemStack(CropRegistry.getSeed("maltamber")));
         blacklist.addIngredientToBlacklist(new ItemStack(CropRegistry.getSeed("maltdark")));
 
-        final IIngredientRegistry ingredientRegistry = registry.getIngredientRegistry();
         final IJeiHelpers jeiHelpers = registry.getJeiHelpers();
-        //IRecipeTransferRegistry recipeTransfer = registry.getRecipeTransferRegistry();
 
         registry.addRecipeCategoryCraftingItem(new ItemStack(BlocksInit.microBrewerBlock), RecipeCategories.MICRO);
         registry.addRecipes(MicroBrewerRecipeMaker.getRecipes(jeiHelpers), RecipeCategories.MICRO);
         registry.addRecipeClickArea(MicroBrewerGui.class, 44, 33, 24, 17, RecipeCategories.MICRO);
-        //recipeTransfer.addRecipeTransferHandler(MicroBrewerContainer.class, RecipeCategories.MICRO, 0, 1, 3, 36);
-
-
 
         registry.addDescription(new ItemStack(CropRegistry.getFood("admiral")), "Hop Type: " + "Bittering", "Alpha Acid: " + "14.5", "Description: \n" + "Citrus, Herbal");
         registry.addDescription(new ItemStack(CropRegistry.getFood("ahtanum")), "Hop Type: " + "Aroma", "Alpha Acid: " + "5.5", "Description: \n" + "Earthy, Floral, Citrus");
@@ -186,7 +173,5 @@ public class JeiBBSPlugin extends BlankModPlugin {
         registry.addDescription(new ItemStack(CropRegistry.getFood("zenith")), "Hop Type: " + "Bittering", "Alpha Acid: " + "9", "Description: \n" + "Floral, Spicy");
         registry.addDescription(new ItemStack(CropRegistry.getFood("zeus")), "Hop Type: " + "Bittering", "Alpha Acid: " + "16", "Description: \n" + "Spicy, Herbal");
         registry.addDescription(new ItemStack(CropRegistry.getFood("zythos")), "Hop Type: " + "Aroma", "Alpha Acid: " + "17", "Description: \n" + "Citrus, Tropical Fruit");
-
-
     }
 }

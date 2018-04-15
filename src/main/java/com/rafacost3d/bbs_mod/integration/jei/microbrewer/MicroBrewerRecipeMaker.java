@@ -4,9 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Table;
 import com.rafacost3d.bbs_mod.objects.blocks.machines.MicroBrewer.MicroBrewerRecipes;
 import mezz.jei.api.IJeiHelpers;
-import mezz.jei.api.recipe.IStackHelper;
 import net.minecraft.item.ItemStack;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -14,7 +12,6 @@ import java.util.Map.Entry;
 public class MicroBrewerRecipeMaker {
     public static List<MicroBrewerRecipe> getRecipes(IJeiHelpers helpers)
     {
-        IStackHelper stackHelper = helpers.getStackHelper();
         MicroBrewerRecipes instance = MicroBrewerRecipes.getInstance();
         Table<ItemStack, ItemStack, ItemStack> recipes = instance.getDualSmeltingList();
         List<MicroBrewerRecipe> jeiRecipes = Lists.newArrayList();
