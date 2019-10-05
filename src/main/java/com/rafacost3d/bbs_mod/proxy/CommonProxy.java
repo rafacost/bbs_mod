@@ -17,6 +17,7 @@ import com.rafacost3d.bbs_mod.util.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.event.RegistryEvent;
@@ -50,9 +51,9 @@ public class CommonProxy {
 
     public void init(FMLInitializationEvent e) {
         NetworkRegistry.INSTANCE.registerGuiHandler(BBSMod.instance, new GuiProxy());
-        MinecraftForge.addGrassSeed(CropRegistry.getSeed(CropRegistry.LIBERTY).getDefaultInstance(), 10);
-        MinecraftForge.addGrassSeed(CropRegistry.getSeed(CropRegistry.STRISSELSPALT).getDefaultInstance(), 10);
-        MinecraftForge.addGrassSeed(CropRegistry.getSeed(CropRegistry.MALT).getDefaultInstance(), 5);
+        MinecraftForge.addGrassSeed(new ItemStack(CropRegistry.getSeed(CropRegistry.LIBERTY)), 10);
+        MinecraftForge.addGrassSeed(new ItemStack(CropRegistry.getSeed(CropRegistry.STRISSELSPALT)), 10);
+        MinecraftForge.addGrassSeed(new ItemStack(CropRegistry.getSeed(CropRegistry.MALT)), 5);
        }
     public void postInit(FMLPostInitializationEvent e) {
         if (config.hasChanged()) {
