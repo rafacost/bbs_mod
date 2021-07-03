@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "bbs_mod:keg",
+    "count": 1
+  },
+  "pattern": [
+    "iii",
+    "iri",
+    "iii"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "r": {
+      "item": "bbs_mod:sanitizer"
+    }
+  }
+}

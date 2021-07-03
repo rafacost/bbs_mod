@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "bbs_mod:watergallon",
+    "count": 1
+  },
+  "pattern": [
+    "i"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "i": {
+      "item": "minecraft:water_bucket"
+    }
+  }
+}

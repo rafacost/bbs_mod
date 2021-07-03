@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "bbs_mod:microbrewer"
+  },
+  "pattern": [
+    "iri",
+    "ici",
+    "iii"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "c": {
+      "item": "minecraft:cauldron"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "r": {
+      "item": "bbs_mod:liberty.rhizome"
+    }
+  }
+}

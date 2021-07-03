@@ -17,7 +17,7 @@ public class BBSConstants {
     public static Double BP_MIN_LIQUID = null;
 
     public static void preint(){
-        if(BBSConfig.metric) {
+        if(ConfigInit.metric) {
             BBSMod.logger.info("Loading Metric Defaults");
             DEGREE = " \u2103";
             ROOM_TEMP = 20;

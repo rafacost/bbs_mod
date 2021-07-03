@@ -1,10 +1,15 @@
+language.name=English
+language.region=United States
+language.code=en_us
+
 itemGroup.bbs_mod.hops=Beer Brewing Simulator Hops
 itemGroup.bbs_mod.pellets=Beer Brewing Simulator Pellets
 itemGroup.bbs_mod.seeds=Beer Brewing Simulator Rhizomes
 itemGroup.bbs_mod.machines=Beer Brewing Simulator Machines
 itemGroup.bbs_mod.item=Beer Brewing Simulator Items
 itemGroup.bbs_mod.fluid=Beer Brewing Simulator Fluids
-item.bbs_mod.stirringspoon.name=Stirring Spoon
+
+item.bbs_mod.spoon.name=Spoon
 item.bbs_mod.sanitizer.name=Sanitizer
 item.bbs_mod.watergallon.name=Water Gallon
 item.bbs_mod.lme_pilsen.name=Liquid Malt Extract - Pilsen 3.3lb
@@ -17,10 +22,18 @@ item.bbs_mod.lme_dark.name=Liquid Malt Extract - Dark 3.3lb
 item.bbs_mod.priming_sugar.name=Priming Sugar
 item.bbs_mod.yeast.name=Yeast
 item.bbs_mod.thermometer.name=Thermometer
-item.bbs_mod.wortbucket.name=Wort Bucket
-tile.bbs_mod.pelleter.name=Hops Pelleting Machine
-tile.bbs_mod.aluminiumpot.name=Aluminium Boiling Kettle
-tile.bbs_mod.fermentorbucket.name=Fermentor Bucket 6.5gl
+item.bbs_mod.waterkeg.name=Water Keg
+item.bbs_mod.mashkeg.name=Mash Keg
+item.bbs_mod.hotwortkeg.name=Hot Wort Keg
+item.bbs_mod.wortkeg.name=Wort Keg
+item.bbs_mod.beerkeg.name=Beer Keg
+item.bbs_mod.keg.name=Empty Keg
+item.bbs_mod.grafter.name=Grafter
+
+tile.bbs_mod.microbrewer.name=Micro Brewer
+tile.bbs_mod.micropack.name=Micro Pack
+tile.bbs_mod.modelblock.name=Basic Block
+
 tile.bbs_mod.beer.name=Beer
 tile.bbs_mod.wort.name=Wort
 fluid.beer=Beer
@@ -29,6 +42,17 @@ item.bbs_mod.worttype.nullWort.name=Wort Bucket
 tooltip.bbs_mod.worttype.nullWort.desc=No Hops
 item.bbs_mod.beertype.nullBeer.name=Beer Bucket
 tooltip.bbs_mod.beertype.nullBeer.desc=Unclassified Beer
+
+item.malt.hop.name=Malt
+item.malt.rhizome.name=Malt Seeds
+item.maltpilsen.hop.name=Pilsen Malt
+item.maltpilsen.rhizome.name=Pilsen Malt Seeds
+item.maltmunich.hop.name=Munich Malt
+item.maltmunich.rhizome.name=Munich Malt Seeds
+item.maltamber.hop.name=Amber Malt
+item.maltamber.rhizome.name=Amber Malt Seeds
+item.maltdark.hop.name=Dark Malt
+item.maltdark.rhizome.name=Dark Malt Seeds
 
 item.admiral.hop.name=Admiral
 item.ahtanum.hop.name=Ahtanum

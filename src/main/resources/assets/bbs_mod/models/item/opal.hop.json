@@ -1,6 +1,1 @@
-{
-  "parent": "builtin/generated",
-  "textures": {
-    "layer0": "bbs_mod:item/hopsleaf"
-  }
-}
+{"parent": "builtin/generated","textures": {"layer0": "bbs_mod:item/hopsleaf_lv2"}}

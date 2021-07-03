@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "bbs_mod:waterkeg",
+    "count": 1
+  },
+  "pattern": [
+    "irr",
+    "rrr"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "i": {
+      "item": "bbs_mod:keg"
+    },
+    "r": {
+      "item": "bbs_mod:watergallon"
+    }
+  }
+}

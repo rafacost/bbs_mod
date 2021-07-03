@@ -1,8 +1,29 @@
 # Beer Brewing Simulator Mod
-For now this is the basic foundation for a future mod called Beer Brewing Simulator.
-It's being developed by rafacost3d, for Minecraft 1.11.2
+<p align="center">
+  <img src="https://raw.githubusercontent.com/rafacost/bbs_mod/1.12.2/src/main/resources/assets/bbs_mod/textures/gui/bbs_logo.png?raw=true" alt="BBS Logo"/>
+</p>
+This Mod is called: Beer Brewing Simulator.
+And that's exactly what it is. If you are a homebrewer you are familiar with the various calculations of abv, ibu, og, fg, srm, and etc.
+With this mod you can play and test with 137 types of hops and 7 types of liquid malt extracts.
+The result of the process of fermentation will be a keg containing all final numbers of your beer.
 
-**Resource Links for 1.11.2**
+List of Attributes Calculated:
+ - ABV (Alcohol by Volume)
+ - IBU (International Bitterness Unit)
+ - SRM (Standard Reference Method)
+ - Lovibond Index
+ - Original Gravity
+ - Final Gravity
+
+ Current known limitations:
+ - Batch and Boil: For now we have fixed the Batch size and Boil Size for 5 gallons.
+ - Extract Method: All recipes are based on Extract Method.
+ - LME: Only Liquid Malts are available for now.
+ - OneHop: One Type of hops per fermentation.
+
+Developed by rafacost3d, for Minecraft 1.12.2
+
+**Resource Links for 1.12.2**
 
 If your site is at the list below, thank you so much for your tutorials/code repositories, you guys helped me a lot!
 
@@ -19,35 +40,5 @@ If your site is at the list below, thank you so much for your tutorials/code rep
 
 
 **To-Do List**
-- [x] Implemented Basic HopSeedsItem
-- [x] Implemented Hop Growth Block
-- [x] Created Generic HopsLeafItem with Hops Type, and Alpha Acid
-- [x] Implemented CreativeTabs
-- [x] Added Support for The One Probe
-- [x] Created BaseMachineBlock, with BaseTileEntity with TOP Support
-- [x] Added HeatSource Algorithm
-- [x] Created StirringSpoonItem
-- [x] Create WaterGallonItem
-- [x] Create LiquidMaltExtractItem
-- [x] Implemented Fluids: Weizen Beer and Wort
-- [x] Created ThermometerItem
-- [x] Created SanitizerItem
-- [x] Created YeastItem
-- [x] Created PrimingSugarItem
-- [x] Created HopsPelletsItem
-- [x] Created Config File allowing selection between Metric System or US/Imperial
-- [x] Created PelleterMachineBlock, to double Hops production
-- [x] Created AluminiumPotBlock, implemented first Recipe Wort for Weizein Beer.
-- [x] Created WortBucket, this Item store the information about the Brewing Process.
-- [x] Created Rhizomes, Hops and Pellets for 137 types of Hops.
-- [x] Created FermenterBlock
-- [x] Added 7 types of Liquid Malt Extract
-- [x] Implemented All Beer Statistics Variables, SRM, ABV, IBU, OG, FG, and etc...
-- [x] Created 10 Buckets with Dynamic SRM Colors, 30 more to go...
-- [x] Implemented Price and Quantity for Hops, Pellets and Rhizomes connection to Firebase Database
-- [ ] Create AirlockItem
-- [ ] Create BottlingBucketBlock
-- [ ] Create BottlesItem
-- [ ] Implement Recipes for Items and Blocks
+- [x] Release Mod.
 - [ ] Create Market System
-- [ ] Release Mod.
